@@ -74,19 +74,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CustomerSearchController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Controllers\ICustomersView.cs" />
+    <Compile Include="Presentation\Client\ICustomersView.cs" />
     <Compile Include="Controllers\IOrdersView.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderState.cs" />
     <Compile Include="Engine\ViewManager\IDynamicViewsManager.cs" />
-    <Compile Include="Presentation\Client\CustomersForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Presentation\Client\ClientSearch.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Client\CustomersForm.Designer.cs">
-      <DependentUpon>CustomersForm.cs</DependentUpon>
+    <Compile Include="Presentation\Client\ClientSearch.Designer.cs">
+      <DependentUpon>ClientSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Client\IClientSearch.cs" />
     <Compile Include="Engine\InteractionPoint\InteractionPointInfoEx.cs" />
@@ -149,8 +150,8 @@
     <Compile Include="Engine\View\ViewInfoEx.cs" />
     <Compile Include="Engine\View\ViewInfosPrividerEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation\Client\CustomersForm.resx">
-      <DependentUpon>CustomersForm.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Client\ClientSearch.resx">
+      <DependentUpon>ClientSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Client\MailSendingFailureView.resx">
       <DependentUpon>MailSendingFailureView.cs</DependentUpon>

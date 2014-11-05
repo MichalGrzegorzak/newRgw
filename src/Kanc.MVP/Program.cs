@@ -31,13 +31,15 @@ namespace Kanc.MVP
             Customer.AllCustomers.Add(new Customer("John"));
             Customer.AllCustomers.Add(new Customer("Paul"));
             Customer.AllCustomers.Add(new Customer("Snow"));
+            Customer.AllCustomers.Add(new Customer("Snow1"));
+            Customer.AllCustomers.Add(new Customer("Snow2"));
 
-            Customer.AllCustomers[0].Orders.Add(new Order(1));
-            Customer.AllCustomers[0].Orders.Add(new Order(2));
-            Customer.AllCustomers[0].Orders.Add(new Order(3));
+            Customer.AllCustomers[2].Orders.Add(new Order(1, "a"));
+            Customer.AllCustomers[2].Orders.Add(new Order(2, "b"));
+            Customer.AllCustomers[2].Orders.Add(new Order(3, "c"));
 
-            Customer.AllCustomers[1].Orders.Add(new Order(4));
-            Customer.AllCustomers[1].Orders.Add(new Order(5));
+            Customer.AllCustomers[1].Orders.Add(new Order(4, "44"));
+            Customer.AllCustomers[1].Orders.Add(new Order(5, "55"));
         }
     }
 }

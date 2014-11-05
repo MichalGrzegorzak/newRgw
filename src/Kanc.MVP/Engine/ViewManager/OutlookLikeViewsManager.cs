@@ -66,7 +66,7 @@ namespace Kanc.MVP.Engine.ViewManager
             switch (vc)
             {
                 case ViewCategory.Klient:
-                    vi.ImgName = "Mail"; vi.ViewType = typeof(CustomersForm); break;
+                    vi.ImgName = "Mail"; vi.ViewType = typeof(ClientSearch); break;
                 case ViewCategory.Raporty:
                     vi.ImgName = "Notes"; vi.ViewType = typeof(NoteView); break;
                 case ViewCategory.Tasks:

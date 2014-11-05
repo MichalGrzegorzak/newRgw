@@ -14,19 +14,19 @@ namespace Kanc.MVP.Engine.Tasks
     public class MainTask : TaskBase
     {
         //[IPointEx(ViewCategory.Mail, typeof(NewMailPropertiesViewController))]
-        //[IPointEx(ViewCategory.Klient, typeof(ClientController))]
-        //public const string NewMailPropertiesView = "New Mail Properties";
+        [IPointEx(ViewCategory.Klient, typeof(CustomerSearchController), true)]
+        public const string SearchCustomer = "Search";
 
         //[InteractionPoint(typeof(CustomersController), true)]
-        [IPointEx(ViewCategory.Klient, typeof(CustomerController), true)]
-        public const string Customers = "Customers";
+        //[IPointEx(ViewCategory.Klient, typeof(CustomerController), true)]
+        //public const string Customers = "Customers";
+
         [IPointEx(ViewCategory.Klient, typeof(OrderController), true)]
         public const string Orders = "Orders";
 
 
 
         private Customer currentCustomer = Customer.AllCustomers[0];
-
         public event EventHandler CurrentCustomerChanged;
         public Customer CurrentCustomer
         {
@@ -36,6 +36,19 @@ namespace Kanc.MVP.Engine.Tasks
                 currentCustomer = value;
                 if (CurrentCustomerChanged != null)
                     CurrentCustomerChanged(this, EventArgs.Empty);
+            }
+        }
+
+        private Order currentOrder = null;
+        public event EventHandler CurrentOrderChanged;
+        public Order CurrentOrder
+        {
+            get { return currentOrder; }
+            set
+            {
+                currentOrder = value;
+                if (CurrentOrderChanged != null)
+                    CurrentOrderChanged(this, EventArgs.Empty);
             }
         }
 

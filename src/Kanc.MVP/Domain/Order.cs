@@ -1,10 +1,13 @@
-﻿namespace Kanc.MVP.Domain
+﻿using System.Security.Cryptography;
+
+namespace Kanc.MVP.Domain
 {
     public class Order
     {
-        public Order(int id)
+        public Order(int id, string desc)
         {
             Id = id;
+            Desc = desc;
         }
 
         private OrderState state = OrderState.Open;
@@ -15,6 +18,7 @@
         }
 
         public int Id { get; set; }
+        public string Desc { get; set; }
 
         public void Accept()
         {

@@ -67,7 +67,7 @@ namespace Kanc.MVP.Controllers
 
         public void ShowCustomers()
         {
-            Task.Navigator.Navigate(MainTask.Customers);
+            Task.Navigator.Navigate(MainTask.SearchCustomer);
         }
     }
 }

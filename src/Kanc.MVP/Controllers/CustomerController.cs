@@ -1,4 +1,5 @@
-﻿using Kanc.MVP.Domain;
+﻿using System.Linq;
+using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
 using MVCSharp.Core;
 
