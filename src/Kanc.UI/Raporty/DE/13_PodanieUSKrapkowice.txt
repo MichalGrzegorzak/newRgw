@@ -1,0 +1,17 @@
+dnia
+nazwaUrzedu
+NIP
+NIPPartner
+innyPowod1
+innyPowod2
+zaOkres
+imieINazwisko
+imieINazwiskoPartner
+adresLinia1
+adresLinia1Partner
+adresLinia2
+adresLinia2Partner
+
+
+
+

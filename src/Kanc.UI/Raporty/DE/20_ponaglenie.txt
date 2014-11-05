@@ -1,0 +1,15 @@
+Data
+PanPani
+Adres1
+Adres2
+NrKlienta
+DataZlozenia
+Year
+Czynnosci
+ID
+NieczynneOd
+NieczynneDo
+
+
+
+

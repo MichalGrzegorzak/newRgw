@@ -1,0 +1,14 @@
+Mandanten
+PustePole
+SwiftCode
+NazwiskoImie
+Adres
+NazwaBanku
+Data
+NumerBanku_BLZ
+NumerKonta
+IBAN
+
+
+
+

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="RogowMigrated" EntityNamespace="Kanc.Data" ContextNamespace="Kanc.Data" Class="RogowMigratedDataContext" EntityBase="LinqEntityBase" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=RogowMigrated;Persist Security Info=True;User ID=sa;Password=sa" SettingsObjectName="Properties.Settings" SettingsPropertyName="RogowMigratedConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Adres" Member="Adres">
+    <Type Name="Adres">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Kod" Storage="_kod" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Miasto" Storage="_miasto" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ulica" Storage="_ulica" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Miejsce" Storage="_miejsce" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="KrajId" Storage="_krajId" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Association Name="Kraj_Adres" Member="Kraj" Storage="_kraj" ThisKey="KrajId" Type="Kraj" IsForeignKey="true" />
+      <Association Name="Adres_Rozliczenie" Member="ZameldRozliczenieList" Storage="_zameldRozliczenieList" OtherKey="AdresZameldId" Type="Rozliczenie" />
+      <Association Name="Adres_Rozliczenie1" Member="KorespRozliczenieList" Storage="_korespRozliczenieList" OtherKey="AdresKorespId" Type="Rozliczenie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bank" Member="Bank">
+    <Type Name="Bank">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BLZ" Member="Blz" Storage="_blz" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="Nazwa" Storage="_nazwa" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Swift" Storage="_swift" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="Adres" Storage="_adres" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="KrajId" Storage="_krajId" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Storage="_createdBy" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Storage="_createdOn" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Storage="_modifiedBy" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Storage="_modifiedOn" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
+      <Association Name="Kraj_Bank" Member="Kraj" Storage="_kraj" ThisKey="KrajId" Type="Kraj" IsForeignKey="true" />
+      <Association Name="Bank_Rozliczenie" Member="RozliczenieList" Storage="_rozliczenieList" OtherKey="BankId" Type="Rozliczenie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Klient" Member="Klient">
+    <Type Name="Klient">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MandId" Storage="_mandId" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Urodz" Storage="_urodz" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="Plec" Storage="_plec" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="PolecajId" Storage="_polecajId" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Association Name="Polecil_Klient" Member="PolecajPolecil" Storage="_polecajPolecil" ThisKey="PolecajId" Type="Polecil" IsForeignKey="true" />
+      <Association Name="Klient_Rozliczenie" Member="CustRozliczenieList" Storage="_custRozliczenieList" OtherKey="CustId" Type="Rozliczenie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kraj" Member="Kraj">
+    <Type Name="Kraj">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Skrot" Storage="_skrot" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="NazwaPL" Storage="_nazwaPL" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="NazwaEU" Storage="_nazwaEU" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Association Name="Kraj_Adres" Member="AdresList" Storage="_adresList" OtherKey="KrajId" Type="Adres" />
+      <Association Name="Kraj_Bank" Member="BankList" Storage="_bankList" OtherKey="KrajId" Type="Bank" />
+      <Association Name="Kraj_Rozliczenie" Member="RozliczenieList" Storage="_rozliczenieList" OtherKey="KrajId" Type="Rozliczenie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Polecil" Member="Polecil">
+    <Type Name="Polecil">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Storage="_nazwa" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Polecil_Klient" Member="PolecajKlientList" Storage="_polecajKlientList" OtherKey="PolecajId" Type="Klient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rozliczenie" Member="Rozliczenie">
+    <Type Name="Rozliczenie">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustId" Storage="_custId" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Rok" Storage="_rok" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="KrajId" Storage="_krajId" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="PodatNiemId" Storage="_podatNiemId" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="PodatHollId" Storage="_podatHollId" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="PodatAustId" Storage="_podatAustId" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="AdresZameldId" Storage="_adresZameldId" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="BankId" Storage="_bankId" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Storage="_nazwisko" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Imie" Storage="_imie" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Konto" Storage="_konto" Type="System.Double" DbType="float NOT NULL" CanBeNull="false" />
+      <Column Name="AdresBanku" Storage="_adresBanku" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Storage="_telefon" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="Komorka" Storage="_komorka" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="Email" Storage="_email" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="Notka" Storage="_notka" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="PartnerImie" Storage="_partnerImie" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="PartnerUrodz" Storage="_partnerUrodz" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
+      <Column Name="ImieDe" Storage="_imieDe" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="NazwiskoDe" Storage="_nazwiskoDe" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="AdresKorespId" Storage="_adresKorespId" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="CreatedBy" Storage="_createdBy" Type="System.String" DbType="nvarchar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Storage="_createdOn" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Storage="_modifiedBy" Type="System.String" DbType="nvarchar(255)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Storage="_modifiedOn" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
+      <Association Name="Adres_Rozliczenie" Member="ZameldAdres" Storage="_zameldAdres" ThisKey="AdresZameldId" Type="Adres" IsForeignKey="true" />
+      <Association Name="Adres_Rozliczenie1" Member="KorespAdres" Storage="_korespAdres" ThisKey="AdresKorespId" Type="Adres" IsForeignKey="true" />
+      <Association Name="Bank_Rozliczenie" Member="Bank" Storage="_bank" ThisKey="BankId" Type="Bank" IsForeignKey="true" />
+      <Association Name="Klient_Rozliczenie" Member="CustKlient" Storage="_custKlient" ThisKey="CustId" Type="Klient" IsForeignKey="true" />
+      <Association Name="Kraj_Rozliczenie" Member="Kraj" Storage="_kraj" ThisKey="KrajId" Type="Kraj" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

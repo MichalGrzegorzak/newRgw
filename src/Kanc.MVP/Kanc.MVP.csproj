@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <SolutionNameWithPath>AdvancedCustomization</SolutionNameWithPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1AFC2A6D-E4B9-4450-9CE0-879E0D42A296}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kanc.MVP</RootNamespace>
+    <AssemblyName>Kanc.MVP</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MT.WindowsUI, Version=2.6.4.0, Culture=neutral, PublicKeyToken=6a0e81d0b9165633, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\MT.WindowsUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Office2007Renderer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Office2007Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Owf.Controls.OutlookPanelEx, Version=1.0.3219.22024, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Owf.Controls.OutlookPanelEx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\ICustomersView.cs" />
+    <Compile Include="Controllers\IOrdersView.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\Order.cs" />
+    <Compile Include="Domain\OrderState.cs" />
+    <Compile Include="Engine\ViewManager\IDynamicViewsManager.cs" />
+    <Compile Include="Presentation\Client\CustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Client\CustomersForm.Designer.cs">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Client\IClientSearch.cs" />
+    <Compile Include="Engine\InteractionPoint\InteractionPointInfoEx.cs" />
+    <Compile Include="Engine\Tasks\MainTask.cs" />
+    <Compile Include="Controllers\MainViewController.cs" />
+    <Compile Include="Engine\InteractionPoint\IPointExAttribute.cs" />
+    <Compile Include="Engine\Navigator\NavigatorEx.cs" />
+    <Compile Include="Controllers\NewMailPropertiesViewController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Engine\Tasks\TaskInfoByAttributesProviderEx.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Engine\View\ViewCategory.cs" />
+    <Compile Include="Model\Mail.cs" />
+    <Compile Include="Presentation\Client\MailSendingFailureView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Client\MailSendingFailureView.Designer.cs">
+      <DependentUpon>MailSendingFailureView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Client\MailSendingSuccessView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Client\MailSendingSuccessView.Designer.cs">
+      <DependentUpon>MailSendingSuccessView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Client\OrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Client\OrdersForm.Designer.cs">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MainForm\IMainView.cs" />
+    <Compile Include="Presentation\MainForm\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MainForm\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Note\NoteView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Note\NoteView.Designer.cs">
+      <DependentUpon>NoteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\ViewManager\OutlookLikeViewsManager.cs" />
+    <Compile Include="Presentation\Note\PinnedNoteView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Note\PinnedNoteView.Designer.cs">
+      <DependentUpon>PinnedNoteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Presentation\Task\TaskView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Task\TaskView.Designer.cs">
+      <DependentUpon>TaskView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\View\ViewExAttribute.cs" />
+    <Compile Include="Engine\View\ViewInfoEx.cs" />
+    <Compile Include="Engine\View\ViewInfosPrividerEx.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\Client\CustomersForm.resx">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Client\MailSendingFailureView.resx">
+      <DependentUpon>MailSendingFailureView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Client\MailSendingSuccessView.resx">
+      <DependentUpon>MailSendingSuccessView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Client\OrdersForm.resx">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MainForm\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Note\NoteView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NoteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Note\PinnedNoteView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PinnedNoteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Task\TaskView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TaskView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tasks24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tasks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdParties\MVCSharp\MVCSharp.csproj">
+      <Project>{c04a36b0-4a58-45d4-b95b-a4a58afebc95}</Project>
+      <Name>MVCSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="CleanUp">
+    <RemoveDir Directories="bin;obj;Presentation\SeparateViewsAssembly\obj" />
+    <Delete Files="$(SolutionNameWithPath).suo" />
+  </Target>
+</Project>

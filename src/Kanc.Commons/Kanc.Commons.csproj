@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9EE3F5C-2B0A-4B3F-A597-5088EDB4BD0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kanc.Commons</RootNamespace>
+    <AssemblyName>Kanc.Commons</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\lib\3.1\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\lib\3.1\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\3.3.1\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\GenericEnumDDL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StatusDDL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\KrajeBankiDDL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Enums\KontoWlasciciel.cs" />
+    <Compile Include="Controls\Enums\Polecony.cs" />
+    <Compile Include="Controls\PoleconyDDL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WlascicielKontaDDL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Enums\RptLang.cs" />
+    <Compile Include="Controls\Enums\Religia.cs" />
+    <Compile Include="Controls\Enums\Status.cs" />
+    <Compile Include="Controls\Enums\TypListy.cs" />
+    <Compile Include="Controls\Enums\TypRaportu.cs" />
+    <Compile Include="Controls\TypyListGrpBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\base\DropdownBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Enums\Kraje.cs" />
+    <Compile Include="Controls\KrajeDDL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\base\RadioGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\UIExtension.cs" />
+    <Compile Include="Helpers\TestySpecializedEnum.cs" />
+    <Compile Include="Helpers\CustomEnumEmailTemplate.cs" />
+    <Compile Include="Helpers\Enums\EnumDescription.cs" />
+    <Compile Include="Controls\MaskedTextBoxExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NullableDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Enums\Plec.cs" />
+    <Compile Include="Controls\PlecDDL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\Dictionary.cs" />
+    <Compile Include="Extensions\Exception.cs" />
+    <Compile Include="Extensions\IPager.cs" />
+    <Compile Include="Extensions\IQuerable.cs" />
+    <Compile Include="Extensions\ListExtension.cs" />
+    <Compile Include="Extensions\Parser.cs" />
+    <Compile Include="Extensions\Strings.cs" />
+    <Compile Include="Helpers\PropertyResolver.cs" />
+    <Compile Include="Helpers\SortableBindingList.cs" />
+    <Compile Include="CaptureDesktop\Capture.cs" />
+    <Compile Include="Helpers\CloneHelper.cs" />
+    <Compile Include="CaptureDesktop\Dll.cs" />
+    <Compile Include="Helpers\Enums\Enum.cs" />
+    <Compile Include="Helpers\Enums\EnumHelper.cs" />
+    <Compile Include="Helpers\KeyValueTriplet.cs" />
+    <Compile Include="Helpers\QueryHelper.cs" />
+    <Compile Include="Helpers\SerializeHelper.cs" />
+    <Compile Include="Helpers\SpecializedEnum.cs" />
+    <Compile Include="Interceptors\DataBindingFactory.cs" />
+    <Compile Include="Interceptors\DataBindingIntercepter.cs" />
+    <Compile Include="Interceptors\DataErrorInfoIntercept.cs" />
+    <Compile Include="Interceptors\NHVTypeInspector.cs" />
+    <Compile Include="Interceptors\NotifyPropertyChangedInterceptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator\src\NHibernate.Validator\NHibernate.Validator.csproj">
+      <Project>{599516E0-E10D-4F44-B5E1-B7B67EFC931A}</Project>
+      <Name>NHibernate.Validator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

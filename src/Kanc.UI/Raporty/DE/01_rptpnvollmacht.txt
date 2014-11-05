@@ -1,0 +1,9 @@
+ImieINazwisko
+Adres
+Data
+Podpis
+Mandaten
+
+
+
+

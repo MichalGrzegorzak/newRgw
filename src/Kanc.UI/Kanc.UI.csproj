@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{774F7D5E-63EF-4FB9-8AED-232109DDD3A8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kanc.UI</RootNamespace>
+    <AssemblyName>Kanc.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsDisjunctiveRequires>False</CodeContractsDisjunctiveRequires>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\3.1\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\3.1\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FizzWare.NBuilder">
+      <HintPath>..\..\lib\nBuilder\FizzWare.NBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\3.1\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Logging\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\3.3.1\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Base\BaseFormSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\BaseFormSessionGeneric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\BaseFormSessionRozlicz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\BaseFormSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\BaseSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\MainFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\NavigationBaseFormSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\ScrollForm.cs" />
+    <Compile Include="Forms\EventPublisher.cs" />
+    <Compile Include="Forms\FrmKontoBankowe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmKontoBankowe.Designer.cs">
+      <DependentUpon>FrmKontoBankowe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Glowna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Glowna.Designer.cs">
+      <DependentUpon>Glowna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\Form1vvv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\Form1vvv.Designer.cs">
+      <DependentUpon>Form1vvv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\Form22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\Form22.Designer.cs">
+      <DependentUpon>Form22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\micro\ucForListaZaplat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\micro\ucForListaZaplat.Designer.cs">
+      <DependentUpon>ucForListaZaplat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\micro\ucID_Mandaten_Rok.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\micro\ucID_Mandaten_Rok.Designer.cs">
+      <DependentUpon>ucID_Mandaten_Rok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucKontakt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucKontakt.Designer.cs">
+      <DependentUpon>ucKontakt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucReklamacje.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucReklamacje.Designer.cs">
+      <DependentUpon>ucReklamacje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\SimpleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmZaplataRachunku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmZaplataRachunku.Designer.cs">
+      <DependentUpon>FrmZaplataRachunku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmKsiegowanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmKsiegowanie.Designer.cs">
+      <DependentUpon>FrmKsiegowanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmInformator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmInformator.Designer.cs">
+      <DependentUpon>FrmInformator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmReklamator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmReklamator.Designer.cs">
+      <DependentUpon>FrmReklamator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucZaplataRachunku.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucZaplataRachunku.Designer.cs">
+      <DependentUpon>ucZaplataRachunku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucKsiegowanie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucKsiegowanie.Designer.cs">
+      <DependentUpon>ucKsiegowanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\micro\uxProcPodatek.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\micro\uxProcPodatek.Designer.cs">
+      <DependentUpon>uxProcPodatek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EdycjaKlienta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EdycjaKlienta.Designer.cs">
+      <DependentUpon>EdycjaKlienta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIContext.cs" />
+    <Compile Include="Ctrl\Base\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Base\BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Class1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ctrl\CueTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucAdresPodglad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucAdresPodglad.Designer.cs">
+      <DependentUpon>ucAdresPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucHistoriaPodglad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucHistoriaPodglad.Designer.cs">
+      <DependentUpon>ucHistoriaPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucKontoPodglad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucKontoPodglad.Designer.cs">
+      <DependentUpon>ucKontoPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucPodstKlientPodglad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucPodstKlientPodglad.Designer.cs">
+      <DependentUpon>ucPodstKlientPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucRachunekPodglad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucRachunekPodglad.Designer.cs">
+      <DependentUpon>ucRachunekPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucRodzinaPodglad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucRodzinaPodglad.Designer.cs">
+      <DependentUpon>ucRodzinaPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucWykazWgIndeksuPodglad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\KlientPodglad\ucWykazWgIndeksuPodglad.Designer.cs">
+      <DependentUpon>ucWykazWgIndeksuPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucDzieci.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucDzieci.Designer.cs">
+      <DependentUpon>ucDzieci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucMandatenID.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucMandatenID.Designer.cs">
+      <DependentUpon>ucMandatenID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucNagrodaListy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucNagrodaListy.Designer.cs">
+      <DependentUpon>ucNagrodaListy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Base\OkCancel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Base\OkCancel.Designer.cs">
+      <DependentUpon>OkCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucAdres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucAdres.Designer.cs">
+      <DependentUpon>ucAdres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucRozciagacz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucRozciagacz.Designer.cs">
+      <DependentUpon>ucRozciagacz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucSofiNummer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucSofiNummer.Designer.cs">
+      <DependentUpon>ucSofiNummer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\System\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrl\System\MsgBox.designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Base\ucBase.cs" />
+    <Compile Include="Ctrl\Klient\ucDzieciExperim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucDzieciExperim.Designer.cs">
+      <DependentUpon>ucDzieciExperim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucKonto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucKonto.Designer.cs">
+      <DependentUpon>ucKonto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucPartner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucPartner.Designer.cs">
+      <DependentUpon>ucPartner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucEdycjaKlient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucEdycjaKlient.Designer.cs">
+      <DependentUpon>ucEdycjaKlient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucWlascicielKonta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Klient\ucWlascicielKonta.Designer.cs">
+      <DependentUpon>ucWlascicielKonta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\System\NotifyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrl\System\NotifyWindow2000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrl\ucStartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\ucStartControl.Designer.cs">
+      <DependentUpon>ucStartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\ucTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\ucTabControl.Designer.cs">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Unwind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Unwind.Designer.cs">
+      <DependentUpon>Unwind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\ICurrentItem.cs" />
+    <Compile Include="Forms\Base\PresentationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Testy\FormTest2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Testy\FormTest2.Designer.cs">
+      <DependentUpon>FormTest2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modalne\FrmArchiwum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modalne\FrmArchiwum.Designer.cs">
+      <DependentUpon>FrmArchiwum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modalne\FrmDodajBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modalne\FrmDodajBank.Designer.cs">
+      <DependentUpon>FrmDodajBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmKartotekaPodglad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartoteka\FrmKartotekaPodglad.Designer.cs">
+      <DependentUpon>FrmKartotekaPodglad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPodatekStrona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPodatekStrona.Designer.cs">
+      <DependentUpon>FrmPodatekStrona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEuEwr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEuEwr.Designer.cs">
+      <DependentUpon>FrmEuEwr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modalne\FrmSzukaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modalne\FrmSzukaj.Designer.cs">
+      <DependentUpon>FrmSzukaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Testy\FrmTest1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Testy\FrmTest1.Designer.cs">
+      <DependentUpon>FrmTest1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmWprowadz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmWprowadz.Designer.cs">
+      <DependentUpon>FrmWprowadz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Testy\ReportTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Testy\ReportTest.Designer.cs">
+      <DependentUpon>ReportTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Ctrl\Base\BaseUserControl.resx">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\BaseFormSessionRozlicz.resx">
+      <DependentUpon>BaseFormSessionRozlicz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\BaseFormSimple.resx">
+      <DependentUpon>BaseFormSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmKontoBankowe.resx">
+      <DependentUpon>FrmKontoBankowe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Glowna.resx">
+      <DependentUpon>Glowna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\Form1vvv.resx">
+      <DependentUpon>Form1vvv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\Form22.resx">
+      <DependentUpon>Form22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucAdresPodglad.resx">
+      <DependentUpon>ucAdresPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucZaplataRachunku.resx">
+      <DependentUpon>ucZaplataRachunku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\micro\ucForListaZaplat.resx">
+      <DependentUpon>ucForListaZaplat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucHistoriaPodglad.resx">
+      <DependentUpon>ucHistoriaPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\micro\ucID_Mandaten_Rok.resx">
+      <DependentUpon>ucID_Mandaten_Rok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucKontakt.resx">
+      <DependentUpon>ucKontakt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucKontoPodglad.resx">
+      <DependentUpon>ucKontoPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucPodstKlientPodglad.resx">
+      <DependentUpon>ucPodstKlientPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucRachunekPodglad.resx">
+      <DependentUpon>ucRachunekPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucReklamacje.resx">
+      <DependentUpon>ucReklamacje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucRodzinaPodglad.resx">
+      <DependentUpon>ucRodzinaPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucWykazWgIndeksuPodglad.resx">
+      <DependentUpon>ucWykazWgIndeksuPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucDzieci.resx">
+      <DependentUpon>ucDzieci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucMandatenID.resx">
+      <DependentUpon>ucMandatenID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucNagrodaListy.resx">
+      <DependentUpon>ucNagrodaListy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Base\OkCancel.resx">
+      <DependentUpon>OkCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucAdres.resx">
+      <DependentUpon>ucAdres.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucDzieciExperim.resx">
+      <DependentUpon>ucDzieciExperim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucKonto.resx">
+      <DependentUpon>ucKonto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucPartner.resx">
+      <DependentUpon>ucPartner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucEdycjaKlient.resx">
+      <DependentUpon>ucEdycjaKlient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucRozciagacz.resx">
+      <DependentUpon>ucRozciagacz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucSofiNummer.resx">
+      <DependentUpon>ucSofiNummer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Klient\ucWlascicielKonta.resx">
+      <DependentUpon>ucWlascicielKonta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\System\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\ucTabControl.resx">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Unwind.resx">
+      <DependentUpon>Unwind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\FrmZaplataRachunku.resx">
+      <DependentUpon>FrmZaplataRachunku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\FrmKsiegowanie.resx">
+      <DependentUpon>FrmKsiegowanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\FrmReklamator.resx">
+      <DependentUpon>FrmReklamator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\KlientPodglad\ucKsiegowanie.resx">
+      <DependentUpon>ucKsiegowanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\micro\uxProcPodatek.resx">
+      <DependentUpon>uxProcPodatek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EdycjaKlienta.resx">
+      <DependentUpon>EdycjaKlienta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report1.rdlc" />
+    <EmbeddedResource Include="Forms\Testy\FormTest2.resx">
+      <DependentUpon>FormTest2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modalne\FrmArchiwum.resx">
+      <DependentUpon>FrmArchiwum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modalne\FrmDodajBank.resx">
+      <DependentUpon>FrmDodajBank.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartoteka\FrmKartotekaPodglad.resx">
+      <DependentUpon>FrmKartotekaPodglad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPodatekStrona.resx">
+      <DependentUpon>FrmPodatekStrona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEuEwr.resx">
+      <DependentUpon>FrmEuEwr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modalne\FrmSzukaj.resx">
+      <DependentUpon>FrmSzukaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Testy\FrmTest1.resx">
+      <DependentUpon>FrmTest1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmWprowadz.resx">
+      <DependentUpon>FrmWprowadz.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Testy\ReportTest.resx">
+      <DependentUpon>ReportTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="appSettings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\CrystalReport1.mht" />
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Adres.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Bank.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.BaseEntity.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Biuro.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.DodatkoweDane.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.EntityAdv.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Historia.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.IEntity.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Klient.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Konto.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.KPWyslane.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.ListaZaplat.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.OneToOneEntity.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Partner.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Podatek.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Polecil.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Rachunek.datasource" />
+    <None Include="Properties\DataSources\Kanc.Core.Entities.Rozliczenie.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Raporty\DE\01_rptpnvollmacht.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Raporty\DE\02_rptpnumowade.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Raporty\DE\03_rptpnbwstatubg.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\05_rptdrukkontobankowe.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\06_stronaNiemcy_both.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\06_stronaNiemcy_de.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\06_stronaNiemcy_pl.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\07_ESTK1A_2006.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\07_ESTK1A_2007.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\07_ESTK1A_2008.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\07_ESTK1A_2009.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\07_ESTK1A_2010.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\07_ESTK1A_2011.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\10_BrakKarty.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\11_EUEWR_BOTH.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\11_EUEWR_DE.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\11_EUEWR_PL.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\12_PodanieEUEWR.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\13_PodanieUSKrapkowice.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\15_OswiadzczenieMaloznka.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\16_PrzebiegAuta.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\17_PrzekazanieAuta.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\18_Budowa.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\DE\20_Ponaglenie.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\EST1\ESt1A2006_C.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\EST1\ESt1A2007_C.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\EST1\EST1A2008_C.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\EST1\ESt1A2009_C.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Raporty\Ewa_nowe\BrakKartyPodatkowej_PismoOKarte_A.pdf" />
+    <None Include="Raporty\Ewa_nowe\BrakKartyPodatkowej_PismoOKarte_B.pdf" />
+    <None Include="Raporty\Ewa_nowe\BrakKartyPodatkowej_PismoOKarte_C.pdf" />
+    <None Include="Raporty\Ewa_nowe\BrakKartyPodatkowej_Vollmacht_Kancelaria_jest pusty.pdf" />
+    <None Include="Raporty\Ewa_nowe\BrakKatyPodatkowej_Ponaglenie_A.pdf" />
+    <None Include="Raporty\Ewa_nowe\BrakKatyPodatkowej_Ponaglenie_B.pdf" />
+    <None Include="Raporty\Ewa_nowe\BrakKatyPodatkowej_Ponaglenie_C.pdf" />
+    <None Include="Raporty\Ewa_nowe\PodanieEUEWR_A.pdf" />
+    <None Include="Raporty\Ewa_nowe\PodanieEUEWR_B.pdf" />
+    <None Include="Raporty\Ewa_nowe\PodanieEUEWR_C.pdf" />
+    <None Include="Raporty\Ewa_nowe\Podanieuskrce_A.pdf" />
+    <None Include="Raporty\Ewa_nowe\Podanieuskrce_B.pdf" />
+    <None Include="Raporty\Ewa_nowe\Podanieuskrce_C.pdf" />
+    <None Include="Raporty\Ewa_nowe\PrzerwaWPracyNiem_A.pdf" />
+    <None Include="Raporty\Ewa_nowe\PrzerwaWPracyNiem_B.pdf" />
+    <None Include="Raporty\Ewa_nowe\PrzerwaWPracyNiem_C.pdf" />
+    <None Include="Raporty\Ewa_nowe\ZaginelaKartaNiem_A.pdf" />
+    <None Include="Raporty\Ewa_nowe\ZaginelaKartaNiem_B.pdf" />
+    <None Include="Raporty\Ewa_nowe\ZaginelaKartaNiem_C.pdf" />
+    <None Include="Raporty\Inne\01_C_rptpnvollmacht.pdf" />
+    <None Include="Raporty\Inne\02_C_rptpnumowade.pdf" />
+    <None Include="Raporty\Inne\03_C_rptpnbwstatubg.pdf" />
+    <None Include="Raporty\Inne\05_C_rptdrukkontobankowe.pdf" />
+    <None Include="Raporty\Wypelnione_sample\01_A_rptpnvollmacht.pdf" />
+    <None Include="Raporty\Wypelnione_sample\02_A_rptpnumowade.pdf" />
+    <None Include="Raporty\Wypelnione_sample\03_A_rptpnbwstatubg.pdf" />
+    <None Include="Raporty\Wypelnione_sample\04_A_rptpnpocztowy.pdf" />
+    <None Include="Raporty\Wypelnione_sample\05_A_rptdrukkontobankowe.pdf" />
+    <None Include="Raporty\Wypelnione_sample\06_A_rptdrukstronaniemcy.pdf" />
+    <None Include="Raporty\Wypelnione_sample\07_A_StronaNiemcy.pdf" />
+    <None Include="Raporty\Wypelnione_sample\ESt1A2005.pdf" />
+    <None Include="Raporty\Wypelnione_sample\ESt1A2006_A.pdf" />
+    <None Include="Raporty\Wypelnione_sample\ESt1A2007_A.pdf" />
+    <None Include="Raporty\Wypelnione_sample\ESt1A2008_A.pdf" />
+    <None Include="Raporty\Wypelnione_sample\ESt1A2009_ A.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator.Binding\NHibernate.Validator.Binding.csproj">
+      <Project>{241F53B6-E2FD-4D6F-B000-258BFAF4B806}</Project>
+      <Name>NHibernate.Validator.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator\src\NHibernate.Validator.Specific\NHibernate.Validator.Specific.csproj">
+      <Project>{F23C735C-50FE-4932-9C10-F48FCECC0DCF}</Project>
+      <Name>NHibernate.Validator.Specific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator\src\NHibernate.Validator\NHibernate.Validator.csproj">
+      <Project>{599516E0-E10D-4F44-B5E1-B7B67EFC931A}</Project>
+      <Name>NHibernate.Validator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kanc.Commons\Kanc.Commons.csproj">
+      <Project>{A9EE3F5C-2B0A-4B3F-A597-5088EDB4BD0B}</Project>
+      <Name>Kanc.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kanc.Core\Kanc.Core.csproj">
+      <Project>{F493329A-8316-4647-94D6-CCBC9E1949C6}</Project>
+      <Name>Kanc.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="icons\button_cancel_256.png" />
+    <Content Include="icons\document_new.ico" />
+    <Content Include="icons\fileclose.png" />
+    <Content Include="icons\Help-48.png" />
+    <Content Include="icons\Help-64.png" />
+    <Content Include="icons\new.ico" />
+    <Content Include="icons\new_file.ico" />
+    <Content Include="icons\new_file.png" />
+    <Content Include="icons\Save-48.png" />
+    <Content Include="icons\Save-64.png" />
+    <Content Include="icons\Search2-48.png" />
+    <Content Include="icons\Search2-64.png" />
+    <Content Include="Raporty\notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ctrl\Raporty\" />
+    <Folder Include="Ctrl\Tabele\" />
+    <Folder Include="Raporty\EUEWR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="Kanc.UI.Tests"
+				   namespace="Kanc.UI.Tests">
+
+  <class name="Rachunek_B" table="Rachunek_B" >
+	<id name="Id">
+	  <generator class="native"/>
+	</id>
+
+	<property name="Name" />
+	<!--<many-to-one name="KlientB" column="KlientId" cascade="all" not-null="false" />-->
+
+      <many-to-one name="Klient"
+                   class="Klient_B" cascade="all"
+		unique="true"
+		column="Klient"/>
+      
+	  <!--<one-to-one name="Klient" class="Klient_B"  cascade="all" lazy="false"/>-->
+	<!--<one-to-one name="KlientB" class="Klient_B"  constrained="true" foreign-key="none"/>-->
+	  
+  </class>
+  
+</hibernate-mapping>

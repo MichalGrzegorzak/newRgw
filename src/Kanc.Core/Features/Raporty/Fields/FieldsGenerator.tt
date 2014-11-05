@@ -1,0 +1,106 @@
+﻿<#@ template debug="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ Assembly name="d:\PROJECTS\mine\Rogow\proj\Kancelaria\Kanc.Core\bin\Debug\Kanc.Core.dll" #>
+<#@ Assembly Name="EnvDTE.dll" #>
+<#@ Assembly Name="System.Data" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Kanc.Core" #>
+<#@ import namespace="Kanc.Core.Features.Raporty" #>
+<#@ import namespace="System.Reflection" #>
+using System;
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using Kanc.Core.Entities;
+using Kanc.Commons;
+
+namespace Kanc.Core.Features.Raporty
+{
+	public class Fields : Dictionary<string, string>
+	{
+		protected F F = new F();    	
+
+		public Fields() 
+	    {
+	    }
+		
+		public void AddRange(Dictionary<string, string> dict)
+        {
+            foreach (var pair in dict)
+            {
+                if (this.ContainsKey(pair.Key))
+                    this[pair.Key] = pair.Value;
+                else
+                    this.Add(pair.Key, pair.Value);
+            }
+        }
+		
+<#
+Kanc.Core.Features.Raporty.F fields = new Kanc.Core.Features.Raporty.F();
+foreach (FieldInfo info in fields.GetType().GetFields())
+{#>
+		public string <#=info.Name#>
+	    {
+	        get { return this[F.<#=info.Name#>]; }
+	        set { this[F.<#=info.Name#>] = value; }
+	    }
+    
+<#}#> 
+
+		public virtual void InitFieldsName(Rozliczenie rozlicz)
+	    {
+            this[F.Imie] = rozlicz.Klient.Imie;
+			this[F.Nazwisko] = rozlicz.Klient.Nazwisko;
+            this[F.Zawod] = rozlicz.Klient.Zawod;
+            this[F.AdresKod] = rozlicz.Adres.Kod;
+            this[F.AdresUlica] = rozlicz.Adres.Ulica;
+            this[F.Steuernummer] = rozlicz.Klient.Steuernummer;
+            this[F.Urodzony] = rozlicz.Klient.Urodz.IfValueThenShortDate();
+            this[F.AdresMiasto] = rozlicz.Adres.Miasto;
+            this[F.Data] = DateTime.Now.ToShortDateString();
+            this[F.Adres] = rozlicz.Adres.Ulica; //??
+            this[F.BankKonto] = rozlicz.Konto.KontoNr;
+            this[F.BankKod] = rozlicz.Konto.BankSwift; //BLZ ?
+            this[F.BankAdres] = rozlicz.Konto.BankAdres;
+            //this[F.FirmaPoczta] = rozlicz.FirmaPoczta; //biuro nazwa ?
+            //this[F.FirmaAdres] = rozlicz.FirmaAdres;
+            //this[F.FirmaOkreg] = rozlicz.FirmaOkreg;
+            //this[F.FirmaNazwa1] = rozlicz.FirmaNazwa1;
+            //this[F.FirmaNazwa2] = rozlicz.FirmaNazwa2;
+            this[F.ZonaImie] = rozlicz.Partner.Imie;
+            this[F.ZonaData] = rozlicz.Partner.Urodz.IfValueThenShortDate();
+            this[F.ZonaReligia] = rozlicz.Partner.Religia.ToString();
+			
+			this[F.Imiona] = rozlicz.Klient.Imie;
+			this[F.UlicaNrDomu] = rozlicz.Adres.Ulica;
+			this[F.KodPocztowy] = rozlicz.Adres.Kod;
+			this[F.MiejsceZamieszkania] = rozlicz.Adres.Miejsce;
+		    this[F.Verheiratetseitdem] = rozlicz.Klient.DataSlubu.IfValueThenShortDate();
+			this[F.NrTelefonu] = rozlicz.Klient.Telefon;
+			this[F.DataUrodzenia] = rozlicz.Klient.Urodz.IfValueThenShortDate();
+			this[F.MalzonekImie] = rozlicz.Partner.Imie;
+			this[F.MalzonekInneNazwisko] = rozlicz.Partner.Nazwisko;
+			this[F.MalzonekDataUrodzenia] = rozlicz.Partner.Urodz.IfValueThenShortDate();
+			this[F.AusgeubterBeruf] = rozlicz.Klient.Zawod;
+			this[F.MalzonekAusgeubterBeruf] = rozlicz.Partner.Zawod;
+            //
+            this[F.Religia] = rozlicz.Klient.Religia.ToString();
+            this[F.MalzonekReligia] = rozlicz.Partner.Religia.ToString();
+			//this[F.MalzonekInnaUlicaNrDomu] = rozlicz.MalzonekInnaUlicaNrDomu;
+			//this[F.MalzonekInnyKodPocztowy] = rozlicz.MalzonekInnyKodPocztowy;
+			//this[F.MalzonekInneMiejsceZamieszkania] = rozlicz.MalzonekInneMiejsceZamieszkania;
+			this[F.BiuroNrKonta] = Context.Slownik.Biuro.BiuroNrKonta;
+			this[F.BiuroNrBanku] = Context.Slownik.Biuro.BiuroNrBanku;
+			this[F.BiuroName] = Context.Slownik.Biuro.BiuroName;
+			this[F.BiuroVorname] = Context.Slownik.Biuro.BiuroVorname;
+			this[F.BiuroUlicaNr] = Context.Slownik.Biuro.BiuroUlicaNr;
+			this[F.BiuroKodPocztowy] = Context.Slownik.Biuro.BiuroKodPocztowy;
+			this[F.BiuroMiejsceZamieszkania] = Context.Slownik.Biuro.BiuroMiejsceZamieszkania;
+		}
+	}
+}

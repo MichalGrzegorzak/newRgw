@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F493329A-8316-4647-94D6-CCBC9E1949C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kanc.Core</RootNamespace>
+    <AssemblyName>Kanc.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/Kanc.Data/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\3.1\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\3.1\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FizzWare.NBuilder">
+      <HintPath>..\..\lib\nBuilder\FizzWare.NBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\3.1\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\3.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>..\..\lib\Testing\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\3.3.1\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.8.10295, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Testing\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binder.cs" />
+    <Compile Include="Entities\Base\EntityAdv.cs" />
+    <Compile Include="Entities\Base\OneToOneEntity.cs" />
+    <Compile Include="Entities\Biuro.cs" />
+    <Compile Include="Entities\custommap.cs" />
+    <Compile Include="Entities\DodatkoweDane.cs" />
+    <Compile Include="Entities\HistoriaNEW.cs" />
+    <Compile Include="Entities\OneToOne\Konto.cs" />
+    <Compile Include="Entities\OneToOne\Klient.cs" />
+    <Compile Include="Entities\Validation\AdresValidationDef.cs" />
+    <Compile Include="Entities\Validation\BankValidationDef.cs" />
+    <Compile Include="Entities\Validation\PartnerValidationDef.cs" />
+    <Compile Include="Entities\Validation\KontoValidationDef.cs" />
+    <Compile Include="Entities\Validation\KlientValidationDef.cs" />
+    <Compile Include="Entities\Validation\PodatekValidationDef.cs" />
+    <Compile Include="Features\Extension.cs" />
+    <Compile Include="Features\GenerateDB.cs" />
+    <Compile Include="Features\IsDirty.cs" />
+    <Compile Include="Features\PdfMaker.cs" />
+    <Compile Include="Features\Raporty\DE\13_PodanieUSKrapkowice.cs" />
+    <Compile Include="Features\Raporty\DE\Base\01_rptpnvollmacht.cs" />
+    <Compile Include="Features\Raporty\DE\Base\02_rptpnumowade.cs" />
+    <Compile Include="Features\Raporty\DE\Base\03_rptpnbwstatubg.cs" />
+    <Compile Include="Features\Raporty\DE\Base\05_rptdrukkontobankowe.cs" />
+    <Compile Include="Features\Raporty\DE\Base\06_stronaniemcy_both.cs" />
+    <Compile Include="Features\Raporty\DE\Base\06_stronaniemcy_de.cs" />
+    <Compile Include="Features\Raporty\DE\Base\06_stronaniemcy_pl.cs" />
+    <Compile Include="Features\Raporty\DE\Base\07_estk1a_2006.cs" />
+    <Compile Include="Features\Raporty\DE\Base\07_estk1a_2007.cs" />
+    <Compile Include="Features\Raporty\DE\Base\07_estk1a_2008.cs" />
+    <Compile Include="Features\Raporty\DE\Base\07_estk1a_2009.cs" />
+    <Compile Include="Features\Raporty\DE\Base\07_estk1a_2010.cs" />
+    <Compile Include="Features\Raporty\DE\Base\07_estk1a_2011.cs" />
+    <Compile Include="Features\Raporty\DE\20_Ponaglenie.cs" />
+    <Compile Include="Features\Raporty\DE\Base\10_brakkarty.cs" />
+    <Compile Include="Features\Raporty\DE\Base\11_euewr_both.cs" />
+    <Compile Include="Features\Raporty\DE\Base\11_euewr_de.cs" />
+    <Compile Include="Features\Raporty\DE\Base\11_euewr_pl.cs" />
+    <Compile Include="Features\Raporty\DE\Base\12_podanieeuewr.cs" />
+    <Compile Include="Features\Raporty\DE\Base\13_PodanieUSKrapkowice.cs" />
+    <Compile Include="Features\Raporty\DE\Base\15_oswiadzczeniemaloznka.cs" />
+    <Compile Include="Features\Raporty\DE\Base\16_przebiegauta.cs" />
+    <Compile Include="Features\Raporty\DE\Base\20_ponaglenie.cs" />
+    <Compile Include="Features\Raporty\DE\Base\21_budowy_nowy.cs" />
+    <Compile Include="Features\Raporty\Fields\FieldsDef.cs" />
+    <Compile Include="Features\Raporty\BaseRpt.cs" />
+    <Compile Include="Features\Raporty\DE\01_Volmacht.cs" />
+    <Compile Include="Features\Raporty\DE\02_UmowaDE.cs" />
+    <Compile Include="Features\Raporty\DE\03_Bestatigung.cs" />
+    <Compile Include="Features\Raporty\DE\ex19_Braki_formtka.cs" />
+    <Compile Include="Features\Raporty\DE\ex04_Pocztowy.cs" />
+    <Compile Include="Features\Raporty\DE\05_KontoBankowe.cs" />
+    <Compile Include="Features\Raporty\DE\07_Estk.cs" />
+    <Compile Include="Features\Raporty\DE\ex08_Przerwy.cs" />
+    <Compile Include="Features\Raporty\DE\ex09_Zaginela.cs" />
+    <Compile Include="Features\Raporty\DE\10_BrakKarty.cs" />
+    <Compile Include="Features\Raporty\DE\12_PodanieEuEwr.cs" />
+    <Compile Include="Features\Raporty\DE\11_EuEwr.cs" />
+    <Compile Include="Features\Raporty\DE\06_StronaNiemcy.cs" />
+    <Compile Include="Features\Raporty\DE\ex14_OkresyPracy.cs" />
+    <Compile Include="Features\Raporty\DE\15_OswiadczenieMalzonka.cs" />
+    <Compile Include="Features\Raporty\DE\16_PrzebiegAuta.cs" />
+    <Compile Include="Features\Raporty\DE\17_PrzekazanieAuta.cs" />
+    <Compile Include="Features\Raporty\DE\18_Budowa.cs" />
+    <Compile Include="Features\Raporty\Fields\FieldsGenerator.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FieldsGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Raporty\RaportFactory.cs" />
+    <Compile Include="Features\Raporty\RaportGenerator.cs" />
+    <Compile Include="Features\Raporty\RptOptions.cs" />
+    <Compile Include="Infrastructure\EventArgs.cs" />
+    <Compile Include="Infrastructure\IsDirtyExtensioncs.cs" />
+    <Compile Include="Infrastructure\Setup\BootStrapper.cs" />
+    <Compile Include="Infrastructure\Setup\Context.cs" />
+    <Compile Include="Infrastructure\Setup\Events.cs" />
+    <Compile Include="Infrastructure\Setup\SessionFactoryInitializer.cs" />
+    <Compile Include="Infrastructure\Slowniki.cs" />
+    <Compile Include="Infrastructure\Utils\CollectControls.cs" />
+    <Compile Include="Infrastructure\Utils\ShowForm.cs" />
+    <Compile Include="Infrastructure\Utils\Utils.cs" />
+    <Compile Include="Entities\OneToOne\Podatek.cs" />
+    <Compile Include="Entities\OneToOne\Partner.cs" />
+    <Compile Include="Entities\ListaZaplat.cs" />
+    <Compile Include="Entities\KPWyslane.cs" />
+    <Compile Include="Removed\IEditable.cs" />
+    <Compile Include="Entities\Base\AbstractEntity.cs" />
+    <Compile Include="Entities\Adres.cs" />
+    <Compile Include="Entities\Rachunek.cs" />
+    <Compile Include="Entities\OneToOne\Historia.cs" />
+    <Compile Include="Entities\Base\BaseEntity.cs" />
+    <Compile Include="Entities\Base\IGenericEntity.cs" />
+    <Compile Include="Entities\Bank.cs" />
+    <Compile Include="Entities\OneToOne\Rozliczenie.cs" />
+    <Compile Include="Entities\Validation\RozliczenieValidationDef.cs" />
+    <Compile Include="CustomValidators\PhoneValidator.cs" />
+    <Compile Include="Entities\Validation\WalidTesting.cs" />
+    <Compile Include="Infrastructure\Fact.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomValidators\WalidujKonto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\migracja\" />
+    <Folder Include="Removed\Interceptors\" />
+    <Folder Include="Removed\old\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Adres.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Bank.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Historia.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Rozliczenie.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Klient.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Rachunek.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator.Binding\NHibernate.Validator.Binding.csproj">
+      <Project>{241F53B6-E2FD-4D6F-B000-258BFAF4B806}</Project>
+      <Name>NHibernate.Validator.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator\src\NHibernate.Validator.Specific\NHibernate.Validator.Specific.csproj">
+      <Project>{F23C735C-50FE-4932-9C10-F48FCECC0DCF}</Project>
+      <Name>NHibernate.Validator.Specific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator\src\NHibernate.Validator\NHibernate.Validator.csproj">
+      <Project>{599516E0-E10D-4F44-B5E1-B7B67EFC931A}</Project>
+      <Name>NHibernate.Validator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kanc.Commons\Kanc.Commons.csproj">
+      <Project>{A9EE3F5C-2B0A-4B3F-A597-5088EDB4BD0B}</Project>
+      <Name>Kanc.Commons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Podatek.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Partner.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\KPWyslane.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\ListaZaplat.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DiagramKlas.cd" />
+    <None Include="Features\Raporty\Fields\FieldsGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FieldsGenerator.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Konto.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

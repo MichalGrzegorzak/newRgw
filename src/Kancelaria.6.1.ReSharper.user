@@ -1,0 +1,1316 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/d:Helpers/f:ValidationHelper.cs" caret="485" fromTop="13" />
+      <File id="241F53B6-E2FD-4D6F-B000-258BFAF4B806/f:SmartViewValidator.cs" caret="1565" fromTop="10" />
+      <File id="774F7D5E-63EF-4FB9-8AED-232109DDD3A8/d:Forms/f:FrmTest1.cs" caret="745" fromTop="18" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Entities/f:Rozliczenie.cs" caret="277" fromTop="8" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Validation/f:RozliczenieValidationDef.cs" caret="682" fromTop="21" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/d:Setup/f:BootStrapper.cs" caret="0" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/d:Interceptors/f:DataBindingFactory.cs" caret="283" fromTop="5" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/f:IsDirtyExtensioncs.cs" caret="0" fromTop="0" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="592" fromTop="20" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Rachunek_B.hbm.xml" caret="0" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:A/f:Klient_A.hbm.xml" caret="0" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:A/f:Rachunek_A.hbm.xml" caret="0" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/f:hibernate.cfg.xml" caret="0" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/d:Setup/f:SessionFactoryInitializer.cs" caret="915" fromTop="23" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/d:Setup/f:Events.cs" caret="315" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Klient_B.hbm.xml" caret="0" fromTop="0" />
+      <File id="241F53B6-E2FD-4D6F-B000-258BFAF4B806/f:EventValidation.cs" caret="935" fromTop="16" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:MainFrm.cs" caret="693" fromTop="11" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Rachunek_B.cs" caret="586" fromTop="5" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="1484" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/f:Base.cs" caret="2225" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Klient_B.cs" caret="346" fromTop="2" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:A/f:Klient_A.cs" caret="0" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:A/f:Rachunek_A.cs" caret="0" fromTop="0" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Entities/f:Adres.cs" caret="244" fromTop="5" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Base/f:EntityBindable.cs" caret="2164" fromTop="3" />
+      <File id="774F7D5E-63EF-4FB9-8AED-232109DDD3A8/d:Forms/f:FrmWprowadz.cs" caret="0" fromTop="0" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Entities/f:Klient.cs" caret="0" fromTop="0" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Entities/f:Rachunek.cs" caret="0" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_DynamicProxy_Atributes.cs" caret="2838" fromTop="14" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="1560" fromTop="16" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="2074" fromTop="9" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Validation/f:RozliczenieValidationDef.cs" caret="752" fromTop="26" />
+      <File id="F493329A-8316-4647-94D6-CCBC9E1949C6/d:Model/d:Validation/f:RozliczenieValidationDef.cs" caret="682" fromTop="18" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="812" fromTop="15" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="14243" fromTop="0" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="6178" fromTop="14" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="5916" fromTop="9" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="6099" fromTop="15" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="525" fromTop="18" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/d:Setup/f:Events.cs" caret="1082" fromTop="24" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Rachunek_B.cs" caret="781" fromTop="16" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Rachunek_B.cs" caret="490" fromTop="7" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Rachunek_B.hbm.xml" caret="389" fromTop="11" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Rachunek_B.cs" caret="689" fromTop="16" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/d:Setup/f:SessionFactoryInitializer.cs" caret="934" fromTop="17" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:A/f:Rachunek_A.hbm.xml" caret="415" fromTop="12" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:A/f:Rachunek_A.hbm.xml" caret="222" fromTop="5" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:A/f:Klient_A.hbm.xml" caret="220" fromTop="5" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/f:IsDirtyExtensioncs.cs" caret="4227" fromTop="11" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Infrastructure/f:IsDirtyExtensioncs.cs" caret="4228" fromTop="22" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="1627" fromTop="44" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="1189" fromTop="35" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="1628" fromTop="45" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="981" fromTop="24" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="662" fromTop="16" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="488" fromTop="20" />
+      <File id="234B5A62-DDC2-49CC-B8B6-3FE85D335A7F/d:UnitTests/f:B1.cs" caret="297" fromTop="14" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Domain/d:B/f:Klient_B.cs" caret="461" fromTop="6" />
+      <File id="18A8E4F6-60A7-46AB-810E-96AC7E6A31E1/d:Forms/f:Binding_SmartValidator_emptyEntities.cs" caret="2713" fromTop="9" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.5.4\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="using" priority="4" />
+      <Item value="Form1`0" priority="0" />
+      <Item value="new" priority="114" />
+      <Item value="Form1" priority="0" />
+      <Item value="f" priority="0" />
+      <Item value="Kanc.Core" priority="0" />
+      <Item value="Kanc" priority="0" />
+      <Item value="Core" priority="1" />
+      <Item value="Database`0" priority="0" />
+      <Item value="Database" priority="0" />
+      <Item value="set" priority="0" />
+      <Item value="Adres`0" priority="1" />
+      <Item value="Form2_Load`0" priority="0" />
+      <Item value="null" priority="26" />
+      <Item value="try" priority="0" />
+      <Item value="catch" priority="1" />
+      <Item value="return" priority="48" />
+      <Item value="if" priority="54" />
+      <Item value="Klient" priority="13" />
+      <Item value="this" priority="63" />
+      <Item value="FrmWprowadz`0" priority="1" />
+      <Item value="SelectedIndex" priority="2" />
+      <Item value="value" priority="25" />
+      <Item value="Mezczyzna" priority="0" />
+      <Item value="else" priority="14" />
+      <Item value="public" priority="80" />
+      <Item value="Dictionary" priority="0" />
+      <Item value="private" priority="27" />
+      <Item value="static" priority="7" />
+      <Item value="Slowniki`0" priority="2" />
+      <Item value="Inst" priority="0" />
+      <Item value="Slowniki" priority="2" />
+      <Item value="sealed" priority="0" />
+      <Item value="readonly" priority="0" />
+      <Item value="IQueryable`0" priority="0" />
+      <Item value="List" priority="6" />
+      <Item value="List&lt;Kraj&gt;" priority="1" />
+      <Item value="void" priority="32" />
+      <Item value="AppDomainInitializer`0" priority="0" />
+      <Item value="Kraj" priority="11" />
+      <Item value="var" priority="11" />
+      <Item value="Session" priority="15" />
+      <Item value="session" priority="10" />
+      <Item value="Polecil`0" priority="3" />
+      <Item value="tx" priority="1" />
+      <Item value="kraje" priority="0" />
+      <Item value="_kraje" priority="0" />
+      <Item value="Context`0" priority="8" />
+      <Item value="IUsrCtrl`0" priority="0" />
+      <Item value="navig" priority="0" />
+      <Item value="rozliczenieBindingSource" priority="37" />
+      <Item value="Bank`0" priority="13" />
+      <Item value="k" priority="29" />
+      <Item value="b" priority="1" />
+      <Item value="nazwaTextBox" priority="1" />
+      <Item value="nazwyBankow" priority="0" />
+      <Item value="collection" priority="1" />
+      <Item value="swiftTextBox" priority="1" />
+      <Item value="swiftCombo" priority="2" />
+      <Item value="DesignMode" priority="3" />
+      <Item value="string" priority="37" />
+      <Item value="bool" priority="11" />
+      <Item value="false" priority="13" />
+      <Item value="result" priority="3" />
+      <Item value="button1" priority="0" />
+      <Item value="Religia`0" priority="1" />
+      <Item value="Int64`0" priority="1" />
+      <Item value="nrKonta" priority="0" />
+      <Item value="int" priority="23" />
+      <Item value="konto" priority="4" />
+      <Item value="i" priority="9" />
+      <Item value="Z" priority="1" />
+      <Item value="W" priority="0" />
+      <Item value="true" priority="11" />
+      <Item value="skrotComboBox" priority="2" />
+      <Item value="LkTextBox" priority="1" />
+      <Item value="nazwaCombo" priority="1" />
+      <Item value="adresCombo" priority="1" />
+      <Item value="_bank" priority="3" />
+      <Item value="Validate`0" priority="0" />
+      <Item value="Rozliczenie`0" priority="37" />
+      <Item value="rozlicz" priority="11" />
+      <Item value="ThreadStaticAttribute`0" priority="0" />
+      <Item value="where" priority="11" />
+      <Item value="Nullable`0" priority="0" />
+      <Item value="struct" priority="0" />
+      <Item value="item" priority="8" />
+      <Item value="def" priority="0" />
+      <Item value="blzTextBox" priority="1" />
+      <Item value="kontoTextBox" priority="1" />
+      <Item value="_rozlicz" priority="0" />
+      <Item value="DateTime`0" priority="20" />
+      <Item value="decimal" priority="1" />
+      <Item value="NotEmpty" priority="1" />
+      <Item value="Rozliczenie" priority="5" />
+      <Item value="Kraj`0" priority="6" />
+      <Item value="Swift" priority="0" />
+      <Item value="RozliczenieHistoria`0" priority="0" />
+      <Item value="RozliczenieRachunek`0" priority="2" />
+      <Item value="NonSerialized" priority="3" />
+      <Item value="klienci" priority="0" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="Console`0" priority="0" />
+      <Item value="ex" priority="0" />
+      <Item value="ucRozliczenie`0" priority="1" />
+      <Item value="rozliczenie" priority="2" />
+      <Item value="Plec`0" priority="6" />
+      <Item value="KeyValuePair" priority="1" />
+      <Item value="krajKrajeComboBox" priority="0" />
+      <Item value="r" priority="57" />
+      <Item value="ucPodstKlient1" priority="0" />
+      <Item value="BaseForm" priority="4" />
+      <Item value="numericUpDown1" priority="2" />
+      <Item value="for" priority="0" />
+      <Item value="val" priority="6" />
+      <Item value="name" priority="6" />
+      <Item value="arr" priority="4" />
+      <Item value="ToList`1" priority="3" />
+      <Item value="c" priority="5" />
+      <Item value="object" priority="8" />
+      <Item value="default" priority="3" />
+      <Item value="Enum" priority="2" />
+      <Item value="ListBindingConverter`0" priority="0" />
+      <Item value="AccessibleDefaultActionDescription" priority="0" />
+      <Item value="Action`0" priority="0" />
+      <Item value="List&lt;Action&gt;" priority="0" />
+      <Item value="toExecute" priority="2" />
+      <Item value="EventArgs`0" priority="3" />
+      <Item value="a" priority="8" />
+      <Item value="KrajeComboBox`0" priority="0" />
+      <Item value="virtual" priority="4" />
+      <Item value="protected" priority="11" />
+      <Item value="LayoutEventArgs`0" priority="0" />
+      <Item value="DesignerSerializationVisibility`0" priority="0" />
+      <Item value="plecPlecComboBox" priority="0" />
+      <Item value="source" priority="17" />
+      <Item value="rozliczenieBindingNavigator" priority="3" />
+      <Item value="MessageBox`0" priority="4" />
+      <Item value="FirstOrDefault`1" priority="0" />
+      <Item value="e" priority="7" />
+      <Item value="Entity`0" priority="4" />
+      <Item value="Klient`0" priority="23" />
+      <Item value="klientBindingSource" priority="1" />
+      <Item value="errorProvider1" priority="3" />
+      <Item value="valid" priority="0" />
+      <Item value="Form2`0" priority="0" />
+      <Item value="Past" priority="0" />
+      <Item value="AssertTrue" priority="0" />
+      <Item value="NotNull" priority="1" />
+      <Item value="DelegatedValidator" priority="1" />
+      <Item value="DelegatedConstraint" priority="0" />
+      <Item value="class" priority="11" />
+      <Item value="dt" priority="0" />
+      <Item value="DateTime" priority="4" />
+      <Item value="Walid`0" priority="0" />
+      <Item value="Walid" priority="1" />
+      <Item value="typeof" priority="5" />
+      <Item value="ucKlient1" priority="3" />
+      <Item value="IDateTimeConstraints`0" priority="0" />
+      <Item value="UI" priority="2" />
+      <Item value="Fact`0" priority="0" />
+      <Item value="FluentConfiguration`0" priority="0" />
+      <Item value="PhoneValidator`0" priority="0" />
+      <Item value="Internal" priority="1" />
+      <Item value="ContextBoundObject`0" priority="0" />
+      <Item value="idTextBox" priority="7" />
+      <Item value="urodzMaskedTextBoxExt" priority="0" />
+      <Item value="CustomControls" priority="0" />
+      <Item value="Ctrl" priority="0" />
+      <Item value="CurrentItem" priority="26" />
+      <Item value="as" priority="11" />
+      <Item value="List&lt;Rozliczenie&gt;" priority="1" />
+      <Item value="lista" priority="2" />
+      <Item value="ucKonto1" priority="3" />
+      <Item value="Queryable`0" priority="0" />
+      <Item value="List&lt;int&gt;" priority="1" />
+      <Item value="foreach" priority="5" />
+      <Item value="_idki" priority="11" />
+      <Item value="BindingSource`0" priority="18" />
+      <Item value="BindingSource" priority="8" />
+      <Item value="ucAdres21" priority="0" />
+      <Item value="LoadData`0" priority="3" />
+      <Item value="IndexOutOfRangeException`0" priority="0" />
+      <Item value="id" priority="3" />
+      <Item value="_newSource" priority="0" />
+      <Item value="Container" priority="0" />
+      <Item value="bindingSource1" priority="4" />
+      <Item value="DataBindingFactory`0" priority="4" />
+      <Item value="UI.Tests" priority="5" />
+      <Item value="GetKraj`0" priority="0" />
+      <Item value="GetKlient`0" priority="0" />
+      <Item value="s" priority="12" />
+      <Item value="Current" priority="3" />
+      <Item value="CurrentBinding" priority="0" />
+      <Item value="ucRozliczenie1" priority="3" />
+      <Item value="ucKlient" priority="0" />
+      <Item value="ucRozliczenie" priority="0" />
+      <Item value="imieTextBox" priority="2" />
+      <Item value="urodzDateTimePicker" priority="1" />
+      <Item value="textBox1" priority="1" />
+      <Item value="bindingSource" priority="5" />
+      <Item value="TextBox`0" priority="2" />
+      <Item value="GetMemberName`0" priority="0" />
+      <Item value="member" priority="0" />
+      <Item value="Length" priority="0" />
+      <Item value="controls" priority="0" />
+      <Item value="control" priority="4" />
+      <Item value="info" priority="2" />
+      <Item value="StringComparison`0" priority="0" />
+      <Item value="Tests" priority="1" />
+      <Item value="base" priority="8" />
+      <Item value="override" priority="12" />
+      <Item value="krajeDDL1" priority="2" />
+      <Item value="IList" priority="3" />
+      <Item value="ItemActivation`0" priority="0" />
+      <Item value="list" priority="2" />
+      <Item value="Kraje`0" priority="9" />
+      <Item value="List&lt;Control&gt;" priority="1" />
+      <Item value="IEnumerable" priority="3" />
+      <Item value="x" priority="3" />
+      <Item value="MoveNext`0" priority="2" />
+      <Item value="MovePrevious`0" priority="0" />
+      <Item value="MainForm`0" priority="0" />
+      <Item value="T`0" priority="12" />
+      <Item value="frmPodatekStrona`0" priority="0" />
+      <Item value="T" priority="0" />
+      <Item value="frm" priority="5" />
+      <Item value="Form`0" priority="3" />
+      <Item value="BaseNonGenericForm`0" priority="1" />
+      <Item value="ShowForm`1" priority="2" />
+      <Item value="brak" priority="8" />
+      <Item value="DefaultBindingProperty" priority="0" />
+      <Item value="krj" priority="0" />
+      <Item value="skrot" priority="0" />
+      <Item value="KeyValueTriplet" priority="0" />
+      <Item value="Enum`0" priority="1" />
+      <Item value="Items" priority="0" />
+      <Item value="rozliczenieBindingNavigatorSaveItem" priority="0" />
+      <Item value="KrajeDDL`0" priority="0" />
+      <Item value="PlecDDL`0" priority="1" />
+      <Item value="plecDDL1" priority="0" />
+      <Item value="DateTimePicker`0" priority="0" />
+      <Item value="ResetText`0" priority="0" />
+      <Item value="TestFixtureSetUp" priority="0" />
+      <Item value="TestFixtureTearDown" priority="0" />
+      <Item value="bank" priority="9" />
+      <Item value="Kraje" priority="1" />
+      <Item value="fromDb" priority="3" />
+      <Item value="ISessionFactoryImplementor`0" priority="0" />
+      <Item value="Configure`0" priority="0" />
+      <Item value="CreateSchema`0" priority="0" />
+      <Item value="MakeRozliczenie1`0" priority="1" />
+      <Item value="MakeBank`0" priority="1" />
+      <Item value="Mężczyzna" priority="1" />
+      <Item value="PL" priority="1" />
+      <Item value="MakeAdres`0" priority="1" />
+      <Item value="Count`1" priority="0" />
+      <Item value="Is`0" priority="0" />
+      <Item value="sessions" priority="0" />
+      <Item value="roz" priority="1" />
+      <Item value="Test" priority="0" />
+      <Item value="NotNullNotEmpty" priority="0" />
+      <Item value="NHibernate" priority="0" />
+      <Item value="Validator" priority="1" />
+      <Item value="Constraints" priority="0" />
+      <Item value="Min" priority="0" />
+      <Item value="err" priority="0" />
+      <Item value="JahrTextBox" priority="0" />
+      <Item value="notkaTextBox" priority="0" />
+      <Item value="ucPartner1" priority="0" />
+      <Item value="ucWlascicielKonta1" priority="2" />
+      <Item value="ucDzieci1" priority="0" />
+      <Item value="ucWyborList1" priority="1" />
+      <Item value="ucNagrodaListy1" priority="0" />
+      <Item value="interface" priority="1" />
+      <Item value="abstract" priority="3" />
+      <Item value="throw" priority="3" />
+      <Item value="NotImplementedException" priority="1" />
+      <Item value="AdresZameld" priority="1" />
+      <Item value="Wyznanie" priority="0" />
+      <Item value="Rachunek" priority="2" />
+      <Item value="results" priority="6" />
+      <Item value="XmlReadMode`0" priority="1" />
+      <Item value="final" priority="0" />
+      <Item value="statusTextBox" priority="0" />
+      <Item value="zaplaconoTextBox" priority="0" />
+      <Item value="in" priority="0" />
+      <Item value="dzieciDatyTextBox" priority="0" />
+      <Item value="Urodz" priority="1" />
+      <Item value="EntityBindable`0" priority="6" />
+      <Item value="prop" priority="1" />
+      <Item value="propg" priority="0" />
+      <Item value="_urodz" priority="1" />
+      <Item value="SetField`1" priority="0" />
+      <Item value="ref" priority="0" />
+      <Item value="Expression&lt;Func&lt;DateTime?&gt;&gt;" priority="0" />
+      <Item value="skrotTextBox" priority="2" />
+      <Item value="nazwaEUTextBox" priority="1" />
+      <Item value="nazwaPLTextBox" priority="0" />
+      <Item value="MinAttribute`0" priority="1" />
+      <Item value="krajId" priority="0" />
+      <Item value="errors" priority="1" />
+      <Item value="ValidatorEngine" priority="1" />
+      <Item value="ErrorProvider" priority="0" />
+      <Item value="errorProvider" priority="0" />
+      <Item value="validator" priority="7" />
+      <Item value="SmartViewValidator" priority="1" />
+      <Item value="NotNullNotEmptyAttribute`0" priority="7" />
+      <Item value="Cfg" priority="0" />
+      <Item value="LengthAttribute`0" priority="1" />
+      <Item value="txbName" priority="0" />
+      <Item value="UseAttribute" priority="0" />
+      <Item value="krajIdTextBox" priority="0" />
+      <Item value="txtSkrot" priority="0" />
+      <Item value="Plec" priority="1" />
+      <Item value="Polecil" priority="3" />
+      <Item value="PoleconyPrzez" priority="1" />
+      <Item value="Rozliczenia" priority="0" />
+      <Item value="_rozliczenia" priority="0" />
+      <Item value="_Klient" priority="0" />
+      <Item value="_PartnerSlub" priority="0" />
+      <Item value="_MovedOn" priority="0" />
+      <Item value="Define`0" priority="1" />
+      <Item value="Bank" priority="7" />
+      <Item value="Adres" priority="2" />
+      <Item value="query" priority="1" />
+      <Item value="BrowsawbleForm" priority="0" />
+      <Item value="BindingNavigator`0" priority="0" />
+      <Item value="BindingNavigator" priority="0" />
+      <Item value="navigator" priority="1" />
+      <Item value="SaveItem`0" priority="2" />
+      <Item value="MoveItem`0" priority="1" />
+      <Item value="MoveItemClicked`0" priority="0" />
+      <Item value="select" priority="1" />
+      <Item value="bindingNavigator1" priority="0" />
+      <Item value="adresTextBox" priority="0" />
+      <Item value="krajKrajeDDL" priority="0" />
+      <Item value="FrmDodajBank" priority="0" />
+      <Item value="form" priority="3" />
+      <Item value="FrmSzukaj`0" priority="0" />
+      <Item value="FrmKartotekaPodglad`0" priority="0" />
+      <Item value="FrmDodajBank`0" priority="0" />
+      <Item value="DeleteItem`0" priority="0" />
+      <Item value="itemId" priority="3" />
+      <Item value="GetListOfIds`0" priority="0" />
+      <Item value="_currPosition" priority="0" />
+      <Item value="_lastId" priority="12" />
+      <Item value="IFeatureSupport`0" priority="0" />
+      <Item value="BindData`0" priority="1" />
+      <Item value="message" priority="1" />
+      <Item value="IdsBindingSource" priority="3" />
+      <Item value="List&lt;InvalidValue&gt;" priority="0" />
+      <Item value="txtNazwaEU" priority="0" />
+      <Item value="txtNazwaPL" priority="0" />
+      <Item value="CreateSession`0" priority="0" />
+      <Item value="bnk" priority="1" />
+      <Item value="ICloneable`0" priority="0" />
+      <Item value="ISession`0" priority="2" />
+      <Item value="_startingItem" priority="7" />
+      <Item value="_isModified" priority="0" />
+      <Item value="EntityItem" priority="1" />
+      <Item value="GetEntity`1" priority="0" />
+      <Item value="SourceEntity" priority="1" />
+      <Item value="Serializable" priority="5" />
+      <Item value="IsTracking" priority="1" />
+      <Item value="IsModified" priority="0" />
+      <Item value="AbstractEntity" priority="0" />
+      <Item value="Id" priority="2" />
+      <Item value="sender" priority="1" />
+      <Item value="Source" priority="0" />
+      <Item value="IEntity`0" priority="1" />
+      <Item value="EventHandler" priority="1" />
+      <Item value="event" priority="2" />
+      <Item value="EventHandler`0" priority="0" />
+      <Item value="RereadSource" priority="0" />
+      <Item value="EventArgs&lt;Bank&gt;" priority="0" />
+      <Item value="Data" priority="0" />
+      <Item value="data" priority="0" />
+      <Item value="mainBindingSrc" priority="3" />
+      <Item value="ucReportPodatekStrona1" priority="0" />
+      <Item value="MainBindingSrc" priority="5" />
+      <Item value="from" priority="0" />
+      <Item value="ucReportPodatekStrona`0" priority="0" />
+      <Item value="is" priority="1" />
+      <Item value="ILoadable`0" priority="0" />
+      <Item value="CollectControls`0" priority="0" />
+      <Item value="Colector`0" priority="0" />
+      <Item value="loadableCtrls" priority="0" />
+      <Item value="Windows" priority="0" />
+      <Item value="Forms" priority="0" />
+      <Item value="F" priority="2" />
+      <Item value="F`0" priority="2" />
+      <Item value="ArgumentException" priority="1" />
+      <Item value="KontoBank" priority="0" />
+      <Item value="AdresKoresp" priority="0" />
+      <Item value="src" priority="0" />
+      <Item value="LoadItemById`0" priority="0" />
+      <Item value="GetItem`0" priority="0" />
+      <Item value="List&lt;Form&gt;" priority="0" />
+      <Item value="_childForms" priority="0" />
+      <Item value="test" priority="1" />
+      <Item value="Assert`0" priority="0" />
+      <Item value="reg" priority="1" />
+      <Item value="input" priority="0" />
+      <Item value="ListaZaplat`0" priority="0" />
+      <Item value="Podatek`0" priority="0" />
+      <Item value="Rachunek`0" priority="11" />
+      <Item value="_KontoBank" priority="0" />
+      <Item value="Partner`0" priority="2" />
+      <Item value="Partner" priority="4" />
+      <Item value="_Partner" priority="4" />
+      <Item value="nameTextBox" priority="3" />
+      <Item value="nameTextBox1" priority="0" />
+      <Item value="Binding`0" priority="0" />
+      <Item value="Binding" priority="0" />
+      <Item value="rta" priority="0" />
+      <Item value="Historia`0" priority="0" />
+      <Item value="double" priority="1" />
+      <Item value="float" priority="2" />
+      <Item value="ItemArgs`0" priority="1" />
+      <Item value="Object`0" priority="0" />
+      <Item value="BaseFormSession`0" priority="0" />
+      <Item value="DialogResult`0" priority="0" />
+      <Item value="rachunekBindingSource" priority="5" />
+      <Item value="LoaderOptimization`0" priority="0" />
+      <Item value="rachunekBindingNavigator" priority="0" />
+      <Item value="SettingsBindableAttribute`0" priority="1" />
+      <Item value="mandIdTextBox" priority="0" />
+      <Item value="_ImieDe" priority="0" />
+      <Item value="_Nazwisko" priority="1" />
+      <Item value="_NazwiskoDe" priority="0" />
+      <Item value="_Konto" priority="0" />
+      <Item value="_AdresBanku" priority="0" />
+      <Item value="_Bank" priority="0" />
+      <Item value="_MandId" priority="0" />
+      <Item value="_Imie" priority="0" />
+      <Item value="Nazwisko" priority="0" />
+      <Item value="NewArrayExpression`0" priority="0" />
+      <Item value="_Name" priority="0" />
+      <Item value="_NazwaEU" priority="0" />
+      <Item value="_nazwaPL" priority="0" />
+      <Item value="conf" priority="2" />
+      <Item value="Model" priority="0" />
+      <Item value="Type`0" priority="11" />
+      <Item value="invocation" priority="4" />
+      <Item value="propertyName" priority="11" />
+      <Item value="instance" priority="0" />
+      <Item value="NewsStyleUriParser`0" priority="0" />
+      <Item value="IPostLoadEventListener" priority="0" />
+      <Item value="marker" priority="1" />
+      <Item value="typeName" priority="0" />
+      <Item value="entity" priority="1" />
+      <Item value="t" priority="0" />
+      <Item value="typ" priority="0" />
+      <Item value="ValidAttribute`0" priority="0" />
+      <Item value="Rachunek_A`0" priority="4" />
+      <Item value="Kraj_A`0" priority="0" />
+      <Item value="Klient_B" priority="2" />
+      <Item value="rachunek_BBindingSource" priority="3" />
+      <Item value="Rachunek_B`0" priority="3" />
+      <Item value="Binding_SmartValidator_emptyEntities`0" priority="0" />
+      <Item value="SessionFactoryInitializer" priority="0" />
+      <Item value="FactoryInitializer" priority="0" />
+      <Item value="rachunek_BBindingNavigator" priority="0" />
+      <Item value="INotifyPropertyChanged`0" priority="1" />
+      <Item value="IDataErrorInfo`0" priority="1" />
+      <Item value="NativeWindow`0" priority="0" />
+      <Item value="Rachunek_B" priority="0" />
+      <Item value="rach" priority="2" />
+      <Item value="IdentityEqualityComparer`0" priority="0" />
+      <Item value="expression" priority="0" />
+      <Item value="txtName" priority="0" />
+      <Item value="switch" priority="0" />
+      <Item value="case" priority="0" />
+      <Item value="MapNameToType`0" priority="0" />
+      <Item value="TObject`0" priority="1" />
+      <Item value="break" priority="0" />
+      <Item value="Control`0" priority="0" />
+      <Item value="bindType" priority="0" />
+      <Item value="_AppDomain`0" priority="0" />
+      <Item value="_klientB" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.Form1">
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Data.RogowMigratedDataContext">
+      <Item value="Manager" priority="0" />
+      <Item value="Adres" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Data.RogowDataManager">
+      <Item value="Adres" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Data.AdresManager">
+      <Item value="Manager" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Linq.ChangeSet">
+      <Item value="Updates" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="ToString`0" priority="0" />
+      <Item value="Add`0" priority="7" />
+      <Item value="Select`2" priority="0" />
+      <Item value="Count" priority="3" />
+      <Item value="Insert`0" priority="0" />
+      <Item value="IndexOf`0" priority="1" />
+      <Item value="Last`1" priority="0" />
+      <Item value="First`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.BindingSource">
+      <Item value="Current" priority="16" />
+      <Item value="DataSource" priority="31" />
+      <Item value="AddNew`0" priority="4" />
+      <Item value="Add`0" priority="0" />
+      <Item value="ResetCurrentItem`0" priority="5" />
+      <Item value="CurrentChanged" priority="1" />
+      <Item value="Position" priority="6" />
+      <Item value="MoveFirst`0" priority="2" />
+      <Item value="AllowNew" priority="1" />
+      <Item value="AllowRemove" priority="0" />
+      <Item value="MoveLast`0" priority="0" />
+      <Item value="BindingComplete" priority="1" />
+      <Item value="ResetBindings`0" priority="6" />
+      <Item value="ResetItem`0" priority="0" />
+      <Item value="ResumeBinding`0" priority="0" />
+      <Item value="MoveNext`0" priority="4" />
+      <Item value="MovePrevious`0" priority="3" />
+      <Item value="CurrencyManager" priority="0" />
+      <Item value="EndEdit`0" priority="1" />
+      <Item value="AddingNew" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Data.Adres">
+      <Item value="KrajId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Linq.Table`1">
+      <Item value="GetByKey`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Klient">
+      <Item value="Polecil" priority="0" />
+      <Item value="IsValid`0" priority="2" />
+      <Item value="Urodz" priority="7" />
+      <Item value="Plec" priority="2" />
+      <Item value="PoleconyPrzez" priority="3" />
+      <Item value="GetErrors`0" priority="0" />
+      <Item value="Id" priority="1" />
+      <Item value="Rozliczenia" priority="0" />
+      <Item value="EnableTracking`0" priority="0" />
+      <Item value="Clone`0" priority="0" />
+      <Item value="Nazwisko" priority="3" />
+      <Item value="Imie" priority="0" />
+      <Item value="Partner" priority="3" />
+      <Item value="DataZawZwiazku" priority="4" />
+      <Item value="Konto" priority="1" />
+      <Item value="Bank" priority="3" />
+      <Item value="AdresBanku" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.PlecComboBox">
+      <Item value="Items" priority="4" />
+      <Item value="CurrentValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox+ObjectCollection">
+      <Item value="Add`0" priority="3" />
+      <Item value="Clear`0" priority="2" />
+      <Item value="Count" priority="1" />
+      <Item value="IndexOf`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="7" />
+      <Item value="Select`2" priority="1" />
+      <Item value="ForEach`0" priority="4" />
+      <Item value="Count" priority="0" />
+      <Item value="Find`0" priority="0" />
+      <Item value="Where`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISession">
+      <Item value="BeginTransaction`0" priority="1" />
+      <Item value="CreateQuery`0" priority="2" />
+      <Item value="Close`0" priority="0" />
+      <Item value="Load`0" priority="3" />
+      <Item value="Save`0" priority="0" />
+      <Item value="Delete`0" priority="4" />
+      <Item value="Flush`0" priority="0" />
+      <Item value="Get`1" priority="0" />
+      <Item value="QueryOver`1" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.IQuery">
+      <Item value="Future`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ITransaction">
+      <Item value="Commit`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.Core.Context">
+      <Item value="Slownik" priority="4" />
+      <Item value="SessionFactory" priority="0" />
+      <Item value="WalidatorCzasu" priority="0" />
+      <Item value="Validator" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Slowniki">
+      <Item value="Initialize`0" priority="0" />
+      <Item value="Banki" priority="0" />
+      <Item value="Kraje" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISessionFactory">
+      <Item value="OpenStatelessSession`0" priority="0" />
+      <Item value="OpenSession`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.BindingNavigator">
+      <Item value="BindingSource" priority="3" />
+      <Item value="PositionItem" priority="0" />
+      <Item value="Focus`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Kraj">
+      <Item value="Skrot" priority="4" />
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList`1" priority="4" />
+      <Item value="Select`2" priority="0" />
+      <Item value="Aggregate`3" priority="0" />
+      <Item value="ValidationDefinitions`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Bank">
+      <Item value="Nazwa" priority="6" />
+      <Item value="Swift" priority="6" />
+      <Item value="Kraj" priority="8" />
+      <Item value="Adres" priority="3" />
+      <Item value="Id" priority="3" />
+      <Item value="Blz" priority="3" />
+      <Item value="GetErrors`0" priority="0" />
+      <Item value="IsValid`0" priority="0" />
+      <Item value="EnableTracking`0" priority="0" />
+      <Item value="Clone`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="AutoCompleteCustomSource" priority="0" />
+      <Item value="Text" priority="3" />
+      <Item value="DataBindings" priority="0" />
+      <Item value="BindingContext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.AutoCompleteStringCollection">
+      <Item value="Add`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int64">
+      <Item value="ToString`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Length" priority="1" />
+      <Item value="Substring`0" priority="5" />
+      <Item value="Parse`1" priority="0" />
+      <Item value="StartsWith`0" priority="2" />
+      <Item value="Split`0" priority="2" />
+      <Item value="IndexOf`0" priority="3" />
+      <Item value="Contains`0" priority="1" />
+      <Item value="RegexLeaveDigits`0" priority="0" />
+      <Item value="RegexLeaveLetters`0" priority="0" />
+      <Item value="RegexOnlyDigits`0" priority="0" />
+      <Item value="RegexOnlyLetters`0" priority="0" />
+      <Item value="RegexOnlyWords`0" priority="0" />
+      <Item value="Replace`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="Parse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Char">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="Text" priority="5" />
+      <Item value="SelectedIndex" priority="0" />
+      <Item value="SetIndexByVal`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Rozliczenie">
+      <Item value="KontoBank" priority="13" />
+      <Item value="KontoLk" priority="1" />
+      <Item value="KontoBlz" priority="3" />
+      <Item value="KontoNr" priority="2" />
+      <Item value="Errors" priority="0" />
+      <Item value="GetErrors`0" priority="0" />
+      <Item value="Klient" priority="27" />
+      <Item value="Id" priority="6" />
+      <Item value="MandId" priority="2" />
+      <Item value="Email" priority="2" />
+      <Item value="ImieDe" priority="1" />
+      <Item value="Komorka" priority="2" />
+      <Item value="NazwiskoDe" priority="2" />
+      <Item value="Telefon" priority="1" />
+      <Item value="AdresZameld" priority="15" />
+      <Item value="KontoAdresBanku" priority="2" />
+      <Item value="KontoWlasciciel" priority="0" />
+      <Item value="PartnerImie" priority="3" />
+      <Item value="PartnerMandId" priority="1" />
+      <Item value="PartnerWyznanie" priority="1" />
+      <Item value="PartnerSlub" priority="2" />
+      <Item value="PartnerUrodz" priority="3" />
+      <Item value="Kraj" priority="0" />
+      <Item value="Nazwisko" priority="3" />
+      <Item value="Imie" priority="1" />
+      <Item value="Adres" priority="0" />
+      <Item value="Rok" priority="4" />
+      <Item value="Steuernummer" priority="0" />
+      <Item value="Wyznanie" priority="0" />
+      <Item value="DzieciLiczba" priority="1" />
+      <Item value="AdresKoresp" priority="2" />
+      <Item value="Notka" priority="0" />
+      <Item value="Status" priority="0" />
+      <Item value="Zaplacono" priority="0" />
+      <Item value="DzieciDaty" priority="1" />
+      <Item value="_AdresKoresp" priority="0" />
+      <Item value="Rachunek" priority="3" />
+      <Item value="Historia" priority="2" />
+      <Item value="Cust" priority="0" />
+      <Item value="Podatek" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="ToString`0" priority="6" />
+      <Item value="Value" priority="12" />
+      <Item value="HasValue" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="0" />
+      <Item value="Format`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.Core.Entities.Plec">
+      <Item value="Mezczyzna" priority="1" />
+      <Item value="Kobieta" priority="0" />
+      <Item value="Mężczyzna" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.KrajeComboBox">
+      <Item value="DataSource" priority="0" />
+      <Item value="FindString`0" priority="0" />
+      <Item value="SelectedIndex" priority="0" />
+      <Item value="Items" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucPodstKlient">
+      <Item value="LoadData`0" priority="2" />
+      <Item value="Focus`0" priority="0" />
+      <Item value="ResetBindings`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.NumericUpDown">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucDzieci">
+      <Item value="Controls" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Control+ControlCollection">
+      <Item value="Find`0" priority="0" />
+      <Item value="GetEnumerator`0" priority="0" />
+      <Item value="AsQueryable`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Control">
+      <Item value="Visible" priority="1" />
+      <Item value="Name" priority="2" />
+      <Item value="Text" priority="0" />
+      <Item value="Focus`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.Core.Enum`1">
+      <Item value="CastOrNull`0" priority="1" />
+      <Item value="GetName`0" priority="0" />
+      <Item value="GetNames`0" priority="0" />
+      <Item value="Parse`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Action`2">
+      <Item value="Invoke`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.ComponentModel.DesignerSerializationVisibility">
+      <Item value="Hidden" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Engine.ValidatorEngine">
+      <Item value="Validate`0" priority="1" />
+      <Item value="GetValidator`1" priority="0" />
+      <Item value="DefaultMode" priority="0" />
+      <Item value="AutoRegisterListeners" priority="0" />
+      <Item value="IsValid`0" priority="0" />
+      <Item value="ValidatePropertyValue`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Engine.InvalidValue">
+      <Item value="ToString`0" priority="1" />
+      <Item value="Message" priority="1" />
+      <Item value="PropertyName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.FrmWprowadz">
+      <Item value="ValidateChildren`0" priority="0" />
+      <Item value="ucWyborList1" priority="0" />
+      <Item value="Validate`0" priority="0" />
+      <Item value="Focus`0" priority="0" />
+      <Item value="bindingSource1_AddingNew`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.Form2">
+      <Item value="Load" priority="0" />
+      <Item value="ucKlient1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ErrorProvider">
+      <Item value="DataMember" priority="0" />
+      <Item value="UpdateBinding`0" priority="0" />
+      <Item value="DataSource" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="InvokeMember`0" priority="0" />
+      <Item value="Name" priority="2" />
+      <Item value="FullName" priority="2" />
+      <Item value="ToList`1" priority="0" />
+      <Item value="IsAssignableFrom`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucKlient">
+      <Item value="Klient" priority="1" />
+      <Item value="PreProcessControlMessage`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Cfg.Loquacious.IDateTimeConstraints`1">
+      <Item value="Satisfy`0" priority="0" />
+      <Item value="IsInThePast`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Cfg.Loquacious.IRelationshipConstraints">
+      <Item value="NotNullable`0" priority="1" />
+      <Item value="IsValid`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Binding.SmartViewValidator+BindControl">
+      <Item value="With`0" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NHibernate.Validator.Engine.ValidatorMode">
+      <Item value="OverrideAttributeWithExternal" priority="1" />
+      <Item value="UseExternal" priority="4" />
+      <Item value="UseAttribute" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Reflection.Assembly">
+      <Item value="GetAssembly`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="ToShortDateString`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucAdres2">
+      <Item value="LoadData`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.AddingNewEventArgs">
+      <Item value="NewObject" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.Core.DataBindingFactory">
+      <Item value="Create`0" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kraj">
+      <Item value="NazwaEU" priority="0" />
+      <Item value="NazwaPL" priority="0" />
+      <Item value="Skrot" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Klient">
+      <Item value="Id" priority="4" />
+      <Item value="Urodz" priority="5" />
+      <Item value="Name" priority="6" />
+      <Item value="Kraj" priority="14" />
+      <Item value="IsValid`0" priority="0" />
+      <Item value="GetErrors`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Rozliczenie">
+      <Item value="Kraj" priority="1" />
+      <Item value="Klient" priority="5" />
+      <Item value="Imie" priority="2" />
+      <Item value="Nazwisko" priority="0" />
+      <Item value="Komorka" priority="0" />
+      <Item value="Telefon" priority="0" />
+      <Item value="Equals`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Form1">
+      <Item value="Load" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.UI.Tests.Core.Factory">
+      <Item value="GetRozliczenie`0" priority="0" />
+      <Item value="GetKlient`0" priority="0" />
+      <Item value="GetRozliczenie1`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Controls.ucKlient">
+      <Item value="LoadData`0" priority="0" />
+      <Item value="Controls" priority="0" />
+      <Item value="validator" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Controls.ucRozliczenie">
+      <Item value="LoadData`0" priority="1" />
+      <Item value="Session" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ControlBindingsCollection">
+      <Item value="Clear`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DateTimePicker">
+      <Item value="DataBindings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.DataSourceUpdateMode">
+      <Item value="OnPropertyChanged" priority="1" />
+      <Item value="OnValidation" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MemberInfo">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.IRozliczenie">
+      <Item value="Imie" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.Expressions.MemberExpression">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
+      <Item value="Name" priority="1" />
+      <Item value="SetValue`0" priority="0" />
+      <Item value="GetValue`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.StringComparison">
+      <Item value="OrdinalIgnoreCase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="GetType`0" priority="0" />
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Adres">
+      <Item value="Kod" priority="7" />
+      <Item value="Miasto" priority="3" />
+      <Item value="Miejsce" priority="6" />
+      <Item value="Ulica" priority="5" />
+      <Item value="Id" priority="0" />
+      <Item value="Kraj" priority="2" />
+      <Item value="EnableTracking`0" priority="1" />
+      <Item value="Clone`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.KrajeDDL">
+      <Item value="ImeModeBase" priority="1" />
+      <Item value="DataBindings" priority="0" />
+      <Item value="Items" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Kraj">
+      <Item value="NazwaPL" priority="7" />
+      <Item value="Skrot" priority="4" />
+      <Item value="NazwaEU" priority="4" />
+      <Item value="Id" priority="2" />
+      <Item value="Name" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.UI.Tests.Kraje">
+      <Item value="PL" priority="0" />
+      <Item value="DE" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.UI.Tests.Enum`1">
+      <Item value="GetName`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:">
+      <Item value="MdiParent" priority="0" />
+      <Item value="ParentFrm" priority="0" />
+      <Item value="MainFrm" priority="0" />
+      <Item value="Show`0" priority="0" />
+      <Item value="GetType`0" priority="0" />
+      <Item value="ParentForm" priority="0" />
+      <Item value="MainBindingSrc" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.BaseForm`1">
+      <Item value="MainFrm" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.KrajeDDL">
+      <Item value="Items" priority="1" />
+      <Item value="DisplayMember" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Kraje">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.KeyValueTriplet`3">
+      <Item value="Key" priority="1" />
+      <Item value="NumericKey" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucKonto">
+      <Item value="Focus`0" priority="0" />
+      <Item value="Session" priority="0" />
+      <Item value="RereadSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.MaskedTextBoxExt">
+      <Item value="Date" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.SyntaxHelpers.Is">
+      <Item value="Not" priority="0" />
+      <Item value="EqualTo`0" priority="0" />
+      <Item value="LessThanOrEqualTo`0" priority="0" />
+      <Item value="Null" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NUnit.Framework.Constraints.ConstraintBuilder">
+      <Item value="Null" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.Core.Entities.Kraje">
+      <Item value="PL" priority="0" />
+      <Item value="brak" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.Test.BootStrapper">
+      <Item value="Initialize`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Polecil">
+      <Item value="Nazwa" priority="0" />
+      <Item value="_nazwa" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="That`0" priority="0" />
+      <Item value="Equals`0" priority="0" />
+      <Item value="IsTrue`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucWlascicielKonta">
+      <Item value="LoadData`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucNagrodaListy">
+      <Item value="Load" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ICriteria">
+      <Item value="CreateCriteria`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.CancelEventArgs">
+      <Item value="Cancel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Binding.SmartViewValidator">
+      <Item value="ValidatorEngine" priority="8" />
+      <Item value="ErrorProvider" priority="1" />
+      <Item value="Bind`0" priority="1" />
+      <Item value="MapNameToType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Cfg.Loquacious.IIntegerConstraints`1">
+      <Item value="GreaterThanOrEqualTo`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Cfg.Loquacious.IRuleArgsOptions">
+      <Item value="WithMessage`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Cfg.Loquacious.IStringConstraints">
+      <Item value="NotNullableAndNotEmpty`0" priority="0" />
+      <Item value="MinLength`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Cfg.Loquacious.IChainableConstraint`1">
+      <Item value="And" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.BrowsawbleForm`1">
+      <Item value="OnLoad`0" priority="0" />
+      <Item value="Load" priority="0" />
+      <Item value="DesignMode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:T">
+      <Item value="IsValid`0" priority="0" />
+      <Item value="Id" priority="6" />
+      <Item value="IsModified" priority="0" />
+      <Item value="Clone`0" priority="1" />
+      <Item value="IsNew`0" priority="0" />
+      <Item value="IsTracking" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.IQueryOver`2">
+      <Item value="JoinQueryOver`1" priority="0" />
+      <Item value="SelectList`0" priority="0" />
+      <Item value="Where`0" priority="1" />
+      <Item value="List`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.FrmDodajBank">
+      <Item value="Show`0" priority="0" />
+      <Item value="navigator" priority="0" />
+      <Item value="mainBindingSrc" priority="1" />
+      <Item value="AddItem`0" priority="0" />
+      <Item value="CurrentItem" priority="1" />
+      <Item value="Closing" priority="0" />
+      <Item value="FormClosing" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.Core.Helpers.CloneHelper">
+      <Item value="CloneObject`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.UI.Tests.CloneHelper">
+      <Item value="CloneObject`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.RozliczenieRachunek">
+      <Item value="EnableTracking`0" priority="0" />
+      <Item value="Clone`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.EventHandler">
+      <Item value="Invoke`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.EventArgs`1">
+      <Item value="Data" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.FrmPodatekStrona">
+      <Item value="Load" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ucReportPodatekStrona">
+      <Item value="LoadData`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.PresentationForm">
+      <Item value="Load" priority="0" />
+      <Item value="Controls" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TSource">
+      <Item value="GetType`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Ctrl.ILoadable">
+      <Item value="LoadData`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Forms.BaseNonGenericForm">
+      <Item value="ShowForm`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.IEntity">
+      <Item value="Clone`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Form">
+      <Item value="Dispose`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Regex">
+      <Item value="Replace`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Podatek">
+      <Item value="Religia" priority="1" />
+      <Item value="Steuernummer" priority="1" />
+      <Item value="DzieciLiczba" priority="1" />
+      <Item value="DzieciDaty" priority="0" />
+      <Item value="Notka" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Partner">
+      <Item value="Imie" priority="2" />
+      <Item value="Religia" priority="3" />
+      <Item value="Urodz" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Rachunek">
+      <Item value="KwotaRachunek" priority="1" />
+      <Item value="NumerRachunku" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Rachunek">
+      <Item value="Name" priority="2" />
+      <Item value="Klient" priority="6" />
+      <Item value="Id" priority="1" />
+      <Item value="IsValid`0" priority="1" />
+      <Item value="GetErrors`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.Historia">
+      <Item value="DataPrzeniesienia" priority="0" />
+      <Item value="DataPrzyjecia" priority="0" />
+      <Item value="Daty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.EntityBindable">
+      <Item value="Clone`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.Core.Entities.ItemArgs">
+      <Item value="Item" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.UI.Tests.Context">
+      <Item value="SessionFactory" priority="0" />
+      <Item value="Validator" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Cfg.Configuration">
+      <Item value="SetInterceptor`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.IInterceptor">
+      <Item value="SetSession`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.DataBindingIntercepter">
+      <Item value="SessionFactory" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.DynamicProxy.IInvocation">
+      <Item value="Proxy" priority="5" />
+      <Item value="Arguments" priority="1" />
+      <Item value="ReturnValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.DataBindingFactory+IMarkerInterface">
+      <Item value="TypeName" priority="5" />
+      <Item value="EntityType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Event.EventListeners">
+      <Item value="PostLoadEventListeners" priority="0" />
+      <Item value="PreInsertEventListeners" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Event.PostLoadEvent">
+      <Item value="Entity" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.UI.Tests.DataBindingFactory">
+      <Item value="Create`0" priority="1" />
+      <Item value="IMarkerInterface`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.Validator.Cfg.Loquacious.IFluentConfiguration">
+      <Item value="AddEntityTypeInspector`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Type">
+      <Item value="GetType`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Rachunek_A">
+      <Item value="KlientA" priority="2" />
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Binding_DynamicProxy_Atributes">
+      <Item value="Show`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Kanc.UI.Tests.Infrastructure.Setup.SessionFactoryInitializer">
+      <Item value="SetupDynamicProxy`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Infrastructure.Setup.SessionFactoryInitializer">
+      <Item value="conf" priority="0" />
+      <Item value="SetupNormal`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Forms.MainFrm">
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Klient_A">
+      <Item value="Name" priority="0" />
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Rachunek_B">
+      <Item value="KlientB" priority="4" />
+      <Item value="PropertyChanged" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="Id" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.PropertyChangedEventArgs">
+      <Item value="PropertyName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Klient_B">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Kanc.UI.Tests.Binding_SmartValidator_emptyEntities">
+      <Item value="Validate`0" priority="0" />
+      <Item value="ValidateChildren`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <Bookmarks>
+    <Bookmark owner="NumberedBookmarkManager" id="Bookmark9" file-id="774F7D5E-63EF-4FB9-8AED-232109DDD3A8/d:Forms/f:MainForm.cs" coords="(Doc Ln 19 Col 57)" />
+  </Bookmarks>
+</Configuration>
