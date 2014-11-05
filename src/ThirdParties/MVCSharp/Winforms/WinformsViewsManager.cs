@@ -137,8 +137,18 @@ namespace MVCSharp.Winforms
         {
             UserControl uc = view as UserControl;
             viewActivatedInCode = true;
-            uc.FindForm().Show();
-            uc.FindForm().Activate();
+
+            Form formOwner = uc.FindForm();
+            if (formOwner == null)
+                uc.Show();
+            else
+            {
+                uc.FindForm().Show();
+                uc.FindForm().Activate();
+            }
+
+            //uc.FindForm().Show();
+            //uc.FindForm().Activate();
             uc.Select();
             uc.Focus();
             viewActivatedInCode = false;
@@ -173,7 +183,13 @@ namespace MVCSharp.Winforms
         {
             WinformsViewInfo viewInf = ViewInfos[viewName] as WinformsViewInfo;
             if (viewInf == null)
-                viewInf = new WinformsViewInfo(ViewInfos[viewName].ViewName, ViewInfos[viewName].ViewType);
+            {
+                var view = ViewInfos[viewName];
+                if(view == null)
+                    throw new Exception("Zla nazwa widoku - " + viewName);
+
+                viewInf = new WinformsViewInfo(view.ViewName, view.ViewType);
+            }
             return viewInf;
         }
 

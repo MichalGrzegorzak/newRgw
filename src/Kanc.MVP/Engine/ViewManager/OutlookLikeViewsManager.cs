@@ -21,6 +21,11 @@ namespace Kanc.MVP.Engine.ViewManager
     {
         OutlookPanelEx contentPanel;
 
+        public void RegisterMasterView(MainForm form)
+        {
+            contentPanel = form.Controls["contentPanel"] as OutlookPanelEx;
+        }
+
         protected override void InitializeFormView(Form form, WinformsViewInfo viewInf)
         {
             base.InitializeFormView(form, viewInf);
@@ -47,9 +52,13 @@ namespace Kanc.MVP.Engine.ViewManager
             base.ActivateUserControlView(view);
             (view as UserControl).BringToFront();
 
-            contentPanel.HeaderText = view.ViewName;
             string imgName = (ViewInfos[view.ViewName] as ViewInfoEx).ImgName;
-            contentPanel.Icon = Resources.ResourceManager.GetObject(imgName) as Image;
+
+            if (contentPanel != null)
+            {
+                contentPanel.HeaderText = view.ViewName;
+                contentPanel.Icon = Resources.ResourceManager.GetObject(imgName) as Image;
+            }
         }
 
         new public static MVCConfiguration GetDefaultConfig()
