@@ -208,7 +208,12 @@ namespace MVCSharp.Winforms
             form.IsMdiContainer = viewInf.IsMdiParent;
             string mdiParent = viewInf.MdiParent;
             if (mdiParent != null)
-                form.MdiParent = views[mdiParent] as Form;
+            {
+                var frm = views[mdiParent] as Form;
+                if(frm == null)
+                    throw new Exception("Brak widoku w tasku ?");
+                form.MdiParent = frm;
+            }
             NotifyInitialize(form as IView);
             InitializeChildViews(form);
         }

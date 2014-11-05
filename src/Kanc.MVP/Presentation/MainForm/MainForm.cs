@@ -12,7 +12,7 @@ using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.MainForm
 {
-    [ViewEx(typeof(MainTask), MainTask.MainView, "")]
+    [ViewEx(typeof(MainTask), MainTask.MainView, "", IsMdiParent = true)]
     public partial class MainForm : WinFormViewForMainViewController, IMainView
     {
         private ListView lvMail = new ListView();
@@ -68,7 +68,9 @@ namespace Kanc.MVP.Presentation.MainForm
         public void AddViewToNavPane(InteractionPointInfoEx ip)
         {
             TaskInfo ti = Controller.Task.Navigator.TaskInfo;
-            if (ip.ViewCategory == ViewCategory.None) return;
+            if (ip.ViewCategory == ViewCategory.None) 
+                return;
+
             ViewInfoEx vi = ti.ViewInfos[ip.ViewName] as ViewInfoEx;
             Image i = Resources.ResourceManager.GetObject(vi.ImgName) as Image;
             imgList.Images.Add(ip.ViewName, i);

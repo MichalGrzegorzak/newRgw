@@ -74,8 +74,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EditOrderController.cs.cs" />
     <Compile Include="Controllers\CustomerSearchController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Engine\Tasks\TaskEditOrder.cs" />
+    <Compile Include="Presentation\Client\ComboboxItem.cs" />
+    <Compile Include="Presentation\Client\IViewEditOrder.cs" />
+    <Compile Include="Presentation\Client\EditOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Client\EditOrder.Designer.cs">
+      <DependentUpon>EditOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Client\ICustomersView.cs" />
     <Compile Include="Controllers\IOrdersView.cs" />
     <Compile Include="Controllers\OrderController.cs" />
@@ -152,6 +162,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\Client\ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Client\EditOrder.resx">
+      <DependentUpon>EditOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Client\MailSendingFailureView.resx">
       <DependentUpon>MailSendingFailureView.cs</DependentUpon>
@@ -239,6 +252,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Kanc.Commons\Kanc.Commons.csproj">
+      <Project>{a9ee3f5c-2b0a-4b3f-a597-5088edb4bd0b}</Project>
+      <Name>Kanc.Commons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ThirdParties\MVCSharp\MVCSharp.csproj">
       <Project>{c04a36b0-4a58-45d4-b95b-a4a58afebc95}</Project>
       <Name>MVCSharp</Name>

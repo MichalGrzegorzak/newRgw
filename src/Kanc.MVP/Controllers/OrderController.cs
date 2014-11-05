@@ -5,9 +5,9 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class OrderController : ControllerBase<MainTask, IOrdersView>
+    public class OrderController : ControllerBase<TaskEditOrder, IOrdersView>
     {
-        public override MainTask Task
+        public override TaskEditOrder Task
         {
             get { return base.Task; }
             set

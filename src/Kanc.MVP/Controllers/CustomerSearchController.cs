@@ -25,7 +25,9 @@ namespace Kanc.MVP.Controllers
         public void CurrentOrderChanged()
         {
             Task.CurrentOrder = View.CurrentOrder;
-            Task.Navigator.Navigate(MainTask.Orders);
+            //Task.Navigator.Navigate(MainTask.Orders);
+            Task.TasksManager.StartTask(typeof (TaskEditOrder), 
+                new object[] {Task.CurrentOrder, Task});
         }
 
         public void CurrentCustomerChanged()
@@ -37,17 +39,16 @@ namespace Kanc.MVP.Controllers
 
         private void ResetView()
         {
-            View.EventsAllowed = false;
-
+            //View.EventsAllowed = false;
             View.Message = "";
             //View.Name = "";
             //View.SelectedCustomer
         }
 
-        private void EnableView()
-        {
-            View.EventsAllowed = true;
-        }
+        //private void EnableView()
+        //{
+        //    View.EventsAllowed = true;
+        //}
 
         public void Search()
         {
@@ -63,14 +64,12 @@ namespace Kanc.MVP.Controllers
             {
                 View.Message = "Nie znaleziono usera";
             }
-
-            EnableView();
         }
 
-        public void ShowOrders()
-        {
-            Task.Navigator.Navigate(MainTask.Orders);
-        }
+        //public void ShowOrders()
+        //{
+        //    Task.Navigator.Navigate(MainTask.Orders);
+        //}
 
         
     }

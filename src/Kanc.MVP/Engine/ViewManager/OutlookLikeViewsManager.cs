@@ -27,12 +27,17 @@ namespace Kanc.MVP.Engine.ViewManager
             // If it's main form then access its content panel.
             if (form is MainForm)
                 contentPanel = form.Controls["contentPanel"] as OutlookPanelEx;
+            else
+            {
+                return;
+            }
         }
 
         protected override void InitializeUserControlView(UserControl ucView)
         {
             base.InitializeUserControlView(ucView);
-            if (ucView.Parent != null) return;
+            if (ucView.Parent != null) 
+                return;
             ucView.Parent = contentPanel;
             ucView.Dock = DockStyle.Fill;
         }
@@ -65,6 +70,8 @@ namespace Kanc.MVP.Engine.ViewManager
             ViewInfoEx vi = new ViewInfoEx(result.ViewName, "", null);
             switch (vc)
             {
+                case ViewCategory.OrderEdit:
+                    vi.ImgName = "Mail"; vi.ViewType = typeof(EditOrder); break;
                 case ViewCategory.Klient:
                     vi.ImgName = "Mail"; vi.ViewType = typeof(ClientSearch); break;
                 case ViewCategory.Raporty:

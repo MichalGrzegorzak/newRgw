@@ -1,9 +1,10 @@
 ﻿using System;
 using MVCSharp.Core.Configuration.Views;
+using MVCSharp.Winforms.Configuration;
 
 namespace Kanc.MVP.Engine.View
 {
-    public class ViewExAttribute : ViewAttribute
+    public class ViewExAttribute : WinformsViewAttribute
     {
         private string imgName;
 

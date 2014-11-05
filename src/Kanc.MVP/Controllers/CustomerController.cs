@@ -18,10 +18,10 @@ namespace Kanc.MVP.Controllers
             }
         }
 
-        public void ShowOrders()
-        {
-            Task.Navigator.Navigate(MainTask.Orders);
-        }
+        //public void ShowOrders()
+        //{
+        //    Task.Navigator.Navigate(MainTask.Orders);
+        //}
 
         public void CurrentCustomerChanged()
         {

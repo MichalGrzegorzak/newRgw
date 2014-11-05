@@ -5,6 +5,7 @@
         Klient,
         Raporty,
         Tasks,
-        None
+        None,
+        OrderEdit
     }
 }

@@ -21,8 +21,8 @@ namespace Kanc.MVP.Engine.Tasks
         //[IPointEx(ViewCategory.Klient, typeof(CustomerController), true)]
         //public const string Customers = "Customers";
 
-        [IPointEx(ViewCategory.Klient, typeof(OrderController), true)]
-        public const string Orders = "Orders";
+        //[IPointEx(ViewCategory.Klient, typeof(OrderController), true)]
+        //public const string Orders = "Orders";
 
 
 
