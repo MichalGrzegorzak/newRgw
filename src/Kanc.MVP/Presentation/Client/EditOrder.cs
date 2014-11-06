@@ -22,27 +22,36 @@ namespace Kanc.MVP.Presentation.Client
         public EditOrder()
         {
             InitializeComponent();
+
+            txbId.Validating += ValidateInput;
+            txbDesc.Validating += ValidateInput;
+            txbOwner.Validating += ValidateInput;
         }
 
         public int Id
         {
-            get { return txbId.Text.Parse<int>(); }
+            get { return txbId.Text.Trim().ParseSafe<int>(); }
             set { txbId.Text = value.ToString(); }
         }
         public string Desc
         {
-            get { return txbDesc.Text; }
+            get { return txbDesc.Text.Trim(); }
             set { txbDesc.Text = value; }
         }
         public string Owner
         {
-            get { return txbOwner.Text; }
+            get { return txbOwner.Text.Trim(); }
             set { txbOwner.Text = value; }
         }
         public string Message
         {
-            get { return lblMessage.Text; }
+            get { return lblMessage.Text.Trim(); }
             set { lblMessage.Text = value; }
+        }
+
+        public void Close()
+        {
+            this.Hide();
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -53,12 +62,47 @@ namespace Kanc.MVP.Presentation.Client
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Controller.Cancel();
+            
         }
 
         //public Order CurrentOrder
         //{
         //    get { throw new NotImplementedException(); }
         //}
+
+        private void ValidateInput(object sender, CancelEventArgs e)
+        {
+            Control ctrl = (Control)sender;
+
+            errorProvider1.SetError(ctrl, ""); //clear ctrl previous error
+
+            if (ctrl.Name == "txbId")
+            {
+                if (ctrl.Text.Trim().Length == 0)
+                    errorProvider1.SetError(ctrl, "Id is Required");
+            }
+
+            //MessageBox.Show("You have Input Errors, Please Correct or", "Test ErrProvider", MessageBoxButtons.OK);
+            //{
+            //    if (ctrl.Text.Trim().Length == 0)
+            //        this.errorProvider1.SetError(ctrl, "Email is Required");
+            //    else if (emailRegx.IsMatch(ctrl.Text) == false)
+            //        this.errorProvider1.SetError(ctrl, "Email format is incorrect");
+            //     else
+            //        this.errorProvider1.SetError(ctrl, "");
+            //}
+            //if (ctrl.Name == "txtconfirm")
+            //{
+            //   if (ctrl.Text.Trim().Length == 0)
+            //       this.errorProvider1.SetError(ctrl, "Password 
+            //               Confirm is Required");
+            //   else if (string.Compare(this.txtpassword.Text, ctrl.Text) != 0)
+            //       this.errorProvider1.SetError(ctrl, "Passwords 
+            //           do not Match, Please Correct");
+            //   else
+            //       this.errorProvider1.SetError(ctrl, "");
+            //}
+        }
 
     }
 

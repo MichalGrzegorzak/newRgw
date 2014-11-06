@@ -16,6 +16,8 @@ namespace Kanc.MVP.Presentation.Client
         string Owner { get; set; }
         string Message { get; set; }
 
-        
+        void Close();
+
+
     }
 }

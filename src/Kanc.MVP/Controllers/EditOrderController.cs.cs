@@ -82,12 +82,14 @@ namespace Kanc.MVP.Controllers
             //SAVE
 
             Task.OriginatingTask.CurrentOrder = ord;
-            Task.OriginatingTask.OnStart(null);
+            //Task.OriginatingTask.OnStart(null);
+            View.Close();
         }
 
         public void Cancel()
         {
-            Task.OriginatingTask.OnStart(null);
+            View.Message = "Wystapil blad";
+            //Task.OriginatingTask.OnStart(null);
             //Task.Navigator.Navigate(MainTask.Orders);
         }
 

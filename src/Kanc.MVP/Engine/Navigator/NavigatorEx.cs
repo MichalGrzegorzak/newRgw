@@ -13,8 +13,8 @@ namespace Kanc.MVP.Engine.Navigator
             IController result = base.GetController(viewName);
             if (result != null) return result;
 
-            InteractionPointInfoEx ip = TaskInfo.InteractionPoints[viewName]
-                                                  as InteractionPointInfoEx;
+            InteractionPointInfoEx ip = TaskInfo.InteractionPoints[viewName] as InteractionPointInfoEx;
+
             Type cType = null;
             switch (ip.ViewCategory)
             {
