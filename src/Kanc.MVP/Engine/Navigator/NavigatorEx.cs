@@ -11,14 +11,15 @@ namespace Kanc.MVP.Engine.Navigator
         public override IController GetController(string viewName)
         {
             IController result = base.GetController(viewName);
-            if (result != null) return result;
+            if (result != null) 
+                return result;
 
             InteractionPointInfoEx ip = TaskInfo.InteractionPoints[viewName] as InteractionPointInfoEx;
 
             Type cType = null;
             switch (ip.ViewCategory)
             {
-                case ViewCategory.Klient: cType = typeof(CustomerController); break;
+                case ViewCategory.Klient: cType = typeof(SearchCustomerController); break;
                 case ViewCategory.Raporty: cType = typeof(NoteController); break;
                 case ViewCategory.Tasks: cType = typeof(TaskController); break;
             }

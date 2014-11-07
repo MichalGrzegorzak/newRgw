@@ -74,54 +74,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\EditOrderController.cs.cs" />
-    <Compile Include="Controllers\CustomerSearchController.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Engine\Tasks\TaskEditOrder.cs" />
-    <Compile Include="Presentation\Client\ComboboxItem.cs" />
-    <Compile Include="Presentation\Client\IViewEditOrder.cs" />
-    <Compile Include="Presentation\Client\EditOrder.cs">
+    <Compile Include="Controllers\Customer\NewCustomerController.cs" />
+    <Compile Include="Controllers\Customer\EditCustomerController.cs" />
+    <Compile Include="Controllers\Order\EditOrderController.cs.cs" />
+    <Compile Include="Controllers\Customer\SearchCustomerController.cs" />
+    <Compile Include="Controllers\Other\MainViewEmptyController.cs" />
+    <Compile Include="Engine\Tasks\SearchTask.cs" />
+    <Compile Include="Engine\Tasks\EditOrderTask.cs" />
+    <Compile Include="Presentation\ComboboxItem.cs" />
+    <Compile Include="Presentation\Customer\EditCustomerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Client\EditOrder.Designer.cs">
-      <DependentUpon>EditOrder.cs</DependentUpon>
+    <Compile Include="Presentation\Customer\EditCustomerView.Designer.cs">
+      <DependentUpon>EditCustomerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Client\ICustomersView.cs" />
+    <Compile Include="Presentation\Customer\IEditCustomersView.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\IOrdersView.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\Other\OrderController.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderState.cs" />
     <Compile Include="Engine\ViewManager\IDynamicViewsManager.cs" />
-    <Compile Include="Presentation\Client\ClientSearch.cs">
+    <Compile Include="Presentation\Customer\NewCustomerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Client\ClientSearch.Designer.cs">
-      <DependentUpon>ClientSearch.cs</DependentUpon>
+    <Compile Include="Presentation\Customer\NewCustomerView.Designer.cs">
+      <DependentUpon>NewCustomerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Client\IClientSearch.cs" />
+    <Compile Include="Presentation\Customer\SearchCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Customer\SearchCustomer.Designer.cs">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Customer\ISearchCustomer.cs" />
     <Compile Include="Engine\InteractionPoint\InteractionPointInfoEx.cs" />
     <Compile Include="Engine\Tasks\MainTask.cs" />
-    <Compile Include="Controllers\MainViewController.cs" />
+    <Compile Include="Controllers\Other\MainViewController.cs" />
     <Compile Include="Engine\InteractionPoint\IPointExAttribute.cs" />
     <Compile Include="Engine\Navigator\NavigatorEx.cs" />
-    <Compile Include="Controllers\NewMailPropertiesViewController.cs" />
-    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\Other\NewMailPropertiesViewController.cs" />
+    <Compile Include="Controllers\Other\NoteController.cs" />
     <Compile Include="Engine\Tasks\TaskInfoByAttributesProviderEx.cs" />
-    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\Other\TaskController.cs" />
     <Compile Include="Engine\View\ViewCategory.cs" />
     <Compile Include="Model\Mail.cs" />
-    <Compile Include="Presentation\Client\MailSendingFailureView.cs">
+    <Compile Include="Presentation\MailSendingFailureView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Client\MailSendingFailureView.Designer.cs">
+    <Compile Include="Presentation\MailSendingFailureView.Designer.cs">
       <DependentUpon>MailSendingFailureView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Client\MailSendingSuccessView.cs">
+    <Compile Include="Presentation\MailSendingSuccessView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Client\MailSendingSuccessView.Designer.cs">
+    <Compile Include="Presentation\MailSendingSuccessView.Designer.cs">
       <DependentUpon>MailSendingSuccessView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MainForm\IMainFormEmptyView.cs" />
+    <Compile Include="Presentation\MainForm\MainFormEmptyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\MainForm\MainFormEmptyView.Designer.cs">
+      <DependentUpon>MainFormEmptyView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\MainForm\IMainView.cs" />
     <Compile Include="Presentation\MainForm\MainForm.cs">
@@ -143,6 +160,15 @@
     <Compile Include="Presentation\Note\PinnedNoteView.Designer.cs">
       <DependentUpon>PinnedNoteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Order\EditOrderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Order\EditOrderView.Designer.cs">
+      <DependentUpon>EditOrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Order\IEditOrderView.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Presentation\Task\TaskView.cs">
       <SubType>UserControl</SubType>
@@ -154,19 +180,25 @@
     <Compile Include="Engine\View\ViewInfoEx.cs" />
     <Compile Include="Engine\View\ViewInfosPrividerEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation\Client\ClientSearch.resx">
-      <DependentUpon>ClientSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Customer\EditCustomerView.resx">
+      <DependentUpon>EditCustomerView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Client\EditOrder.resx">
-      <DependentUpon>EditOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Customer\NewCustomerView.resx">
+      <DependentUpon>NewCustomerView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Client\MailSendingFailureView.resx">
+    <EmbeddedResource Include="Presentation\Customer\SearchCustomer.resx">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MailSendingFailureView.resx">
       <DependentUpon>MailSendingFailureView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Client\MailSendingSuccessView.resx">
+    <EmbeddedResource Include="Presentation\MailSendingSuccessView.resx">
       <DependentUpon>MailSendingSuccessView.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MainForm\MainFormEmptyView.resx">
+      <DependentUpon>MainFormEmptyView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\MainForm\MainForm.resx">
       <SubType>Designer</SubType>
@@ -179,6 +211,9 @@
     <EmbeddedResource Include="Presentation\Note\PinnedNoteView.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PinnedNoteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Order\EditOrderView.resx">
+      <DependentUpon>EditOrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Task\TaskView.resx">
       <SubType>Designer</SubType>

@@ -3,7 +3,7 @@ using Kanc.MVP.Domain;
 
 namespace Kanc.MVP.Presentation.Client
 {
-    public interface IClientSearch
+    public interface ISearchCustomer
     {
         void SetCustomerOrders(IList<Order> orders);
 
@@ -11,7 +11,7 @@ namespace Kanc.MVP.Presentation.Client
 
         int SelectedCustomerIndex { get; }
         Order CurrentOrder { get; }
-        bool EventsAllowed { set; }
+        //bool EventsAllowed { set; }
 
         string Nazwisko { get; set; }
         string Message { get; set; }

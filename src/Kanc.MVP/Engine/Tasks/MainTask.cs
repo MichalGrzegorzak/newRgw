@@ -13,9 +13,18 @@ namespace Kanc.MVP.Engine.Tasks
     [Task(typeof(NavigatorEx))]
     public class MainTask : TaskBase
     {
-        //[IPointEx(ViewCategory.Mail, typeof(NewMailPropertiesViewController))]
-        [IPointEx(ViewCategory.Klient, typeof(CustomerSearchController), true)]
+        [IPointEx(ViewCategory.None, typeof(MainViewController))]
+        public const string MainView = "MainView";
+
+        [IPointEx(ViewCategory.None, typeof(MainViewEmptyController))]
+        public const string MainViewEmpty = "MainViewEmpty";
+
+        [IPointEx(ViewCategory.Klient, typeof(SearchCustomerController), true)]
         public const string SearchCustomer = "Search";
+
+        [IPointEx(ViewCategory.Klient, typeof(NewCustomerController), true)]
+        public const string NewCustomer = "NewCustomer";
+        
 
         //[InteractionPoint(typeof(CustomersController), true)]
         //[IPointEx(ViewCategory.Klient, typeof(CustomerController), true)]
@@ -51,11 +60,6 @@ namespace Kanc.MVP.Engine.Tasks
                     CurrentOrderChanged(this, EventArgs.Empty);
             }
         }
-
-        [IPointEx(ViewCategory.None, typeof(MainViewController))]
-        public const string MainView = "MainView";
-
-        
 
         [IPointEx(ViewCategory.None, typeof(ControllerBase))]
         public const string MailSendingSuccessView = "MailSendingSuccessView";

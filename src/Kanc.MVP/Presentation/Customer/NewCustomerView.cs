@@ -15,43 +15,32 @@ using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.Client
 {
-    [ViewEx(typeof(TaskEditOrder), TaskEditOrder.EditOrder, "New")]
-    //[ViewEx(typeof(TaskEditOrder), TaskEditOrder.EditOrder, "New", MdiParent = MainTask.MainView)]
-    public partial class EditOrder : ucEditOrder, IViewEditOrder
+    [ViewEx(typeof(MainTask), MainTask.NewCustomer, "New")]
+    public partial class NewCustomerView : ucNewCustomer, INewCustomersView
     {
-        public EditOrder()
+        public NewCustomerView()
         {
+            
             InitializeComponent();
 
-            txbId.Validating += ValidateInput;
-            txbDesc.Validating += ValidateInput;
-            txbOwner.Validating += ValidateInput;
+            //txbId.Validating += ValidateInput;
         }
 
-        public int Id
+        //public int Id
+        //{
+        //    get { return txbId.Text.Trim().ParseSafe<int>(); }
+        //    set { txbId.Text = value.ToString(); }
+        //}
+
+        public string Name
         {
-            get { return txbId.Text.Trim().ParseSafe<int>(); }
-            set { txbId.Text = value.ToString(); }
-        }
-        public string Desc
-        {
-            get { return txbDesc.Text.Trim(); }
-            set { txbDesc.Text = value; }
-        }
-        public string Owner
-        {
-            get { return txbOwner.Text.Trim(); }
-            set { txbOwner.Text = value; }
+            get { return txbName.Text.Trim(); }
+            set { txbName.Text = value; }
         }
         public string Message
         {
             get { return lblMessage.Text.Trim(); }
             set { lblMessage.Text = value; }
-        }
-
-        public void Close()
-        {
-            this.Hide();
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -62,13 +51,7 @@ namespace Kanc.MVP.Presentation.Client
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Controller.Cancel();
-            
         }
-
-        //public Order CurrentOrder
-        //{
-        //    get { throw new NotImplementedException(); }
-        //}
 
         private void ValidateInput(object sender, CancelEventArgs e)
         {
@@ -76,11 +59,11 @@ namespace Kanc.MVP.Presentation.Client
 
             errorProvider1.SetError(ctrl, ""); //clear ctrl previous error
 
-            if (ctrl.Name == "txbId")
-            {
-                if (ctrl.Text.Trim().Length == 0)
-                    errorProvider1.SetError(ctrl, "Id is Required");
-            }
+            //if (ctrl.Name == "txbId")
+            //{
+            //    if (ctrl.Text.Trim().Length == 0)
+            //        errorProvider1.SetError(ctrl, "Id is Required");
+            //}
 
             //MessageBox.Show("You have Input Errors, Please Correct or", "Test ErrProvider", MessageBoxButtons.OK);
             //{
@@ -106,6 +89,6 @@ namespace Kanc.MVP.Presentation.Client
 
     }
 
-    public class ucEditOrder : WinUserControlView<EditOrderController>
+    public class ucNewCustomer : WinUserControlView<NewCustomerController>
     { }
 }

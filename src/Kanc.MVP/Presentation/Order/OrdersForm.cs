@@ -10,7 +10,7 @@ using MVCSharp.Winforms;
 namespace Kanc.MVP.Presentation.Client
 {
     //[View(typeof(MainTask), MainTask.Orders)]
-    [ViewEx(typeof(TaskEditOrder), TaskEditOrder.EditOrder, "New", MdiParent = MainTask.MainView)]
+    [ViewEx(typeof(EditOrderTask), EditOrderTask.EditOrder, "New", MdiParent = MainTask.MainView)]
     public partial class OrdersForm : WinFormViewForOrdersController, IOrdersView
     {
         public OrdersForm()

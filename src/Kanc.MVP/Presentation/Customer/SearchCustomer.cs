@@ -10,11 +10,9 @@ using MVCSharp.Winforms;
 namespace Kanc.MVP.Presentation.Client
 {
     [ViewEx(typeof(MainTask), MainTask.SearchCustomer, "New")]
-    public partial class ClientSearch : WinUserControlView_For_MailController, IClientSearch
+    public partial class SearchCustomer : WinUserControlView_For_MailController, ISearchCustomer
     {
-        public bool EventsAllowed { get; set; }
-
-        public ClientSearch()
+        public SearchCustomer()
         {
             InitializeComponent();
         }
@@ -32,6 +30,7 @@ namespace Kanc.MVP.Presentation.Client
         {
             gridOrders.CurrentCellChanged -= gridOrders_CurrentCellChanged;
 
+            gridOrders.DataSource = null; //otherwise grid not refreshes
             gridOrders.DataSource = orders;
 
             gridOrders.CurrentCellChanged += gridOrders_CurrentCellChanged;
@@ -79,20 +78,21 @@ namespace Kanc.MVP.Presentation.Client
 
         private void cmbUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (!EventsAllowed) return;
-
             Controller.CurrentCustomerChanged();
         }
 
         private void gridOrders_CurrentCellChanged(object sender, EventArgs e)
         {
-            //if (!EventsAllowed) return;
-
             Controller.CurrentOrderChanged();
+        }
+
+        private void btnNewOrder_Click(object sender, EventArgs e)
+        {
+            Controller.NewOrder();
         }
 
     }
 
-    public class WinUserControlView_For_MailController : WinUserControlView<CustomerSearchController>
+    public class WinUserControlView_For_MailController : WinUserControlView<SearchCustomerController>
     { }
 }

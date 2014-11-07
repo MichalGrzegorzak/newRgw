@@ -146,6 +146,8 @@ namespace MVCSharp.Winforms
                 uc.FindForm().Show();
                 uc.FindForm().Activate();
             }
+            
+            //uc.Refresh();
 
             //uc.FindForm().Show();
             //uc.FindForm().Activate();

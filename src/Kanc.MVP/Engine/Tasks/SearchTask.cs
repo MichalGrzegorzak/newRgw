@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 using Kanc.MVP.Controllers;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
@@ -14,10 +13,14 @@ using MVCSharp.Core.Tasks;
 namespace Kanc.MVP.Engine.Tasks
 {
     [Task(typeof(NavigatorEx))]
-    public class TaskEditOrder : TaskBase
+    public class SearchTask : TaskBase
     {
-        [IPointEx(ViewCategory.OrderEdit, typeof(EditOrderController), true)]
-        public const string EditOrder = "Edit";
+        [IPointEx(ViewCategory.Klient, typeof(SearchCustomerController), true)]
+        public const string SearchCustomer = "Search";
+
+        //[InteractionPoint(typeof(CustomersController), true)]
+        //[IPointEx(ViewCategory.Klient, typeof(CustomerController), true)]
+        //public const string Customers = "Customers";
 
         private Customer currentCustomer = Customer.AllCustomers[0];
         public event EventHandler CurrentCustomerChanged;
@@ -32,37 +35,34 @@ namespace Kanc.MVP.Engine.Tasks
             }
         }
 
-        //private Order currentOrder = null;
-        //public event EventHandler CurrentOrderChanged;
-        //public Order CurrentOrder
-        //{
-        //    get { return currentOrder; }
-        //    set
-        //    {
-        //        currentOrder = value;
-        //        if (CurrentOrderChanged != null)
-        //            CurrentOrderChanged(this, EventArgs.Empty);
-        //    }
-        //}
+        private Order currentOrder = null;
+        public event EventHandler CurrentOrderChanged;
+        public Order CurrentOrder
+        {
+            get { return currentOrder; }
+            set
+            {
+                currentOrder = value;
+                if (CurrentOrderChanged != null)
+                    CurrentOrderChanged(this, EventArgs.Empty);
+            }
+        }
 
-        public Order Order;
-        //public ITask OriginatingTask;
         public MainTask OriginatingTask;
-
-        //public bool IsWorkerOfTheMonth = false;
-        //public bool SpecialServices = false;
-
+        
         public override void OnStart(object param)
         {
-            Order = (param as object[])[0] as Order;
-            OriginatingTask = (param as object[])[1] as MainTask;
+            OriginatingTask = (param as object[])[0] as MainTask;
 
             OriginatingTask.CurrentCustomerChanged += CurrentCustomerChanged;
+            OriginatingTask.CurrentOrderChanged += CurrentOrderChanged;
 
             var frm = OriginatingTask.Navigator.ViewsManager.GetView(MainTask.MainView) as MainForm;
             ((IDynamicViewsManager)Navigator.ViewsManager).RegisterMasterView(frm);
-            Navigator.ActivateView(EditOrder);
-            //Navigator.NavigateDirectly(EditOrder);
+
+
+            Navigator.ActivateView(SearchCustomer);
+            //Navigator.NavigateDirectly(SearchCustomer);
         }
     }
 }

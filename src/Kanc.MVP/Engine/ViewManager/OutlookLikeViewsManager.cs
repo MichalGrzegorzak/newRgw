@@ -80,9 +80,9 @@ namespace Kanc.MVP.Engine.ViewManager
             switch (vc)
             {
                 case ViewCategory.OrderEdit:
-                    vi.ImgName = "Mail"; vi.ViewType = typeof(EditOrder); break;
+                    vi.ImgName = "Mail"; vi.ViewType = typeof(NewCustomerView); break;
                 case ViewCategory.Klient:
-                    vi.ImgName = "Mail"; vi.ViewType = typeof(ClientSearch); break;
+                    vi.ImgName = "Mail"; vi.ViewType = typeof(SearchCustomer); break;
                 case ViewCategory.Raporty:
                     vi.ImgName = "Notes"; vi.ViewType = typeof(NoteView); break;
                 case ViewCategory.Tasks:

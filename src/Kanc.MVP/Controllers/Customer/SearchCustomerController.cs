@@ -7,11 +7,11 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class CustomerSearchController : ControllerBase<MainTask, IClientSearch>
+    public class SearchCustomerController : ControllerBase<MainTask, ISearchCustomer>
     {
         public List<Customer> FoundCustomers = new List<Customer>();
 
-        public override IClientSearch View
+        public override ISearchCustomer View
         {
             get { return base.View; }
             set
@@ -19,36 +19,50 @@ namespace Kanc.MVP.Controllers
                 base.View = value;
                 //View.SetCustomers(Customer.AllCustomers);
                 //View.SelectedCustomer = Task.CurrentCustomer;
+                Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
             }
         }
 
-        public void CurrentOrderChanged()
+        /// <summary>
+        ///     Update orders
+        /// </summary>
+        void Task_CurrentCustomerChanged(object sender, System.EventArgs e)
         {
-            Task.CurrentOrder = View.CurrentOrder;
-            //Task.Navigator.Navigate(MainTask.Orders);
-            Task.TasksManager.StartTask(typeof (TaskEditOrder), 
-                new object[] {Task.CurrentOrder, Task});
+            View.Nazwisko = Task.CurrentCustomer.Name;
+            View.SetCustomerOrders(Task.CurrentCustomer.Orders);
         }
 
         public void CurrentCustomerChanged()
         {
             var selectedUser = FoundCustomers[View.SelectedCustomerIndex];
             Task.CurrentCustomer = selectedUser;
-            View.SetCustomerOrders(selectedUser.Orders);
+        }
+
+        public void CurrentOrderChanged()
+        {
+            Task.CurrentOrder = View.CurrentOrder;
+            
+            //Task.Navigator.Navigate(MainTask.Orders);
+            Task.TasksManager.StartTask(typeof (EditOrderTask),
+                new object[] { Task, Task.CurrentOrder, Task.CurrentCustomer });
+        }
+
+        public void NewOrder()
+        {
+            Order order = new Order(-1, "");
+            //Task.CurrentCustomer.Orders.Add(order);
+
+            //Task.Navigator.Navigate(MainTask.Orders);
+            Task.TasksManager.StartTask(typeof(EditOrderTask),
+                new object[] { Task, order, Task.CurrentCustomer });
         }
 
         private void ResetView()
         {
-            //View.EventsAllowed = false;
             View.Message = "";
             //View.Name = "";
             //View.SelectedCustomer
         }
-
-        //private void EnableView()
-        //{
-        //    View.EventsAllowed = true;
-        //}
 
         public void Search()
         {

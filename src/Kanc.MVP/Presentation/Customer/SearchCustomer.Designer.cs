@@ -1,6 +1,6 @@
 ﻿namespace Kanc.MVP.Presentation.Client
 {
-    partial class ClientSearch
+    partial class SearchCustomer
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,6 +35,7 @@
             this.errLabel = new System.Windows.Forms.Label();
             this.cmbUsers = new System.Windows.Forms.ComboBox();
             this.gridOrders = new System.Windows.Forms.DataGridView();
+            this.btnNewOrder = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.tableLayoutPanel1.Controls.Add(this.errLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.cmbUsers, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.gridOrders, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnNewOrder, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
@@ -122,7 +124,6 @@
             // 
             // gridOrders
             // 
-            this.gridOrders.AllowUserToAddRows = false;
             this.gridOrders.AllowUserToDeleteRows = false;
             this.gridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.gridOrders, 2);
@@ -134,13 +135,23 @@
             this.gridOrders.TabIndex = 7;
             this.gridOrders.CurrentCellChanged += new System.EventHandler(this.gridOrders_CurrentCellChanged);
             // 
+            // btnNewOrder
+            // 
+            this.btnNewOrder.Location = new System.Drawing.Point(93, 247);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Size = new System.Drawing.Size(44, 14);
+            this.btnNewOrder.TabIndex = 8;
+            this.btnNewOrder.Text = "Nowe";
+            this.btnNewOrder.UseVisualStyleBackColor = true;
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
+            // 
             // ClientSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ClientSearch";
+            this.Name = "SearchCustomer";
             this.Size = new System.Drawing.Size(299, 264);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -158,5 +169,6 @@
         private System.Windows.Forms.Label errLabel;
         private System.Windows.Forms.ComboBox cmbUsers;
         private System.Windows.Forms.DataGridView gridOrders;
+        private System.Windows.Forms.Button btnNewOrder;
     }
 }
