@@ -23,7 +23,10 @@ namespace Kanc.MVP.Controllers
             Customer c = new Customer("");
             c.Name = View.Name;
 
+            //save
             Task.CurrentCustomer = c;
+            Customer.AllCustomers.Add(c);
+
             Order o = new Order(-1, "");
             
             Task.TasksManager.StartTask(typeof(EditOrderTask),

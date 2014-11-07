@@ -8,6 +8,7 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 using MVCSharp.Core.Configuration.Tasks;
 using MVCSharp.Core.Configuration;
 using MVCSharp.Core.Views;
@@ -49,6 +50,7 @@ namespace MVCSharp.Core
         private TaskInfo taskInfo;
         private IViewsManager viewsManager;
         private Dictionary<string, IController> controllers = new Dictionary<string, IController>();
+        private Stack<string> viewsNavigationTracking = new Stack<string>();
 
         #region Documentation
         /// <summary>
@@ -88,6 +90,8 @@ namespace MVCSharp.Core
             get { return viewsManager; }
             set { viewsManager = value; }
         }
+
+
 
         #region Documentation
         /// <summary>
@@ -148,6 +152,14 @@ namespace MVCSharp.Core
         {
             if (viewName == Task.CurrViewName) return;
             ActivateView(viewName);
+
+            viewsNavigationTracking.Push(viewName);
+        }
+
+        public virtual void NavigateBack()
+        {
+            string lastView = viewsNavigationTracking.Pop();
+            NavigateDirectly(lastView);
         }
         
         #region Documentation

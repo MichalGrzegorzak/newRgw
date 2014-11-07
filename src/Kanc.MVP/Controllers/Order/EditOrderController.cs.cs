@@ -57,7 +57,9 @@ namespace Kanc.MVP.Controllers
 
             
             //Task.OriginatingTask.OnStart(null);
-            Task.OriginTask.Navigator.Navigate(MainTask.SearchCustomer);
+            
+            //Task.OriginTask.Navigator.Navigate(MainTask.SearchCustomer);
+            Task.OriginTask.Navigator.NavigateBack();
         }
 
         public void Cancel()
