@@ -16,10 +16,10 @@ namespace Kanc.MVP.Engine.Tasks
     [Task(typeof(NavigatorEx))]
     public class EditOrderTask : TaskBase
     {
-        [IPointEx(ViewCategory.OrderEdit, typeof(EditOrderController), true)]
+        [IPointEx(ViewCategory.NowyKlient, typeof(EditOrderController), true)]
         public const string EditOrder = "EditOrder";
 
-        [IPointEx(ViewCategory.OrderEdit, typeof(EditCustomerController), true)]
+        [IPointEx(ViewCategory.NowyKlient, typeof(EditCustomerController), true)]
         public const string EditCustomer = "EditCustomer";
 
         //private Customer currentCustomer = Customer.AllCustomers[0];

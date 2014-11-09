@@ -3,6 +3,7 @@ using System.Linq;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Presentation.Client;
+using Kanc.MVP.Presentation.Customers;
 using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
@@ -19,18 +20,20 @@ namespace Kanc.MVP.Controllers
                 base.View = value;
                 //View.SetCustomers(Customer.AllCustomers);
                 //View.SelectedCustomer = Task.CurrentCustomer;
-                Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
+                //Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
             }
         }
 
-        /// <summary>
-        ///     Update orders
-        /// </summary>
-        void Task_CurrentCustomerChanged(object sender, System.EventArgs e)
-        {
-            View.Nazwisko = Task.CurrentCustomer.Name;
-            View.SetCustomerOrders(Task.CurrentCustomer.Orders);
-        }
+        ///// <summary>
+        /////     Update orders
+        ///// </summary>
+        //void Task_CurrentCustomerChanged(object sender, System.EventArgs e)
+        //{
+        //    View.Nazwisko = Task.CurrentCustomer.Name;
+        //    View.SetCustomerOrders(Task.CurrentCustomer.Orders);
+
+        //    View.UpdateView();
+        //}
 
         public void CurrentCustomerChanged()
         {

@@ -19,8 +19,8 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.None, typeof(MainViewEmptyController))]
         public const string MainViewEmpty = "MainViewEmpty";
 
-        [IPointEx(ViewCategory.Klient, typeof(SearchCustomerController), true)]
-        public const string SearchCustomer = "Search";
+        [IPointEx(ViewCategory.None, typeof(SearchFormController), true)]
+        public const string SearchCustomer = "SearchForm";
 
         [IPointEx(ViewCategory.Klient, typeof(NewCustomerController), true)]
         public const string NewCustomer = "NewCustomer";
@@ -67,7 +67,7 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.None, typeof(ControllerBase))]
         public const string MailSendingFailureView = "MailSendingFailureView";
 
-        [IPointEx(ViewCategory.Raporty)]
+        [IPointEx(ViewCategory.Druki)]
         public const string PinnedNote = "Pinned Note";
         
         public override void OnStart(object param)

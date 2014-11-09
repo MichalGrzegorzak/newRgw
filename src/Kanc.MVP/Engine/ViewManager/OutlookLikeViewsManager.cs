@@ -5,6 +5,7 @@ using Kanc.MVP.Controllers;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Presentation.Client;
+using Kanc.MVP.Presentation.Customers;
 using Kanc.MVP.Presentation.MainForm;
 using Kanc.MVP.Presentation.Note;
 using Kanc.MVP.Presentation.Task;
@@ -79,14 +80,14 @@ namespace Kanc.MVP.Engine.ViewManager
             ViewInfoEx vi = new ViewInfoEx(result.ViewName, "", null);
             switch (vc)
             {
-                case ViewCategory.OrderEdit:
+                case ViewCategory.NowyKlient:
                     vi.ImgName = "Mail"; vi.ViewType = typeof(NewCustomerView); break;
                 case ViewCategory.Klient:
                     vi.ImgName = "Mail"; vi.ViewType = typeof(SearchCustomer); break;
-                case ViewCategory.Raporty:
+                case ViewCategory.Druki:
                     vi.ImgName = "Notes"; vi.ViewType = typeof(NoteView); break;
-                case ViewCategory.Tasks:
-                    vi.ImgName = "Tasks"; vi.ViewType = typeof(TaskView); break;                    
+                //case ViewCategory.Tasks:
+                //    vi.ImgName = "Tasks"; vi.ViewType = typeof(TaskView); break;                    
             }
             ViewInfos.Add(vi);
             return result;

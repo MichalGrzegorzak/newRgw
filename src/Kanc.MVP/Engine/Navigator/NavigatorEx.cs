@@ -20,8 +20,8 @@ namespace Kanc.MVP.Engine.Navigator
             switch (ip.ViewCategory)
             {
                 case ViewCategory.Klient: cType = typeof(SearchCustomerController); break;
-                case ViewCategory.Raporty: cType = typeof(NoteController); break;
-                case ViewCategory.Tasks: cType = typeof(TaskController); break;
+                case ViewCategory.Druki: cType = typeof(NoteController); break;
+                //case ViewCategory.Tasks: cType = typeof(TaskController); break;
             }
             ip.ControllerType = cType;
             return base.GetController(viewName);            

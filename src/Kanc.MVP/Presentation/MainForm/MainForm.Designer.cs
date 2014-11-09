@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.klientToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.szukajToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.notesToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.newBtn = new System.Windows.Forms.ToolStripSplitButton();
             this.mailMessageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.noteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.taskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mailToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.notesToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.tasksToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.navigateBar = new MT.WindowsUI.NavigationPane.NavigateBar();
             this.mailNavBtn = new MT.WindowsUI.NavigationPane.NavigateBarButton();
             this.notesNavBtn = new MT.WindowsUI.NavigationPane.NavigateBarButton();
-            this.tasksNavBtn = new MT.WindowsUI.NavigationPane.NavigateBarButton();
+            this.szukajNavButton = new MT.WindowsUI.NavigationPane.NavigateBarButton();
             this.mtSplitter = new MT.WindowsUI.MTSplitter();
             this.contentPanel = new Owf.Controls.OutlookPanelEx();
             this.topSpacePanel = new System.Windows.Forms.Panel();
@@ -64,17 +66,66 @@
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newBtn,
+            this.klientToolStripButton,
             this.toolStripSeparator1,
-            this.mailToolStripButton,
+            this.szukajToolStripButton,
             this.notesToolStripButton,
-            this.tasksToolStripButton});
+            this.btnSave,
+            this.btnCancel,
+            this.newBtn});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(440, 25);
             this.toolStrip.TabIndex = 0;
             this.toolStrip.Text = "toolStrip1";
+            // 
+            // klientToolStripButton
+            // 
+            this.klientToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Mail24;
+            this.klientToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.klientToolStripButton.Name = "klientToolStripButton";
+            this.klientToolStripButton.Size = new System.Drawing.Size(58, 22);
+            this.klientToolStripButton.Text = "Nowy";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // szukajToolStripButton
+            // 
+            this.szukajToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Mail;
+            this.szukajToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.szukajToolStripButton.Name = "szukajToolStripButton";
+            this.szukajToolStripButton.Size = new System.Drawing.Size(60, 22);
+            this.szukajToolStripButton.Text = "Szukaj";
+            this.szukajToolStripButton.Click += new System.EventHandler(this.catToolStripItem_Click);
+            // 
+            // notesToolStripButton
+            // 
+            this.notesToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Notes;
+            this.notesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.notesToolStripButton.Name = "notesToolStripButton";
+            this.notesToolStripButton.Size = new System.Drawing.Size(58, 22);
+            this.notesToolStripButton.Text = "Notes";
+            this.notesToolStripButton.Click += new System.EventHandler(this.catToolStripItem_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(60, 22);
+            this.btnSave.Text = "Zapisz";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(62, 22);
+            this.btnCancel.Text = "Anuluj";
             // 
             // newBtn
             // 
@@ -112,38 +163,6 @@
             this.taskToolStripMenuItem1.Text = "Task";
             this.taskToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripItem_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // mailToolStripButton
-            // 
-            this.mailToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Mail;
-            this.mailToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mailToolStripButton.Name = "mailToolStripButton";
-            this.mailToolStripButton.Size = new System.Drawing.Size(60, 22);
-            this.mailToolStripButton.Text = "Szukaj";
-            this.mailToolStripButton.Click += new System.EventHandler(this.catToolStripItem_Click);
-            // 
-            // notesToolStripButton
-            // 
-            this.notesToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Notes;
-            this.notesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.notesToolStripButton.Name = "notesToolStripButton";
-            this.notesToolStripButton.Size = new System.Drawing.Size(58, 22);
-            this.notesToolStripButton.Text = "Notes";
-            this.notesToolStripButton.Click += new System.EventHandler(this.catToolStripItem_Click);
-            // 
-            // tasksToolStripButton
-            // 
-            this.tasksToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Tasks;
-            this.tasksToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tasksToolStripButton.Name = "tasksToolStripButton";
-            this.tasksToolStripButton.Size = new System.Drawing.Size(56, 22);
-            this.tasksToolStripButton.Text = "Tasks";
-            this.tasksToolStripButton.Click += new System.EventHandler(this.catToolStripItem_Click);
-            // 
             // navigateBar
             // 
             this.navigateBar.AlwaysUseSystemColors = false;
@@ -151,7 +170,7 @@
             this.navigateBar.CollapsibleWidth = 27;
             this.navigateBar.Controls.Add(this.mailNavBtn);
             this.navigateBar.Controls.Add(this.notesNavBtn);
-            this.navigateBar.Controls.Add(this.tasksNavBtn);
+            this.navigateBar.Controls.Add(this.szukajNavButton);
             this.navigateBar.DisplayedButtonCount = 3;
             this.navigateBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.navigateBar.Location = new System.Drawing.Point(0, 51);
@@ -161,7 +180,7 @@
             this.navigateBar.NavigateBarButtons.AddRange(new MT.WindowsUI.NavigationPane.NavigateBarButton[] {
             this.mailNavBtn,
             this.notesNavBtn,
-            this.tasksNavBtn});
+            this.szukajNavButton});
             this.navigateBar.NavigateBarColorTable = ((MT.WindowsUI.NavigationPane.NavigateBarColorTable)(resources.GetObject("navigateBar.NavigateBarColorTable")));
             this.navigateBar.NavigateBarDisplayedButtonCount = 3;
             this.navigateBar.SelectedButton = this.mailNavBtn;
@@ -194,7 +213,7 @@
             // 
             // notesNavBtn
             // 
-            this.notesNavBtn.Caption = "Raporty";
+            this.notesNavBtn.Caption = "Druki";
             this.notesNavBtn.CaptionDescription = "Notes category";
             this.notesNavBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.notesNavBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -214,27 +233,27 @@
             this.notesNavBtn.TabIndex = 5;
             this.notesNavBtn.ToolTipText = "Notes category";
             // 
-            // tasksNavBtn
+            // szukajNavButton
             // 
-            this.tasksNavBtn.Caption = "Tasks";
-            this.tasksNavBtn.CaptionDescription = "Tasks category";
-            this.tasksNavBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tasksNavBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tasksNavBtn.Image = ((System.Drawing.Image)(resources.GetObject("tasksNavBtn.Image")));
-            this.tasksNavBtn.IsSelected = false;
-            this.tasksNavBtn.IsShowCaptionDescription = false;
-            this.tasksNavBtn.IsShowCaptionImage = false;
-            this.tasksNavBtn.IsShowCollapseScreenCaption = false;
-            this.tasksNavBtn.Key = "A0BBF8F4974049EAAE0CDBCF8F99E01D";
-            this.tasksNavBtn.Location = new System.Drawing.Point(0, 236);
-            this.tasksNavBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.tasksNavBtn.MinimumSize = new System.Drawing.Size(16, 16);
-            this.tasksNavBtn.MouseOverImage = ((System.Drawing.Image)(resources.GetObject("tasksNavBtn.MouseOverImage")));
-            this.tasksNavBtn.Name = "tasksNavBtn";
-            this.tasksNavBtn.SelectedImage = ((System.Drawing.Image)(resources.GetObject("tasksNavBtn.SelectedImage")));
-            this.tasksNavBtn.Size = new System.Drawing.Size(116, 32);
-            this.tasksNavBtn.TabIndex = 6;
-            this.tasksNavBtn.ToolTipText = "Tasks category";
+            this.szukajNavButton.Caption = "Szukaj";
+            this.szukajNavButton.CaptionDescription = "Szukaj";
+            this.szukajNavButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.szukajNavButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.szukajNavButton.Image = global::Kanc.MVP.Properties.Resources.Notes24;
+            this.szukajNavButton.IsSelected = false;
+            this.szukajNavButton.IsShowCaptionDescription = false;
+            this.szukajNavButton.IsShowCaptionImage = false;
+            this.szukajNavButton.IsShowCollapseScreenCaption = false;
+            this.szukajNavButton.Key = "E0601B65D9E34D0290254CFD59C96CF5";
+            this.szukajNavButton.Location = new System.Drawing.Point(0, 236);
+            this.szukajNavButton.MinimumSize = new System.Drawing.Size(22, 20);
+            this.szukajNavButton.MouseOverImage = global::Kanc.MVP.Properties.Resources.Notes24;
+            this.szukajNavButton.Name = "szukajNavButton";
+            this.szukajNavButton.SelectedImage = global::Kanc.MVP.Properties.Resources.Notes24;
+            this.szukajNavButton.Size = new System.Drawing.Size(116, 32);
+            this.szukajNavButton.TabIndex = 7;
+            this.szukajNavButton.ToolTipText = "NavigateBarButton";
+            this.szukajNavButton.Click += new System.EventHandler(this.szukajNavButton_Click);
             // 
             // mtSplitter
             // 
@@ -409,7 +428,6 @@
         private MT.WindowsUI.MTSplitter mtSplitter;
         private MT.WindowsUI.NavigationPane.NavigateBarButton mailNavBtn;
         private MT.WindowsUI.NavigationPane.NavigateBarButton notesNavBtn;
-        private MT.WindowsUI.NavigationPane.NavigateBarButton tasksNavBtn;
         private Owf.Controls.OutlookPanelEx contentPanel;
         private System.Windows.Forms.Panel topSpacePanel;
         private System.Windows.Forms.ToolStripSplitButton newBtn;
@@ -425,12 +443,15 @@
         private System.Windows.Forms.ToolStripMenuItem notesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton mailToolStripButton;
+        private System.Windows.Forms.ToolStripButton szukajToolStripButton;
         private System.Windows.Forms.ToolStripButton notesToolStripButton;
-        private System.Windows.Forms.ToolStripButton tasksToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem mailMessageToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem noteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem taskToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripButton btnSave;
+        private System.Windows.Forms.ToolStripButton btnCancel;
+        private MT.WindowsUI.NavigationPane.NavigateBarButton szukajNavButton;
+        private System.Windows.Forms.ToolStripButton klientToolStripButton;
     }
 }
 

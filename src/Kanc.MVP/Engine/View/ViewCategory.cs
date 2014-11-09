@@ -2,10 +2,10 @@
 {
     public enum ViewCategory
     {
-        Klient,
-        Raporty,
-        Tasks,
         None,
-        OrderEdit
+        Szukaj,
+        Klient,
+        Druki,
+        NowyKlient
     }
 }

@@ -6,7 +6,6 @@ namespace Kanc.MVP.Domain
     {
         public static readonly List<Customer> AllCustomers = new List<Customer>();
         public readonly List<Order> Orders = new List<Order>();
-        private string name;
 
         public Customer(string name)
         {
@@ -14,5 +13,6 @@ namespace Kanc.MVP.Domain
         }
 
         public string Name { get; set; }
+        public string Age { get; set; }
     }
 }

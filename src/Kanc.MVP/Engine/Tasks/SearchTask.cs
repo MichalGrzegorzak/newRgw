@@ -15,7 +15,7 @@ namespace Kanc.MVP.Engine.Tasks
     [Task(typeof(NavigatorEx))]
     public class SearchTask : TaskBase
     {
-        [IPointEx(ViewCategory.Klient, typeof(SearchCustomerController), true)]
+        [IPointEx(ViewCategory.None, typeof(SearchCustomerController), true)]
         public const string SearchCustomer = "Search";
 
         //[InteractionPoint(typeof(CustomersController), true)]
@@ -57,8 +57,8 @@ namespace Kanc.MVP.Engine.Tasks
             OriginatingTask.CurrentCustomerChanged += CurrentCustomerChanged;
             OriginatingTask.CurrentOrderChanged += CurrentOrderChanged;
 
-            var frm = OriginatingTask.Navigator.ViewsManager.GetView(MainTask.MainView) as MainForm;
-            ((IDynamicViewsManager)Navigator.ViewsManager).RegisterMasterView(frm);
+            //var frm = OriginatingTask.Navigator.ViewsManager.GetView(MainTask.MainView) as MainForm;
+            //((IDynamicViewsManager)Navigator.ViewsManager).RegisterMasterView(frm);
 
 
             Navigator.ActivateView(SearchCustomer);

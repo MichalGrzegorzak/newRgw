@@ -15,9 +15,9 @@ namespace Kanc.MVP.Presentation.MainForm
     [ViewEx(typeof(MainTask), MainTask.MainView, "", IsMdiParent = true)]
     public partial class MainForm : WinFormViewForMainViewController, IMainView
     {
-        private ListView lvMail = new ListView();
+        private ListView lvKlient = new ListView();
         private ListView lvNotes = new ListView();
-        private ListView lvTasks = new ListView();
+        private ListView lvSzukaj = new ListView();
 
         private ImageList imgList = new ImageList();
 
@@ -29,12 +29,12 @@ namespace Kanc.MVP.Presentation.MainForm
 
         private void SetupNavPane()
         {
-            navigateBar.NavigateBarButtons[0].RelatedControl = lvMail;
+            navigateBar.NavigateBarButtons[0].RelatedControl = lvKlient;
             navigateBar.NavigateBarButtons[1].RelatedControl = lvNotes;
-            navigateBar.NavigateBarButtons[2].RelatedControl = lvTasks;
-            setupListView(lvMail);
+            navigateBar.NavigateBarButtons[2].RelatedControl = lvSzukaj;
+            setupListView(lvKlient);
             setupListView(lvNotes);
-            setupListView(lvTasks);
+            setupListView(lvSzukaj);
             navigateBar.SelectedButton = navigateBar.NavigateBarButtons[1];
             navigateBar.SelectedButton = navigateBar.NavigateBarButtons[0];
         }
@@ -68,20 +68,25 @@ namespace Kanc.MVP.Presentation.MainForm
         public void AddViewToNavPane(InteractionPointInfoEx ip)
         {
             TaskInfo ti = Controller.Task.Navigator.TaskInfo;
-            if (ip.ViewCategory == ViewCategory.None) 
+            if (ip.ViewCategory == ViewCategory.None)
                 return;
 
             ViewInfoEx vi = ti.ViewInfos[ip.ViewName] as ViewInfoEx;
-            Image i = Resources.ResourceManager.GetObject(vi.ImgName) as Image;
-            imgList.Images.Add(ip.ViewName, i);
-            ListView lv = lvMail;
+            //if (vi.ImgName != null)
+            {
+                Image i = Resources.ResourceManager.GetObject(vi.ImgName) as Image;
+                imgList.Images.Add(ip.ViewName, i);
+            }
+            ListView lv = lvKlient;
             switch (ip.ViewCategory)
             {
-                case ViewCategory.Klient: lv = lvMail; break;
-                case ViewCategory.Raporty: lv = lvNotes; break;
-                case ViewCategory.Tasks: lv = lvTasks; break;
+                case ViewCategory.Klient: lv = lvKlient; break;
+                case ViewCategory.Druki: lv = lvNotes; break;
+                //case ViewCategory.Szukaj: lv = lvSzukaj; break;
+                //case ViewCategory.Tasks: lv = lvTasks; break;
             }
             lv.Items.Add(ip.ViewName, ip.ViewName);
+            lv.Items[0].Font = new Font(lv.Items[0].Font, FontStyle.Bold);
         }
 
         private void navigateBar_OnNavigateBarButtonSelected(NavigateBarButton tNavigateBarButton)
@@ -97,20 +102,26 @@ namespace Kanc.MVP.Presentation.MainForm
                 case ViewCategory.Klient:
                     navigateBar.SelectedButton = navigateBar.NavigateBarButtons[0];
                     CheckToolBarCategoryButtons(true, false, false); break;
-                case ViewCategory.Raporty:
+                case ViewCategory.Druki:
                     navigateBar.SelectedButton = navigateBar.NavigateBarButtons[1];
                     CheckToolBarCategoryButtons(false, true, false); break;
-                case ViewCategory.Tasks:
+                case ViewCategory.Szukaj:
                     navigateBar.SelectedButton = navigateBar.NavigateBarButtons[2];
                     CheckToolBarCategoryButtons(false, false, true); break;
+                default:
+                    throw new Exception("Brak akcji !");
+                    //case ViewCategory.Tasks:
+                    //    navigateBar.SelectedButton = navigateBar.NavigateBarButtons[2];
+                    //    CheckToolBarCategoryButtons(false, false, true); break;
             }
         }
 
-        private void CheckToolBarCategoryButtons(bool mailChecked, bool notesChecked, bool tasksChecked)
+        private void CheckToolBarCategoryButtons(bool klientChecked, bool drukujChecked, bool szukajChecked)
         {
-            mailToolStripButton.Checked = mailChecked;
-            notesToolStripButton.Checked = notesChecked;
-            tasksToolStripButton.Checked = tasksChecked;
+            klientToolStripButton.Checked = klientChecked;
+            szukajToolStripButton.Checked = szukajChecked;
+            notesToolStripButton.Checked = drukujChecked;
+            
         }
 
         private void catToolStripItem_Click(object sender, EventArgs e)
@@ -123,9 +134,19 @@ namespace Kanc.MVP.Presentation.MainForm
             switch ((sender as ToolStripItem).Text)
             {
                 case "Klient": Controller.CreateView(ViewCategory.Klient); break;
-                case "Note": Controller.CreateView(ViewCategory.Raporty); break;
-                case "Task": Controller.CreateView(ViewCategory.Tasks); break;
+                case "Note": Controller.CreateView(ViewCategory.Druki); break;
+                //case "Szukaj": Controller.CreateView(ViewCategory.Szukaj); break;
+                //case "Nowy klient": Controller.CreateView(ViewCategory.NowyKlient); break;
+                //case "Task": Controller.CreateView(ViewCategory.Tasks); break;
+                default:
+                    throw new Exception("Nie ma takiej akcji!");
             }
+        }
+
+        private void szukajNavButton_Click(object sender, EventArgs e)
+        {
+            Controller.NavigateToView(MainTask.SearchCustomer);
+            //Controller.CreateView(ViewCategory.NowyKlient);
         }
     }
 
