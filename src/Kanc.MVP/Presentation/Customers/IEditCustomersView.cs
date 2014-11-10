@@ -2,14 +2,15 @@
 {
     public interface IBaseEditCustomersView
     {
+        int Id { get; set; }
         string Name { get; set; }
+        int Age { get; set; }
         string Message { get; set; }
     }
 
     public interface IEditCustomersView : IBaseEditCustomersView
     {
-        //string Name { get; set; }
-        //string Message { get; set; }
+        
     }
 
     public interface INewCustomersView : IBaseEditCustomersView

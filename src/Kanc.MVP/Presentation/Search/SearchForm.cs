@@ -17,7 +17,6 @@ namespace Kanc.MVP.Presentation.Customers
 
         void searchCustomer1_CloseTriggered(object sender, System.EventArgs e)
         {
-            //this.Close();
             this.Hide();
         }
 

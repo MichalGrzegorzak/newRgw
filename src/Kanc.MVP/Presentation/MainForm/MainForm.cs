@@ -37,9 +37,13 @@ namespace Kanc.MVP.Presentation.MainForm
             setupListView(lvKlient);
             setupListView(lvNotes);
             setupListView(lvSzukaj);
-            navigateBar.SelectedButton = navigateBar.NavigateBarButtons[1];
-            navigateBar.SelectedButton = navigateBar.NavigateBarButtons[0];
-            
+
+            //navigateBar.SelectedButton = navigateBar.NavigateBarButtons[1];
+            //navigateBar.SelectedButton = navigateBar.NavigateBarButtons[0];
+
+            //hack - inaczej nie zmieni
+            ShowViewCategory(ViewCategory.Druki);
+            ShowViewCategory(ViewCategory.Klient);
         }
 
         private void setupListView(ListView lv)
@@ -78,8 +82,8 @@ namespace Kanc.MVP.Presentation.MainForm
             TaskInfo ti = Controller.Task.Navigator.TaskInfo;
             var list = ti.InteractionPoints.Cast<InteractionPointInfoEx>();
 
-            if (takeOnlyCommonTargets)
-                list = list.Where(x => x.IsCommonTarget);
+            //if (takeOnlyCommonTargets)
+            list = list.Where(x => x.IsCommonTarget == takeOnlyCommonTargets);
 
             foreach (InteractionPointInfoEx ip in list)
                 AddViewToNavPane(ip);
@@ -122,13 +126,11 @@ namespace Kanc.MVP.Presentation.MainForm
                 case ViewCategory.Klient:
                     navigateBar.SelectedButton = navigateBar.NavigateBarButtons[0];
                     CheckToolBarCategoryButtons(true, false, false); break;
-                case ViewCategory.Szukaj:
-                    navigateBar.SelectedButton = navigateBar.NavigateBarButtons[1];
-                    CheckToolBarCategoryButtons(false, true, false);
-                    
-                    if (Controller != null) //controller is assigned after view initialization
-                        Controller.StartSearch();
-                    break;
+                //case ViewCategory.Szukaj:
+                //    navigateBar.SelectedButton = navigateBar.NavigateBarButtons[1];
+                //    CheckToolBarCategoryButtons(false, true, false);
+                //    //Controller.StartSearch();
+                //    break;
                 case ViewCategory.Druki:
                     navigateBar.SelectedButton = navigateBar.NavigateBarButtons[2];
                     CheckToolBarCategoryButtons(false, false, true); break;
@@ -142,20 +144,15 @@ namespace Kanc.MVP.Presentation.MainForm
 
         private void CheckToolBarCategoryButtons(bool klientChecked, bool drukujChecked, bool szukajChecked)
         {
-            klientToolStripButton.Checked = klientChecked;
+            nowyKlientToolStripButton.Checked = klientChecked;
             szukajToolStripButton.Checked = szukajChecked;
             notesToolStripButton.Checked = drukujChecked;
-            
         }
 
-        public void Refresh()
+        public void ShowViewCategory(ViewCategory cat)
         {
-            //navigateBar.Refresh();
-            //toolStrip.Refresh();
-            //navigateBar.NavigateBarButtons[0].PerformClick();
-            var btn = navigateBar.NavigateBarButtons.FindByKey("Klient");
+            var btn = navigateBar.NavigateBarButtons.FindByKey(cat.ToString());
             btn.PerformClick();
-            //navigateBar.SelectedButton = navigateBar.NavigateBarButtons[0];
         }
 
         private void catToolStripItem_Click(object sender, EventArgs e)
@@ -163,24 +160,18 @@ namespace Kanc.MVP.Presentation.MainForm
             CurrentCategoryChanged((sender as ToolStripItem).Text);
         }
 
-        private void newToolStripItem_Click(object sender, EventArgs e)
+        private void nowyKlientToolStripButton_Click(object sender, EventArgs e)
         {
-            switch ((sender as ToolStripItem).Text)
-            {
-                case "Klient": Controller.CreateView(ViewCategory.Klient); break;
-                case "Note": Controller.CreateView(ViewCategory.Druki); break;
-                //case "Szukaj": Controller.CreateView(ViewCategory.Szukaj); break;
-                //case "Nowy klient": Controller.CreateView(ViewCategory.NowyKlient); break;
-                //case "Task": Controller.CreateView(ViewCategory.Tasks); break;
-                default:
-                    throw new Exception("Nie ma takiej akcji!");
-            }
+            CurrentCategoryChanged(ViewCategory.Klient.ToString());
+            Controller.NavigateDirectlyTo(MainTask.NewCustomer);
+            //Controller.CreateView(ViewCategory.Klient);
         }
 
-        private void szukajNavButton_Click(object sender, EventArgs e)
+        private void szukajToolStripButton_Click(object sender, EventArgs e)
         {
-            
+            Controller.StartSearch();
         }
+
     }
 
     public class WinFormViewForMainViewController : WinFormView<MainViewController> { }

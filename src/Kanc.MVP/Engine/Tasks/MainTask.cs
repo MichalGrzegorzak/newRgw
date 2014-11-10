@@ -11,11 +11,10 @@ using MVCSharp.Core.Tasks;
 namespace Kanc.MVP.Engine.Tasks
 {
     [Task(typeof(NavigatorEx))]
-    public class MainTask : TaskBase
+    public class MainTask : MyTaskBase
     {
         [IPointEx(ViewCategory.None, typeof(MainViewController))]
         public const string MainView = "MainView";
-
         [IPointEx(ViewCategory.None, typeof(MainViewEmptyController))]
         public const string MainViewEmpty = "MainViewEmpty";
 
@@ -54,7 +53,6 @@ namespace Kanc.MVP.Engine.Tasks
                 FireCustomerChanged();
             }
         }
-
         public void FireCustomerChanged()
         {
             if (CurrentCustomerChanged != null)
@@ -69,9 +67,13 @@ namespace Kanc.MVP.Engine.Tasks
             set
             {
                 currentOrder = value;
-                if (CurrentOrderChanged != null)
-                    CurrentOrderChanged(this, EventArgs.Empty);
+                FireOrderChanged();
             }
+        }
+        public void FireOrderChanged()
+        {
+            if (CurrentOrderChanged != null)
+                CurrentOrderChanged(this, EventArgs.Empty);
         }
 
         [IPointEx(ViewCategory.None, typeof(ControllerBase))]

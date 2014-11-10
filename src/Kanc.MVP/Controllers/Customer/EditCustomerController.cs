@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
@@ -10,15 +11,39 @@ namespace Kanc.MVP.Controllers
 {
     public class EditCustomerController : ControllerBase<MainTask, IEditCustomersView>
     {
+        public override MainTask Task
+        {
+            get { return base.Task; }
+            set
+            {
+                base.Task = value;
+                Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
+            }
+        }
+
+        void Task_CurrentCustomerChanged(object sender, EventArgs e)
+        {
+            BindModel(Task.CurrentCustomer);
+        }
         public override IEditCustomersView View
         {
             get { return base.View; }
             set
             {
                 base.View = value;
-                //View.SetCustomers(Customer.AllCustomers);
-                //View.SelectedCustomer = Task.CurrentCustomer;
             }
+        }
+
+        public void ResetView()
+        {
+            View.Message = "";
+        }
+
+        public void BindModel(Customer c)
+        {
+            ResetView();
+
+            View.Name = c.Name;
         }
 
         public void Save()
@@ -33,56 +58,8 @@ namespace Kanc.MVP.Controllers
 
         public void Cancel()
         {
-            //View.Message = "Wystapil blad";
-            //Task.OriginatingTask.OnStart(null);
             Task.Navigator.Navigate(MainTask.MainViewEmpty);
         }
 
-        //public void CurrentOrderChanged()
-        //{
-        //    Task.CurrentOrder = View.CurrentOrder;
-            
-        //    //Task.Navigator.Navigate(MainTask.Orders);
-        //    Task.TasksManager.StartTask(typeof (EditOrderTask), 
-        //        new object[] {Task.CurrentOrder, Task});
-        //}
-
-        //public void CurrentCustomerChanged()
-        //{
-        //    var selectedUser = FoundCustomers[View.SelectedCustomerIndex];
-        //    Task.CurrentCustomer = selectedUser;
-        //    View.SetCustomerOrders(selectedUser.Orders);
-        //}
-
-        //private void ResetView()
-        //{
-        //    //View.EventsAllowed = false;
-        //    View.Message = "";
-        //    //View.Name = "";
-        //    //View.SelectedCustomer
-        //}
-
-        //public void Search()
-        //{
-        //    ResetView();
-
-        //    FoundCustomers = Customer.AllCustomers.Where(x => x.Name.StartsWith(View.Nazwisko)).ToList();
-        //    if (FoundCustomers.Any())
-        //    {
-        //        View.SetCustomers(FoundCustomers);
-        //        CurrentCustomerChanged();
-        //    }
-        //    else
-        //    {
-        //        View.Message = "Nie znaleziono usera";
-        //    }
-        //}
-
-        //public void ShowOrders()
-        //{
-        //    Task.Navigator.Navigate(MainTask.Orders);
-        //}
-
-        
     }
 }

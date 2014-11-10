@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.txbOwner = new System.Windows.Forms.TextBox();
-            this.txbDesc = new System.Windows.Forms.TextBox();
+            this.txbAge = new System.Windows.Forms.TextBox();
+            this.txbName = new System.Windows.Forms.TextBox();
             this.txbId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,8 +52,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblMessage, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txbOwner, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txbDesc, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txbAge, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txbName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txbId, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
@@ -82,19 +82,19 @@
             this.lblMessage.TabIndex = 7;
             this.lblMessage.Text = "Blad";
             // 
-            // txbOwner
+            // txbAge
             // 
-            this.txbOwner.Location = new System.Drawing.Point(103, 73);
-            this.txbOwner.Name = "txbOwner";
-            this.txbOwner.Size = new System.Drawing.Size(100, 20);
-            this.txbOwner.TabIndex = 5;
+            this.txbAge.Location = new System.Drawing.Point(103, 73);
+            this.txbAge.Name = "txbAge";
+            this.txbAge.Size = new System.Drawing.Size(100, 20);
+            this.txbAge.TabIndex = 5;
             // 
-            // txbDesc
+            // txbName
             // 
-            this.txbDesc.Location = new System.Drawing.Point(103, 53);
-            this.txbDesc.Name = "txbDesc";
-            this.txbDesc.Size = new System.Drawing.Size(100, 20);
-            this.txbDesc.TabIndex = 4;
+            this.txbName.Location = new System.Drawing.Point(103, 53);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(100, 20);
+            this.txbName.TabIndex = 4;
             // 
             // txbId
             // 
@@ -108,18 +108,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Owner:";
+            this.label3.Text = "Age";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Desc";
+            this.label2.Text = "Name";
             // 
             // label1
             // 
@@ -190,8 +190,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbId;
-        private System.Windows.Forms.TextBox txbDesc;
-        private System.Windows.Forms.TextBox txbOwner;
+        private System.Windows.Forms.TextBox txbName;
+        private System.Windows.Forms.TextBox txbAge;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnZapisz;
         private System.Windows.Forms.Button btnCancel;

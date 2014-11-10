@@ -10,7 +10,6 @@ namespace Kanc.MVP.Controllers
 {
     public class EditOrderController : ControllerBase<MainTask, IEditOrderView>
     {
-        //public List<Customer> FoundCustomers = new List<Customer>();
         public override MainTask Task
         {
             get { return base.Task; }
@@ -20,7 +19,6 @@ namespace Kanc.MVP.Controllers
                 Task.CurrentOrderChanged += Task_CurrentOrderChanged;
             }
         }
-
         void Task_CurrentOrderChanged(object sender, EventArgs e)
         {
             BindModel(Task.CurrentOrder);
@@ -68,8 +66,7 @@ namespace Kanc.MVP.Controllers
             c.Orders.Add(ord);
             Task.CurrentCustomer = c;
             
-            Task.Navigator.Navigate(MainTask.EditCustomer);
-                //NavigateBack();
+            Task.Navigator.NavigateDirectly(MainTask.EditCustomer);
         }
 
         public void Cancel()

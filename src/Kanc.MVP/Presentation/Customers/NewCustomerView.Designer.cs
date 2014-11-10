@@ -31,14 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.txbName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.txbName = new System.Windows.Forms.TextBox();
+            this.txbId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -51,12 +53,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblMessage, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txbName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblName, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblName, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txbName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txbId, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblId, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -80,26 +84,12 @@
             this.lblMessage.TabIndex = 7;
             this.lblMessage.Text = "Blad";
             // 
-            // txbName
-            // 
-            this.txbName.Location = new System.Drawing.Point(103, 33);
-            this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(100, 20);
-            this.txbName.TabIndex = 8;
-            // 
             // label3
             // 
             this.label3.Location = new System.Drawing.Point(3, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(3, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
-            this.label2.TabIndex = 10;
             // 
             // tableLayoutPanel2
             // 
@@ -145,11 +135,41 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(3, 30);
+            this.lblName.Location = new System.Drawing.Point(3, 50);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(38, 13);
             this.lblName.TabIndex = 12;
             this.lblName.Text = "Name:";
+            // 
+            // txbName
+            // 
+            this.txbName.Location = new System.Drawing.Point(103, 53);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(100, 20);
+            this.txbName.TabIndex = 8;
+            // 
+            // txbId
+            // 
+            this.txbId.Location = new System.Drawing.Point(103, 33);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(100, 20);
+            this.txbId.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(3, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.TabIndex = 10;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(3, 30);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.TabIndex = 13;
+            this.lblId.Text = "Id";
             // 
             // errorProvider1
             // 
@@ -183,5 +203,7 @@
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox txbId;
+        private System.Windows.Forms.Label lblId;
     }
 }

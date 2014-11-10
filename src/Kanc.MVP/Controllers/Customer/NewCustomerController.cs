@@ -8,21 +8,19 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class NewCustomerController : ControllerBase<MainTask, INewCustomersView>
+    public class NewCustomerController : MyControllerBase<MainTask, INewCustomersView>
     {
-        public override INewCustomersView View
+        public void Activate()
         {
-            get { return base.View; }
-            set
-            {
-                base.View = value;
-            }
+        
         }
+
 
         public void Save()
         {
             Customer c = new Customer("");
             c.Name = View.Name;
+            c.Age = View.Age;
 
             //save
             Task.CurrentCustomer = c;
@@ -42,50 +40,6 @@ namespace Kanc.MVP.Controllers
             Task.Navigator.Navigate(MainTask.MainViewEmpty);
         }
 
-        //public void CurrentOrderChanged()
-        //{
-        //    Task.CurrentOrder = View.CurrentOrder;
-            
-        //    //Task.Navigator.Navigate(MainTask.Orders);
-        //    Task.TasksManager.StartTask(typeof (EditOrderTask), 
-        //        new object[] {Task.CurrentOrder, Task});
-        //}
-
-        //public void CurrentCustomerChanged()
-        //{
-        //    var selectedUser = FoundCustomers[View.SelectedCustomerIndex];
-        //    Task.CurrentCustomer = selectedUser;
-        //    View.SetCustomerOrders(selectedUser.Orders);
-        //}
-
-        //private void ResetView()
-        //{
-        //    //View.EventsAllowed = false;
-        //    View.Message = "";
-        //    //View.Name = "";
-        //    //View.SelectedCustomer
-        //}
-
-        //public void Search()
-        //{
-        //    ResetView();
-
-        //    FoundCustomers = Customer.AllCustomers.Where(x => x.Name.StartsWith(View.Nazwisko)).ToList();
-        //    if (FoundCustomers.Any())
-        //    {
-        //        View.SetCustomers(FoundCustomers);
-        //        CurrentCustomerChanged();
-        //    }
-        //    else
-        //    {
-        //        View.Message = "Nie znaleziono usera";
-        //    }
-        //}
-
-        //public void ShowOrders()
-        //{
-        //    Task.Navigator.Navigate(MainTask.Orders);
-        //}
 
         
     }

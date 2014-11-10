@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Kanc.Commons;
 using Kanc.MVP.Controllers;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
@@ -18,16 +19,20 @@ namespace Kanc.MVP.Presentation.Customers
             //txbId.Validating += ValidateInput;
         }
 
-        //public int Id
-        //{
-        //    get { return txbId.Text.Trim().ParseSafe<int>(); }
-        //    set { txbId.Text = value.ToString(); }
-        //}
-
-        public string Name
+        public int Id
         {
-            get { return txbDesc.Text.Trim(); }
-            set { txbDesc.Text = value; }
+            get { return txbId.Text.Trim().ParseSafe<int>(); }
+            set { txbId.Text = value.ToString(); }
+        }
+        public new string Name
+        {
+            get { return txbName.Text.Trim(); }
+            set { txbName.Text = value; }
+        }
+        public int Age
+        {
+            get { return txbAge.Text.Trim().ParseSafe<int>(); }
+            set { txbAge.Text = value.ToString(); }
         }
         public string Message
         {

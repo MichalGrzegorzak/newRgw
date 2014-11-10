@@ -21,10 +21,6 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.None, typeof(SearchCustomerController), true)]
         public const string SearchCustomer = "Search";
 
-        //[InteractionPoint(typeof(CustomersController), true)]
-        //[IPointEx(ViewCategory.Klient, typeof(CustomerController), true)]
-        //public const string Customers = "Customers";
-
         private Customer currentCustomer = Customer.AllCustomers[0];
         public event EventHandler CurrentCustomerChanged;
         public Customer CurrentCustomer
@@ -51,22 +47,14 @@ namespace Kanc.MVP.Engine.Tasks
             }
         }
 
-        //public MainTask OriginatingTask;
-        
         public override void OnStart(object param)
         {
-            //OriginatingTask = (param as object[])[0] as MainTask;
             base.OnStart(param);
-
-            //OriginTask.CurrentCustomerChanged += CurrentCustomerChanged;
-            //OriginTask.CurrentOrderChanged += CurrentOrderChanged;
 
             //var frm = OriginatingTask.Navigator.ViewsManager.GetView(MainTask.MainView) as MainForm;
             //((IDynamicViewsManager)Navigator.ViewsManager).RegisterMasterView(frm);
 
-
             Navigator.ActivateView(Start);
-            //Navigator.NavigateDirectly(SearchCustomer);
         }
     }
 }

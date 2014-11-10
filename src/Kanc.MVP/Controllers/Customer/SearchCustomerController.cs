@@ -12,28 +12,6 @@ namespace Kanc.MVP.Controllers
     {
         public List<Customer> FoundCustomers = new List<Customer>();
 
-        public override ISearchCustomer View
-        {
-            get { return base.View; }
-            set
-            {
-                base.View = value;
-                //View.SetCustomers(Customer.AllCustomers);
-                //View.SelectedCustomer = Task.CurrentCustomer;
-                //Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
-            }
-        }
-
-        ///// <summary>
-        /////     Update orders
-        ///// </summary>
-        //void Task_CurrentCustomerChanged(object sender, System.EventArgs e)
-        //{
-        //    View.Nazwisko = Task.CurrentCustomer.Name;
-        //    View.SetCustomerOrders(Task.CurrentCustomer.Orders);
-        //    View.UpdateView();
-        //}
-
         public void CurrentCustomerChanged()
         {
             var selectedUser = FoundCustomers[View.SelectedCustomerIndex];
@@ -41,21 +19,16 @@ namespace Kanc.MVP.Controllers
             Task.CurrentCustomer = selectedUser;
             View.SetCustomerOrders(selectedUser.Orders);
             View.RefreshView();
-            //View.Nazwisko = Task.CurrentCustomer.Name;
         }
 
         public void CurrentOrderChanged()
         {
             Task.CurrentOrder = View.CurrentOrder;
             UserHasSelectedOrder();
-            //Task.Navigator.Navigate(MainTask.Orders);
-
-            //Task.TasksManager.StartTask(typeof (EditOrderTask),
-            //    new object[] { Task, Task.CurrentOrder, Task.CurrentCustomer });
         }
 
         /// <summary>
-        /// Finalize
+        /// Finalize task - return value
         /// </summary>
         public void UserHasSelectedOrder()
         {
@@ -69,10 +42,6 @@ namespace Kanc.MVP.Controllers
             Task.CurrentOrder = order;
 
             UserHasSelectedOrder();
-            //Task.CurrentCustomer.Orders.Add(order);
-
-            //Task.Navigator.Navigate(MainTask.Orders);
-            
         }
 
         private void ResetView()
@@ -97,12 +66,6 @@ namespace Kanc.MVP.Controllers
                 View.Message = "Nie znaleziono usera";
             }
         }
-
-        //public void ShowOrders()
-        //{
-        //    Task.Navigator.Navigate(MainTask.Orders);
-        //}
-
         
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Kanc.Commons;
 using Kanc.MVP.Controllers;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
@@ -11,24 +12,32 @@ namespace Kanc.MVP.Presentation.Customers
     [ViewEx(typeof(MainTask), MainTask.NewCustomer, "New")]
     public partial class NewCustomerView : ucNewCustomer, INewCustomersView
     {
+        public override void Activate(bool activate)
+        {
+            base.Activate(activate);
+        }
+
         public NewCustomerView()
         {
-            
             InitializeComponent();
 
             //txbId.Validating += ValidateInput;
         }
 
-        //public int Id
-        //{
-        //    get { return txbId.Text.Trim().ParseSafe<int>(); }
-        //    set { txbId.Text = value.ToString(); }
-        //}
-
+        public int Id
+        {
+            get { return txbId.Text.Trim().ParseSafe<int>(); }
+            set { txbId.Text = value.ToString(); }
+        }
         public string Name
         {
             get { return txbName.Text.Trim(); }
             set { txbName.Text = value; }
+        }
+        public int Age
+        {
+            get { return -99; }
+            set { ; }
         }
         public string Message
         {

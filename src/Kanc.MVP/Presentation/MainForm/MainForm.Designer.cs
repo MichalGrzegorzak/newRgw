@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.klientToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.nowyKlientToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.szukajToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.notesToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -66,7 +66,7 @@
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.klientToolStripButton,
+            this.nowyKlientToolStripButton,
             this.toolStripSeparator1,
             this.szukajToolStripButton,
             this.notesToolStripButton,
@@ -80,13 +80,14 @@
             this.toolStrip.TabIndex = 0;
             this.toolStrip.Text = "toolStrip1";
             // 
-            // klientToolStripButton
+            // nowyKlientToolStripButton
             // 
-            this.klientToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Mail24;
-            this.klientToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.klientToolStripButton.Name = "klientToolStripButton";
-            this.klientToolStripButton.Size = new System.Drawing.Size(58, 22);
-            this.klientToolStripButton.Text = "Nowy";
+            this.nowyKlientToolStripButton.Image = global::Kanc.MVP.Properties.Resources.Mail24;
+            this.nowyKlientToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.nowyKlientToolStripButton.Name = "nowyKlientToolStripButton";
+            this.nowyKlientToolStripButton.Size = new System.Drawing.Size(58, 22);
+            this.nowyKlientToolStripButton.Text = "Nowy";
+            this.nowyKlientToolStripButton.Click += new System.EventHandler(this.nowyKlientToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -100,7 +101,7 @@
             this.szukajToolStripButton.Name = "szukajToolStripButton";
             this.szukajToolStripButton.Size = new System.Drawing.Size(60, 22);
             this.szukajToolStripButton.Text = "Szukaj";
-            this.szukajToolStripButton.Click += new System.EventHandler(this.catToolStripItem_Click);
+            this.szukajToolStripButton.Click += new System.EventHandler(this.szukajToolStripButton_Click);
             // 
             // notesToolStripButton
             // 
@@ -141,27 +142,18 @@
             // 
             // mailMessageToolStripMenuItem1
             // 
-            this.mailMessageToolStripMenuItem1.Image = global::Kanc.MVP.Properties.Resources.Mail;
             this.mailMessageToolStripMenuItem1.Name = "mailMessageToolStripMenuItem1";
-            this.mailMessageToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
-            this.mailMessageToolStripMenuItem1.Text = "Mail";
-            this.mailMessageToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripItem_Click);
+            this.mailMessageToolStripMenuItem1.Size = new System.Drawing.Size(67, 22);
             // 
             // noteToolStripMenuItem1
             // 
-            this.noteToolStripMenuItem1.Image = global::Kanc.MVP.Properties.Resources.Notes;
             this.noteToolStripMenuItem1.Name = "noteToolStripMenuItem1";
-            this.noteToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
-            this.noteToolStripMenuItem1.Text = "Note";
-            this.noteToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripItem_Click);
+            this.noteToolStripMenuItem1.Size = new System.Drawing.Size(67, 22);
             // 
             // taskToolStripMenuItem1
             // 
-            this.taskToolStripMenuItem1.Image = global::Kanc.MVP.Properties.Resources.Tasks;
             this.taskToolStripMenuItem1.Name = "taskToolStripMenuItem1";
-            this.taskToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
-            this.taskToolStripMenuItem1.Text = "Task";
-            this.taskToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripItem_Click);
+            this.taskToolStripMenuItem1.Size = new System.Drawing.Size(67, 22);
             // 
             // navigateBar
             // 
@@ -213,7 +205,7 @@
             // 
             // notesNavBtn
             // 
-            this.notesNavBtn.Caption = "Szukaj";
+            this.notesNavBtn.Caption = "Raporty";
             this.notesNavBtn.CaptionDescription = "Notes category";
             this.notesNavBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.notesNavBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -330,27 +322,18 @@
             // 
             // mailMessageToolStripMenuItem
             // 
-            this.mailMessageToolStripMenuItem.Image = global::Kanc.MVP.Properties.Resources.Mail;
             this.mailMessageToolStripMenuItem.Name = "mailMessageToolStripMenuItem";
-            this.mailMessageToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.mailMessageToolStripMenuItem.Text = "Mail";
-            this.mailMessageToolStripMenuItem.Click += new System.EventHandler(this.newToolStripItem_Click);
+            this.mailMessageToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
             // 
             // noteToolStripMenuItem
             // 
-            this.noteToolStripMenuItem.Image = global::Kanc.MVP.Properties.Resources.Notes;
             this.noteToolStripMenuItem.Name = "noteToolStripMenuItem";
-            this.noteToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.noteToolStripMenuItem.Text = "Note";
-            this.noteToolStripMenuItem.Click += new System.EventHandler(this.newToolStripItem_Click);
+            this.noteToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
             // 
             // taskToolStripMenuItem
             // 
-            this.taskToolStripMenuItem.Image = global::Kanc.MVP.Properties.Resources.Tasks;
             this.taskToolStripMenuItem.Name = "taskToolStripMenuItem";
-            this.taskToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.taskToolStripMenuItem.Text = "Task";
-            this.taskToolStripMenuItem.Click += new System.EventHandler(this.newToolStripItem_Click);
+            this.taskToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
             // 
             // editToolStripMenuItem
             // 
@@ -450,7 +433,7 @@
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton btnCancel;
         private MT.WindowsUI.NavigationPane.NavigateBarButton szukajNavButton;
-        private System.Windows.Forms.ToolStripButton klientToolStripButton;
+        private System.Windows.Forms.ToolStripButton nowyKlientToolStripButton;
     }
 }
 
