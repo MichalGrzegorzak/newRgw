@@ -8,7 +8,7 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class EditCustomerController : ControllerBase<EditOrderTask, IEditCustomersView>
+    public class EditCustomerController : ControllerBase<MainTask, IEditCustomersView>
     {
         public override IEditCustomersView View
         {
@@ -24,15 +24,11 @@ namespace Kanc.MVP.Controllers
         public void Save()
         {
             //uwaga - edycja przez referencje
-            Task.Customer.Name = View.Name;
+            var c = Task.CurrentCustomer;
+            c.Name = View.Name;
 
-            var c = Task.OriginTask.CurrentCustomer;
-            Task.OriginTask.CurrentCustomer = Task.Customer;
-            //Task.OriginatingTask.CurrentCustomerChanged(this, EventArgs.Empty);
-
-
-            //Task.OriginatingTask.OnStart(null);
-            Task.OriginTask.Navigator.Navigate(EditOrderTask.EditOrder);
+            Task.FireCustomerChanged();
+            Task.Navigator.Navigate(MainTask.EditOrder);
         }
 
         public void Cancel()

@@ -1,6 +1,7 @@
 ﻿using System;
 using Kanc.MVP.Engine.View;
 using MVCSharp.Core.Configuration.Tasks;
+using MVCSharp.Core.Tasks;
 
 namespace Kanc.MVP.Engine.InteractionPoint
 {
@@ -8,8 +9,7 @@ namespace Kanc.MVP.Engine.InteractionPoint
     {
         private ViewCategory viewCat;
 
-        public IPointExAttribute(ViewCategory viewCat, Type controllerType,
-                                                       bool isCommonTarget)
+        public IPointExAttribute(ViewCategory viewCat, Type controllerType, bool isCommonTarget)
                                     : base(controllerType, isCommonTarget)
         {
             this.viewCat = viewCat;

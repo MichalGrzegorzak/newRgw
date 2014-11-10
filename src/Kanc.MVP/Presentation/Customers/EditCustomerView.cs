@@ -8,7 +8,7 @@ using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.Customers
 {
-    [ViewEx(typeof(EditOrderTask), EditOrderTask.EditCustomer, "New")]
+    [ViewEx(typeof(MainTask), MainTask.EditCustomer, "New")]
     public partial class EditCustomerView : ucEditCustomer, IEditCustomersView
     {
         public EditCustomerView()

@@ -200,7 +200,7 @@
             this.mailNavBtn.IsShowCaptionDescription = false;
             this.mailNavBtn.IsShowCaptionImage = false;
             this.mailNavBtn.IsShowCollapseScreenCaption = false;
-            this.mailNavBtn.Key = "C633862AFB6748E98839B2EDD82D1073";
+            this.mailNavBtn.Key = "Klient";
             this.mailNavBtn.Location = new System.Drawing.Point(0, 172);
             this.mailNavBtn.Margin = new System.Windows.Forms.Padding(2);
             this.mailNavBtn.MinimumSize = new System.Drawing.Size(16, 16);
@@ -213,7 +213,7 @@
             // 
             // notesNavBtn
             // 
-            this.notesNavBtn.Caption = "Druki";
+            this.notesNavBtn.Caption = "Szukaj";
             this.notesNavBtn.CaptionDescription = "Notes category";
             this.notesNavBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.notesNavBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -222,7 +222,7 @@
             this.notesNavBtn.IsShowCaptionDescription = false;
             this.notesNavBtn.IsShowCaptionImage = false;
             this.notesNavBtn.IsShowCollapseScreenCaption = false;
-            this.notesNavBtn.Key = "7113C017B2324E83B0380687F78236BF";
+            this.notesNavBtn.Key = "Szukaj";
             this.notesNavBtn.Location = new System.Drawing.Point(0, 204);
             this.notesNavBtn.Margin = new System.Windows.Forms.Padding(2);
             this.notesNavBtn.MinimumSize = new System.Drawing.Size(16, 16);
@@ -235,8 +235,8 @@
             // 
             // szukajNavButton
             // 
-            this.szukajNavButton.Caption = "Szukaj";
-            this.szukajNavButton.CaptionDescription = "Szukaj";
+            this.szukajNavButton.Caption = "Druki";
+            this.szukajNavButton.CaptionDescription = "Druki";
             this.szukajNavButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.szukajNavButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.szukajNavButton.Image = global::Kanc.MVP.Properties.Resources.Notes24;
@@ -244,7 +244,7 @@
             this.szukajNavButton.IsShowCaptionDescription = false;
             this.szukajNavButton.IsShowCaptionImage = false;
             this.szukajNavButton.IsShowCollapseScreenCaption = false;
-            this.szukajNavButton.Key = "E0601B65D9E34D0290254CFD59C96CF5";
+            this.szukajNavButton.Key = "Druki";
             this.szukajNavButton.Location = new System.Drawing.Point(0, 236);
             this.szukajNavButton.MinimumSize = new System.Drawing.Size(22, 20);
             this.szukajNavButton.MouseOverImage = global::Kanc.MVP.Properties.Resources.Notes24;
@@ -253,7 +253,6 @@
             this.szukajNavButton.Size = new System.Drawing.Size(116, 32);
             this.szukajNavButton.TabIndex = 7;
             this.szukajNavButton.ToolTipText = "NavigateBarButton";
-            this.szukajNavButton.Click += new System.EventHandler(this.szukajNavButton_Click);
             // 
             // mtSplitter
             // 

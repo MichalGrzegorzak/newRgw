@@ -15,7 +15,7 @@ using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.Client
 {
-    [ViewEx(typeof(EditOrderTask), EditOrderTask.EditOrder, "New")]
+    [ViewEx(typeof(MainTask), MainTask.EditOrder, "New")]
     public partial class EditOrderView : ucEditOrder, IEditOrderView
     {
         public EditOrderView()

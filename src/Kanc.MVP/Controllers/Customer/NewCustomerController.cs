@@ -29,9 +29,10 @@ namespace Kanc.MVP.Controllers
             Customer.AllCustomers.Add(c);
 
             Order o = new Order(-1, "");
+            Task.CurrentOrder = o;
             
-            Task.TasksManager.StartTask(typeof(EditOrderTask),
-                new object[] { Task, o, Task.CurrentCustomer });
+            //Task.TasksManager.StartTask(typeof(EditOrderTask),new object[] { Task, o, Task.CurrentCustomer });
+            Task.Navigator.Navigate(MainTask.EditOrder);
         }
 
         public void Cancel()

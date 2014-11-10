@@ -8,9 +8,23 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class EditOrderController : ControllerBase<EditOrderTask, IEditOrderView>
+    public class EditOrderController : ControllerBase<MainTask, IEditOrderView>
     {
         //public List<Customer> FoundCustomers = new List<Customer>();
+        public override MainTask Task
+        {
+            get { return base.Task; }
+            set
+            {
+                base.Task = value;
+                Task.CurrentOrderChanged += Task_CurrentOrderChanged;
+            }
+        }
+
+        void Task_CurrentOrderChanged(object sender, EventArgs e)
+        {
+            BindModel(Task.CurrentOrder);
+        }
 
         public override IEditOrderView View
         {
@@ -18,7 +32,7 @@ namespace Kanc.MVP.Controllers
             set
             {
                 base.View = value;
-                BindModel(Task.Order);
+                BindModel(Task.CurrentOrder);
                 //View.SetCustomer(Customer.AllCustomers);
                 //View.SelectedCustomer = Task.CurrentCustomer;
             }
@@ -43,30 +57,28 @@ namespace Kanc.MVP.Controllers
 
         public void Save()
         {
-            var ord = Task.Order;
+            var ord = Task.CurrentOrder;
 
             //uwaga - edycja przez referencje
             ord.Id = View.Id;
             ord.Desc = View.Desc;
             ord.Ship();
 
-            var c = Task.OriginTask.CurrentCustomer;
+            var c = Task.CurrentCustomer;
             c.Orders.Add(ord);
-            Task.OriginTask.CurrentCustomer = c;
-            //Task.OriginatingTask.CurrentCustomerChanged(this, EventArgs.Empty);
-
+            Task.CurrentCustomer = c;
             
-            //Task.OriginatingTask.OnStart(null);
-            
-            //Task.OriginTask.Navigator.Navigate(MainTask.SearchCustomer);
-            Task.OriginTask.Navigator.NavigateBack();
+            Task.Navigator.Navigate(MainTask.EditCustomer);
+                //NavigateBack();
         }
 
         public void Cancel()
         {
             //View.Message = "Wystapil blad";
             //Task.OriginatingTask.OnStart(null);
-            Task.Navigator.Navigate(MainTask.SearchCustomer);
+            
+            //Task.Navigator.Navigate(MainTask.SearchCustomer);
+            Task.Navigator.NavigateBack();
         }
 
         

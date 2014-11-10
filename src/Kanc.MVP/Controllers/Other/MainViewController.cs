@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Tasks;
@@ -36,7 +37,7 @@ namespace Kanc.MVP.Controllers
         }
     }
 
-    public class MainViewController : ControllerBase<MainTask, IView>, IMyTaskResultListener
+    public class MainViewController : ControllerBase<MainTask, IMainView>, IMyTaskResultListener
     {
         public void NavigateToView(string viewName)
         {
@@ -47,23 +48,11 @@ namespace Kanc.MVP.Controllers
         {
             IViewsManager vm = Task.Navigator.ViewsManager;
 
-            //switch (vc)
-            //{
-            //    //    Task.TasksManager.StartTask(typeof(New))
-
-            //    case ViewCategory.NowyKlient:
-            //        vi.ImgName = "Mail"; vi.ViewType = typeof(NewCustomerView); break;
-            //    case ViewCategory.Klient:
-            //        vi.ImgName = "Mail"; vi.ViewType = typeof(SearchCustomer); break;
-            //    case ViewCategory.Druki:
-            //        vi.ImgName = "Notes"; vi.ViewType = typeof(NoteView); break;
-            //    case ViewCategory.Tasks:
-            //        vi.ImgName = "Tasks"; vi.ViewType = typeof(TaskView); break;                    
-            //}
-
             InteractionPointInfoEx ip = (vm as IDynamicViewsManager).CreateView(vc);
             (View as IMainView).AddViewToNavPane(ip);
         }
+
+        private Dictionary<Type, ITask> tasks = new Dictionary<Type, ITask>();
 
         public void StartSearch()
         {
@@ -76,15 +65,24 @@ namespace Kanc.MVP.Controllers
             Type taskType = typeof(TT);
             var resultListener = this as IMyTaskResultListener;
 
-            Task.TasksManager.StartTask(taskType, new object[] { Task, resultListener });
+            if (!tasks.ContainsKey(taskType))
+                tasks[taskType] = Task.TasksManager.StartTask(taskType, new object[] { Task, resultListener });
+            else
+                tasks[taskType].OnStart(null);
         }
         public void RecieveTaskResult(params object[] item)
         {
             Task.CurrentCustomer = item[0] as Customer;
             Task.CurrentOrder = item[1] as Order;
 
-            Task.TasksManager.StartTask(typeof(EditOrderTask),
-                new object[] { Task, Task.CurrentOrder, Task.CurrentCustomer });
+            //View.LoadAvailableActions(false);
+            
+            //Task.TasksManager.StartTask(typeof(EditOrderTask),
+            //    new object[] { Task, Task.CurrentOrder, Task.CurrentCustomer });
+            Task.Navigator.NavigateDirectly(MainTask.EditOrder);
+
+            //View.CurrentCategoryChanged(ViewCategory.Klient.ToString());
+            View.Refresh();
         }
     }
 }

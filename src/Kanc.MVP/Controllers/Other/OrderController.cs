@@ -5,9 +5,9 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class OrderController : ControllerBase<EditOrderTask, IOrdersView>
+    public class OrderController : ControllerBase<MainTask, IOrdersView>
     {
-        public override EditOrderTask Task
+        public override MainTask Task
         {
             get { return base.Task; }
             set
@@ -29,7 +29,7 @@ namespace Kanc.MVP.Controllers
 
         private void CurrentCustomerChanged(object sender, EventArgs e)
         {
-            View.SetOrdersList(Task.OriginTask.CurrentCustomer.Orders);
+            View.SetOrdersList(Task.CurrentCustomer.Orders);
             UpdateView();
         }
 
@@ -67,7 +67,7 @@ namespace Kanc.MVP.Controllers
 
         public void ShowCustomers()
         {
-            Task.Navigator.Navigate(MainTask.SearchCustomer);
+            Task.Navigator.Navigate(MainTask.EditCustomer);
         }
     }
 }

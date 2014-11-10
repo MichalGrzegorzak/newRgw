@@ -25,10 +25,10 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.Klient, typeof(NewCustomerController), true)]
         public const string NewCustomer = "NewCustomer";
 
-        [IPointEx(ViewCategory.NowyKlient, typeof(EditCustomerController), true)]
+        [IPointEx(ViewCategory.NowyKlient, typeof(EditCustomerController), false)]
         public const string EditCustomer = "EditCustomer";
 
-        [IPointEx(ViewCategory.NowyKlient, typeof(EditOrderController), true)]
+        [IPointEx(ViewCategory.Klient, typeof(EditOrderController), false)]
         public const string EditOrder = "EditOrder";
 
         
@@ -51,9 +51,14 @@ namespace Kanc.MVP.Engine.Tasks
             set
             {
                 currentCustomer = value;
-                if (CurrentCustomerChanged != null)
-                    CurrentCustomerChanged(this, EventArgs.Empty);
+                FireCustomerChanged();
             }
+        }
+
+        public void FireCustomerChanged()
+        {
+            if (CurrentCustomerChanged != null)
+                CurrentCustomerChanged(this, EventArgs.Empty);
         }
 
         private Order currentOrder = null;
@@ -77,7 +82,7 @@ namespace Kanc.MVP.Engine.Tasks
 
         [IPointEx(ViewCategory.Druki)]
         public const string PinnedNote = "Pinned Note";
-        
+
         public override void OnStart(object param)
         {
             Navigator.NavigateDirectly(MainView);
