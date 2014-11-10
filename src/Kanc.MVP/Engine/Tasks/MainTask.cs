@@ -19,11 +19,19 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.None, typeof(MainViewEmptyController))]
         public const string MainViewEmpty = "MainViewEmpty";
 
-        [IPointEx(ViewCategory.None, typeof(SearchFormController), true)]
-        public const string SearchCustomer = "SearchForm";
+        //[IPointEx(ViewCategory.None, typeof(SearchFormController), true)]
+        //public const string SearchCustomer = "SearchForm";
 
         [IPointEx(ViewCategory.Klient, typeof(NewCustomerController), true)]
         public const string NewCustomer = "NewCustomer";
+
+        [IPointEx(ViewCategory.NowyKlient, typeof(EditCustomerController), true)]
+        public const string EditCustomer = "EditCustomer";
+
+        [IPointEx(ViewCategory.NowyKlient, typeof(EditOrderController), true)]
+        public const string EditOrder = "EditOrder";
+
+        
         
 
         //[InteractionPoint(typeof(CustomersController), true)]

@@ -16,11 +16,7 @@ namespace Kanc.MVP.Engine.Tasks
     [Task(typeof(NavigatorEx))]
     public class EditOrderTask : TaskBase
     {
-        [IPointEx(ViewCategory.NowyKlient, typeof(EditOrderController), true)]
-        public const string EditOrder = "EditOrder";
-
-        [IPointEx(ViewCategory.NowyKlient, typeof(EditCustomerController), true)]
-        public const string EditCustomer = "EditCustomer";
+        
 
         //private Customer currentCustomer = Customer.AllCustomers[0];
         //public event EventHandler CurrentCustomerChanged;

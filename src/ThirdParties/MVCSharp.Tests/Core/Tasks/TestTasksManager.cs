@@ -85,6 +85,10 @@ namespace MVCSharp.Tests.Core.Tasks
                 StartTimes++;
             }
 
+            public void OnStartSubTask<T>(T param) where T : class
+            {
+            }
+
             public Navigator Navigator
             {
                 get { return navigator; }

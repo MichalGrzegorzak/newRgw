@@ -18,10 +18,10 @@ namespace MVCSharp.Examples.WindowsFormsExample.ApplicationLogic
         [IPoint(typeof(ControllerBase), IsCommonTarget = true)]
         public const string MdiChild2 = "Mdi Child2";
 
-        [IPoint(typeof(ControllerBase), IsCommonTarget = true)]
+        [IPoint(typeof(UCController), IsCommonTarget = true)]
         public const string UserControlView1 = "UserControlView1";
 
-        [IPoint(typeof(ControllerBase), IsCommonTarget = true)]
+        [IPoint(typeof(UCController), IsCommonTarget = true)]
         public const string UserControlView2 = "UserControlView2";
 
         [IPoint(typeof(ControllerBase), IsCommonTarget = true)]

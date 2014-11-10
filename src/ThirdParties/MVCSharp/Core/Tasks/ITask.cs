@@ -30,6 +30,8 @@ namespace MVCSharp.Core.Tasks
         #endregion
         void OnStart(object param);
 
+        //void OnStartSubTask<T>(T paramClass) where T : class;
+
         #region Documentation
         /// <summary>
         /// Each task should be linked to a proper <see cref="MVCSharp.Core.Navigator"/> instance.

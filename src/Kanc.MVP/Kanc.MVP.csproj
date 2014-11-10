@@ -80,6 +80,7 @@
     <Compile Include="Controllers\Customer\SearchCustomerController.cs" />
     <Compile Include="Controllers\Other\SearchFormController.cs" />
     <Compile Include="Controllers\Other\MainViewEmptyController.cs" />
+    <Compile Include="Engine\Tasks\MyTask.cs" />
     <Compile Include="Engine\Tasks\SearchTask.cs" />
     <Compile Include="Engine\Tasks\EditOrderTask.cs" />
     <Compile Include="Presentation\ComboboxItem.cs" />

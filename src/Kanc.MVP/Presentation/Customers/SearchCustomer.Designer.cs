@@ -138,6 +138,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.gridOrders, 2);
             this.gridOrders.Size = new System.Drawing.Size(203, 172);
             this.gridOrders.TabIndex = 7;
+            this.gridOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridOrders_CellDoubleClick);
             this.gridOrders.CurrentCellChanged += new System.EventHandler(this.gridOrders_CurrentCellChanged);
             // 
             // btnNewOrder

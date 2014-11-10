@@ -13,8 +13,11 @@ using MVCSharp.Core.Tasks;
 namespace Kanc.MVP.Engine.Tasks
 {
     [Task(typeof(NavigatorEx))]
-    public class SearchTask : TaskBase
+    public class SearchTask : MyTaskBase
     {
+        [IPointEx(ViewCategory.None, typeof(ControllerBase), true)]
+        public const string Start = "Start";
+
         [IPointEx(ViewCategory.None, typeof(SearchCustomerController), true)]
         public const string SearchCustomer = "Search";
 
@@ -48,20 +51,21 @@ namespace Kanc.MVP.Engine.Tasks
             }
         }
 
-        public MainTask OriginatingTask;
+        //public MainTask OriginatingTask;
         
         public override void OnStart(object param)
         {
-            OriginatingTask = (param as object[])[0] as MainTask;
+            //OriginatingTask = (param as object[])[0] as MainTask;
+            base.OnStart(param);
 
-            OriginatingTask.CurrentCustomerChanged += CurrentCustomerChanged;
-            OriginatingTask.CurrentOrderChanged += CurrentOrderChanged;
+            //OriginTask.CurrentCustomerChanged += CurrentCustomerChanged;
+            //OriginTask.CurrentOrderChanged += CurrentOrderChanged;
 
             //var frm = OriginatingTask.Navigator.ViewsManager.GetView(MainTask.MainView) as MainForm;
             //((IDynamicViewsManager)Navigator.ViewsManager).RegisterMasterView(frm);
 
 
-            Navigator.ActivateView(SearchCustomer);
+            Navigator.ActivateView(Start);
             //Navigator.NavigateDirectly(SearchCustomer);
         }
     }

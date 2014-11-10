@@ -145,8 +145,7 @@ namespace Kanc.MVP.Presentation.MainForm
 
         private void szukajNavButton_Click(object sender, EventArgs e)
         {
-            Controller.NavigateToView(MainTask.SearchCustomer);
-            //Controller.CreateView(ViewCategory.NowyKlient);
+            Controller.StartSearch();
         }
     }
 

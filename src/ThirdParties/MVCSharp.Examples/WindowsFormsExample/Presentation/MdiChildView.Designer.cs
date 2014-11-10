@@ -28,32 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userControlView = new MVCSharp.Examples.WindowsFormsExample.Presentation.UserControlView();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.userControlView = new MVCSharp.Examples.WindowsFormsExample.Presentation.UserControlView();
             this.SuspendLayout();
+            // 
+            // textBox
+            // 
+            this.textBox.Location = new System.Drawing.Point(9, 10);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(76, 20);
+            this.textBox.TabIndex = 0;
             // 
             // userControlView
             // 
             this.userControlView.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.userControlView.Location = new System.Drawing.Point(12, 66);
+            this.userControlView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userControlView.Location = new System.Drawing.Point(89, 11);
+            this.userControlView.Margin = new System.Windows.Forms.Padding(2);
             this.userControlView.Name = "userControlView";
-            this.userControlView.Size = new System.Drawing.Size(191, 111);
+            this.userControlView.Size = new System.Drawing.Size(111, 120);
             this.userControlView.TabIndex = 1;
-            // 
-            // textBox
-            // 
-            this.textBox.Location = new System.Drawing.Point(12, 12);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(100, 22);
-            this.textBox.TabIndex = 0;
             // 
             // MdiChildView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 193);
-            this.Controls.Add(this.textBox);
+            this.ClientSize = new System.Drawing.Size(219, 157);
             this.Controls.Add(this.userControlView);
+            this.Controls.Add(this.textBox);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MdiChildView";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -62,7 +66,7 @@
 
         #endregion
 
-        private UserControlView userControlView;
         private System.Windows.Forms.TextBox textBox;
+        private UserControlView userControlView;
     }
 }

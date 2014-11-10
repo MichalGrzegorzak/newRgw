@@ -8,7 +8,7 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class SearchCustomerController : ControllerBase<MainTask, ISearchCustomer>
+    public class SearchCustomerController : ControllerBase<SearchTask, ISearchCustomer>
     {
         public List<Customer> FoundCustomers = new List<Customer>();
 
@@ -31,33 +31,48 @@ namespace Kanc.MVP.Controllers
         //{
         //    View.Nazwisko = Task.CurrentCustomer.Name;
         //    View.SetCustomerOrders(Task.CurrentCustomer.Orders);
-
         //    View.UpdateView();
         //}
 
         public void CurrentCustomerChanged()
         {
             var selectedUser = FoundCustomers[View.SelectedCustomerIndex];
+            
             Task.CurrentCustomer = selectedUser;
+            View.SetCustomerOrders(selectedUser.Orders);
+            View.RefreshView();
+            //View.Nazwisko = Task.CurrentCustomer.Name;
         }
 
         public void CurrentOrderChanged()
         {
             Task.CurrentOrder = View.CurrentOrder;
-            
+            UserHasSelectedOrder();
             //Task.Navigator.Navigate(MainTask.Orders);
-            Task.TasksManager.StartTask(typeof (EditOrderTask),
-                new object[] { Task, Task.CurrentOrder, Task.CurrentCustomer });
+
+            //Task.TasksManager.StartTask(typeof (EditOrderTask),
+            //    new object[] { Task, Task.CurrentOrder, Task.CurrentCustomer });
+        }
+
+        /// <summary>
+        /// Finalize
+        /// </summary>
+        public void UserHasSelectedOrder()
+        {
+            Task.TaskResultListener.RecieveTaskResult(Task.CurrentCustomer, Task.CurrentOrder);
+            View.Close();
         }
 
         public void NewOrder()
         {
             Order order = new Order(-1, "");
+            Task.CurrentOrder = order;
+
+            UserHasSelectedOrder();
             //Task.CurrentCustomer.Orders.Add(order);
 
             //Task.Navigator.Navigate(MainTask.Orders);
-            Task.TasksManager.StartTask(typeof(EditOrderTask),
-                new object[] { Task, order, Task.CurrentCustomer });
+            
         }
 
         private void ResetView()

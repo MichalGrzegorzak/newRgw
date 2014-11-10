@@ -10,13 +10,21 @@ using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.Customers
 {
-    [ViewEx(typeof(MainTask), MainTask.SearchCustomer, "New")]
+    //[ViewEx(typeof(MainTask), MainTask.SearchCustomer, "New")]
     [ViewEx(typeof(SearchTask), SearchTask.SearchCustomer, "New")]
     public partial class SearchCustomer : WinUserControlView_For_MailController, ISearchCustomer
     {
         public SearchCustomer()
         {
             InitializeComponent();
+        }
+
+        public event EventHandler CloseTriggered;
+
+        public void Close()
+        {
+            if(CloseTriggered != null)
+                CloseTriggered.Invoke(this, null);
         }
 
         public Order CurrentOrder
@@ -55,10 +63,9 @@ namespace Kanc.MVP.Presentation.Customers
             cmbUsers.SelectedIndex = 0;
         }
 
-        public void UpdateView()
+        public void RefreshView()
         {
             btnNewOrder.Enabled = (SelectedCustomerIndex > 0);
-
         }
 
         public int SelectedCustomerIndex
@@ -82,7 +89,7 @@ namespace Kanc.MVP.Presentation.Customers
         private void searchButton_Click(object sender, EventArgs e)
         {
             Controller.Search();
-            UpdateView();
+            RefreshView();
         }
 
         private void cmbUsers_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,6 +105,11 @@ namespace Kanc.MVP.Presentation.Customers
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
             Controller.NewOrder();
+        }
+
+        private void gridOrders_CellDoubleClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+            Controller.CurrentOrderChanged();
         }
 
     }

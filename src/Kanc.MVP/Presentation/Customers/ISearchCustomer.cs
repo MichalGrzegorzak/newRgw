@@ -16,7 +16,8 @@ namespace Kanc.MVP.Presentation.Customers
         string Nazwisko { get; set; }
         string Message { get; set; }
 
-        void UpdateView();
+        void RefreshView();
+        void Close();
 
     }
 }
