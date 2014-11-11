@@ -29,7 +29,7 @@ namespace Kanc.MVP.Presentation.Customers
             get { return txbId.Text.Trim().ParseSafe<int>(); }
             set { txbId.Text = value.ToString(); }
         }
-        public string Name
+        public string NazwiskoPl
         {
             get { return txbName.Text.Trim(); }
             set { txbName.Text = value; }

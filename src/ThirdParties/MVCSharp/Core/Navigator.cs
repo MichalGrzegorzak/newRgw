@@ -91,8 +91,6 @@ namespace MVCSharp.Core
             set { viewsManager = value; }
         }
 
-
-
         #region Documentation
         /// <summary>
         /// Navigates to a next view by a given navigation trigger name.
@@ -136,6 +134,15 @@ namespace MVCSharp.Core
         public virtual void Navigate(string triggerName)
         {
             string nextViewName = TaskInfo.GetNextViewName(Task.CurrViewName, triggerName);
+            if (Task.CurrViewName == triggerName)
+            {
+                string s = "something wrong ?";
+            }
+            if (nextViewName == null)
+            {
+                //you are not allowed to go to triggerName
+                throw new Exception("Not allowed to navigate to " + triggerName + " from " +Task.CurrViewName);
+            }
             NavigateDirectly(nextViewName);
         }
 
@@ -150,7 +157,8 @@ namespace MVCSharp.Core
         #endregion
         public virtual void NavigateDirectly(string viewName)
         {
-            if (viewName == Task.CurrViewName) return;
+            if (viewName == Task.CurrViewName) 
+                return;
             ActivateView(viewName);
 
             viewsNavigationTracking.Push(viewName);
@@ -158,8 +166,15 @@ namespace MVCSharp.Core
 
         public virtual void NavigateBack()
         {
-            string lastView = viewsNavigationTracking.Pop();
-            NavigateDirectly(lastView);
+            if (viewsNavigationTracking.Peek() != null)
+            {
+                string lastView = viewsNavigationTracking.Pop();
+                NavigateDirectly(lastView);
+            }
+            else
+            {
+                string s = "??";
+            }
         }
         
         #region Documentation

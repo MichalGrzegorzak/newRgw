@@ -55,12 +55,12 @@ namespace Kanc.MVP.Presentation.Client
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            Controller.Save();
+            Controller.Next();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Controller.Cancel();
+            Controller.Previous();
             
         }
 

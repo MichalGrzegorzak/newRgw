@@ -70,7 +70,7 @@ namespace Kanc.MVP.Presentation.MainForm
 
         public override void Initialize()
         {
-            LoadAvailableActions(true);
+            //LoadAvailableActions(true);
         }
 
         public void LoadAvailableActions(bool takeOnlyCommonTargets)
@@ -162,9 +162,11 @@ namespace Kanc.MVP.Presentation.MainForm
 
         private void nowyKlientToolStripButton_Click(object sender, EventArgs e)
         {
+            LoadAvailableActions(false);
             CurrentCategoryChanged(ViewCategory.Klient.ToString());
-            Controller.NavigateDirectlyTo(MainTask.NewCustomer);
-            //Controller.CreateView(ViewCategory.Klient);
+
+            Controller.NavigateToView(MainTask.NewCustomer);
+            //Controller.CreateView(ViewCategory.NowyKlient);
         }
 
         private void szukajToolStripButton_Click(object sender, EventArgs e)

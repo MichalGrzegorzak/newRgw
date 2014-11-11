@@ -74,7 +74,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Customer\NewCustomerController.cs" />
     <Compile Include="Controllers\Customer\EditCustomerController.cs" />
     <Compile Include="Controllers\Order\EditOrderController.cs.cs" />
     <Compile Include="Controllers\Customer\SearchCustomerController.cs" />
@@ -84,6 +83,8 @@
     <Compile Include="Engine\Tasks\MyTask.cs" />
     <Compile Include="Engine\Tasks\SearchTask.cs" />
     <Compile Include="Presentation\ComboboxItem.cs" />
+    <Compile Include="Presentation\Customers\BasicValidator.cs" />
+    <Compile Include="Presentation\Customers\ControlHelper.cs" />
     <Compile Include="Presentation\Customers\EditCustomerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,12 +100,7 @@
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderState.cs" />
     <Compile Include="Engine\ViewManager\IDynamicViewsManager.cs" />
-    <Compile Include="Presentation\Customers\NewCustomerView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\Customers\NewCustomerView.Designer.cs">
-      <DependentUpon>NewCustomerView.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Presentation\Customers\RegexHelper.cs" />
     <Compile Include="Presentation\Search\SearchCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,9 +186,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\Customers\EditCustomerView.resx">
       <DependentUpon>EditCustomerView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Customers\NewCustomerView.resx">
-      <DependentUpon>NewCustomerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Search\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>

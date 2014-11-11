@@ -8,7 +8,7 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class NewCustomerController : MyControllerBase<MainTask, INewCustomersView>
+    public class NewCustomerController : EditCustomerController
     {
         public void Activate()
         {
@@ -19,7 +19,7 @@ namespace Kanc.MVP.Controllers
         public void Save()
         {
             Customer c = new Customer("");
-            c.Name = View.Name;
+            c.Name = View.NazwiskoPl;
             c.Age = View.Age;
 
             //save

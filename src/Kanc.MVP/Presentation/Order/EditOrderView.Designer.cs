@@ -168,7 +168,7 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // EditOrder
+            // EditOrderView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

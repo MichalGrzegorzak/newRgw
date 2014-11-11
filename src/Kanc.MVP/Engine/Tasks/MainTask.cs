@@ -13,7 +13,7 @@ namespace Kanc.MVP.Engine.Tasks
     [Task(typeof(NavigatorEx))]
     public class MainTask : MyTaskBase
     {
-        [IPointEx(ViewCategory.None, typeof(MainViewController))]
+        [IPointEx(ViewCategory.None, typeof(MainViewController), false, NavTargets = new[] { NewCustomer, EditCustomer })]
         public const string MainView = "MainView";
         [IPointEx(ViewCategory.None, typeof(MainViewEmptyController))]
         public const string MainViewEmpty = "MainViewEmpty";
@@ -21,13 +21,12 @@ namespace Kanc.MVP.Engine.Tasks
         //[IPointEx(ViewCategory.None, typeof(SearchFormController), true)]
         //public const string SearchCustomer = "SearchForm";
 
-        [IPointEx(ViewCategory.Klient, typeof(NewCustomerController), true)]
+        [IPointEx(ViewCategory.NowyKlient, typeof(EditCustomerController), true, NavTargets = new[] { EditOrder })]
         public const string NewCustomer = "NewCustomer";
-
-        [IPointEx(ViewCategory.NowyKlient, typeof(EditCustomerController), false)]
+        [IPointEx(ViewCategory.Klient, typeof(EditCustomerController), false, NavTargets = new[] { EditOrder })]
         public const string EditCustomer = "EditCustomer";
 
-        [IPointEx(ViewCategory.Klient, typeof(EditOrderController), false)]
+        [IPointEx(ViewCategory.Klient, typeof(EditOrderController), false, NavTargets = new[] { EditCustomer })]
         public const string EditOrder = "EditOrder";
 
         

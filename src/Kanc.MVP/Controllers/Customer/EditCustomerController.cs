@@ -9,56 +9,68 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class EditCustomerController : ControllerBase<MainTask, IEditCustomersView>
+    public class EditCustomerController : SubControllerBase<IBaseEditCustomersView>
     {
-        public override MainTask Task
+        public override void ViewActivated()
         {
-            get { return base.Task; }
-            set
+            if (View.IsNew)
             {
-                base.Task = value;
-                Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
+                ResetView(); //executed whenever NewCustomer action is clicked
             }
         }
 
-        void Task_CurrentCustomerChanged(object sender, EventArgs e)
+        public override void BindModel()
         {
-            BindModel(Task.CurrentCustomer);
-        }
-        public override IEditCustomersView View
-        {
-            get { return base.View; }
-            set
-            {
-                base.View = value;
-            }
+            var c = Task.CurrentCustomer;
+
+            ResetView();
+            View.Id = c.Id;
+            View.NazwiskoPl = c.Name;
+            View.Age = c.Age;
         }
 
         public void ResetView()
         {
             View.Message = "";
+            View.Id = 0;
+            View.Age = 0;
+            View.NazwiskoPl = "";
         }
 
-        public void BindModel(Customer c)
+        public override bool IsValid()
         {
-            ResetView();
+            Errors = new List<string>();
+            
+            var c = Task.CurrentCustomer;
+            if (c.Id < 1)
+            {
+                Errors.Add("Id can`t be 0");
+                return false;
+            }
 
-            View.Name = c.Name;
+            return true;
         }
 
-        public void Save()
+        public override void Next()
         {
             //uwaga - edycja przez referencje
             var c = Task.CurrentCustomer;
-            c.Name = View.Name;
+            c.Name = View.NazwiskoPl;
 
+            if (!c.Orders.Any())
+            {
+                Order o = new Order(0, "");
+                c.Orders.Add(o);
+                Task.CurrentOrder = o;
+            }
+
+            //Task.Navigator.Navigate(MainTask.EditOrder);
+            base.Next();
             Task.FireCustomerChanged();
-            Task.Navigator.Navigate(MainTask.EditOrder);
         }
-
-        public void Cancel()
+        public override void Previous()
         {
-            Task.Navigator.Navigate(MainTask.MainViewEmpty);
+            base.Previous();
         }
 
     }

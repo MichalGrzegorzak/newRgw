@@ -1,22 +1,49 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
+using System.Management.Instrumentation;
 using System.Windows.Forms;
+using System.Xml.Schema;
 using Kanc.Commons;
 using Kanc.MVP.Controllers;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
+using MVCSharp.Core.Views;
 using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.Customers
 {
     [ViewEx(typeof(MainTask), MainTask.EditCustomer, "New")]
-    public partial class EditCustomerView : ucEditCustomer, IEditCustomersView
+    [ViewEx(typeof(MainTask), MainTask.NewCustomer, "New")]
+    public partial class EditCustomerView : ucEditCustomer, IBaseEditCustomersView
     {
+        private BasicValidator<EditCustomerView> validatorHlp = null;
+
         public EditCustomerView()
         {
             InitializeComponent();
+            txbId.Enabled = false;
 
-            //txbId.Validating += ValidateInput;
+            validatorHlp = new BasicValidator<EditCustomerView>(this, errorProvider1);
+            validatorHlp.For(x=>x.Name).IsRequired();
+            validatorHlp.For(x=>x.Age).IsRequired().IsCorrectAge();
+            //validatorHlp.For("txbName", "Name").IsRequired();
+            //validatorHlp.For("txbAge", "Age").IsRequired().IsCorrectAge();
+
+            ControlHelper.GetAll<TextBox>(this).ToList()
+                .ForEach(x=> x.Validating += ValidateInput);
+            //txbName.Validating += ValidateInput;
+            //txbAge.Validating += ValidateInput;
+        }
+
+        public override void Activate(bool activate)
+        {
+            Controller.ViewActivated();
+        }
+
+        public bool IsNew
+        {
+            get { return Id > 0; }
         }
 
         public int Id
@@ -24,7 +51,7 @@ namespace Kanc.MVP.Presentation.Customers
             get { return txbId.Text.Trim().ParseSafe<int>(); }
             set { txbId.Text = value.ToString(); }
         }
-        public new string Name
+        public string NazwiskoPl
         {
             get { return txbName.Text.Trim(); }
             set { txbName.Text = value; }
@@ -42,25 +69,20 @@ namespace Kanc.MVP.Presentation.Customers
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            Controller.Save();
+            Controller.Next();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Controller.Cancel();
+            Controller.Previous();
         }
 
         private void ValidateInput(object sender, CancelEventArgs e)
         {
             Control ctrl = (Control)sender;
-
             errorProvider1.SetError(ctrl, ""); //clear ctrl previous error
 
-            if (ctrl.Name == "txbId")
-            {
-                if (ctrl.Text.Trim().Length == 0)
-                    errorProvider1.SetError(ctrl, "Id is Required");
-            }
+            validatorHlp.Validate(ctrl);
 
             //MessageBox.Show("You have Input Errors, Please Correct or", "Test ErrProvider", MessageBoxButtons.OK);
             //{
@@ -84,6 +106,7 @@ namespace Kanc.MVP.Presentation.Customers
             //}
         }
 
+        
     }
 
     public class ucEditCustomer : WinUserControlView<EditCustomerController>

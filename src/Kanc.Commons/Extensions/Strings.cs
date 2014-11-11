@@ -220,7 +220,7 @@ namespace Kanc.Commons
             return result;
         }
 
-        public static bool IsMatch(this string input, string other)
+        public static bool IsSame(this string input, string other)
         {
             if (!input.IsNotNullOrEmptyT() || !other.IsNotNullOrEmptyT())
                 throw new Exception("Nie moze byc null or empty!");

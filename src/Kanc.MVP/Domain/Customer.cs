@@ -9,10 +9,18 @@ namespace Kanc.MVP.Domain
 
         public Customer(string name)
         {
+            Id = 0;
             Name = name;
+            Orders = new List<Order>();
         }
-
-        public string Name { get; set; }
+        
+        public int Id { get; set; }
         public int Age { get; set; }
+        public string Name { get; set; }
+
+        //public bool IsValid()
+        //{
+            
+        //}
     }
 }

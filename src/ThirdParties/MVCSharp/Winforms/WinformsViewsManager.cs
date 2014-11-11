@@ -292,6 +292,11 @@ namespace MVCSharp.Winforms
         #endregion
         protected void Application_Idle(object sender, EventArgs e)
         {
+            if (Navigator.Task.CurrViewName == null)
+            {
+                throw new Exception("why?");
+            }
+
             if ((activeView == null) ||
                 (activeView == views[Navigator.Task.CurrViewName]))
                 return;

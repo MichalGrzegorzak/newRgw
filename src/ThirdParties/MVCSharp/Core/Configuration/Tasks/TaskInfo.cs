@@ -6,6 +6,7 @@
 //===========================================
 
 using System;
+using System.Linq;
 using System.Text;
 using MVCSharp.Core.Configuration.Views;
 using MVCSharp.Core.Tasks;
@@ -73,6 +74,10 @@ namespace MVCSharp.Core.Configuration.Tasks
         {
             InteractionPointInfo currPoint = InteractionPoints[currViewName];
             InteractionPointInfo target = currPoint.NavTargets[triggerName];
+            if (triggerName == "NEXT")
+            {
+                target = currPoint.NavTargets.Cast<InteractionPointInfo>().First();
+            }
             if (target == null)
             {
                 InteractionPointInfo possibleCommonTarget = iPoints[triggerName];

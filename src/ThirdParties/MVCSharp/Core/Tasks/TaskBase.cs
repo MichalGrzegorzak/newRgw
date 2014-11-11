@@ -79,7 +79,14 @@ namespace MVCSharp.Core.Tasks
         public virtual string CurrViewName
         {
             get { return currViewName; }
-            set { currViewName = value; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new Exception("no way!");
+                }
+                currViewName = value;
+            }
         }
     }
 }

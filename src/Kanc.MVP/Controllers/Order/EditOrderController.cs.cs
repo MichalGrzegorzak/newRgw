@@ -8,36 +8,12 @@ using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
-    public class EditOrderController : ControllerBase<MainTask, IEditOrderView>
+    public class EditOrderController : SubControllerBase<IEditOrderView>
     {
-        public override MainTask Task
+        public override void BindModel()
         {
-            get { return base.Task; }
-            set
-            {
-                base.Task = value;
-                Task.CurrentOrderChanged += Task_CurrentOrderChanged;
-            }
-        }
-        void Task_CurrentOrderChanged(object sender, EventArgs e)
-        {
-            BindModel(Task.CurrentOrder);
-        }
+            Order order = Task.CurrentOrder;
 
-        public override IEditOrderView View
-        {
-            get { return base.View; }
-            set
-            {
-                base.View = value;
-                BindModel(Task.CurrentOrder);
-                //View.SetCustomer(Customer.AllCustomers);
-                //View.SelectedCustomer = Task.CurrentCustomer;
-            }
-        }
-
-        private void BindModel(Order order)
-        {
             View.Message = "";
 
             View.Id = order.Id;
@@ -45,15 +21,12 @@ namespace Kanc.MVP.Controllers
             //View.Owner = 
         }
 
-        private void ResetView()
-        {
-            //View.EventsAllowed = false;
-            View.Message = "";
-            //View.Name = "";
-            //View.SelectedCustomer
-        }
+        //private void ResetView()
+        //{
+        //    View.Message = "";
+        //}
 
-        public void Save()
+        public override void Next()
         {
             var ord = Task.CurrentOrder;
 
@@ -62,21 +35,16 @@ namespace Kanc.MVP.Controllers
             ord.Desc = View.Desc;
             ord.Ship();
 
-            var c = Task.CurrentCustomer;
-            c.Orders.Add(ord);
-            Task.CurrentCustomer = c;
-            
-            Task.Navigator.NavigateDirectly(MainTask.EditCustomer);
+            //Task.Navigator.NavigateDirectly(MainTask.EditCustomer);
+            base.Next();
+            Task.FireOrderChanged();
+        }
+        public override void Previous()
+        {
+            base.Previous();
         }
 
-        public void Cancel()
-        {
-            //View.Message = "Wystapil blad";
-            //Task.OriginatingTask.OnStart(null);
-            
-            //Task.Navigator.Navigate(MainTask.SearchCustomer);
-            Task.Navigator.NavigateBack();
-        }
+        
 
         
     }
