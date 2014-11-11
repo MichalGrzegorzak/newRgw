@@ -2,14 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 using Kanc.MVP.Engine.Tasks;
+using Kanc.MVP.Presentation.Customers;
 using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
     public class SubControllerBase<TView> : MyControllerBase<MainTask, TView>
-        where TView : class
+        where TView : class, IMyBaseView
     {
         public override MainTask Task
         {
@@ -48,10 +50,16 @@ namespace Kanc.MVP.Controllers
         {
         }
 
+        protected BasicValidator<TView> Validator = null;
+        public void RegisterControlForValidation<TProperty>(Control control, Expression<Func<TView, TProperty>> expression)
+        {
+            Validator.For(expression, control.Name);
+        }
+
         protected List<string> Errors = new List<string>();
         public virtual bool IsValid()
         {
-            Errors = new List<string>(); //you should do
+            Errors = new List<string>(); //you should always do this
             return true;
         }
 
@@ -61,10 +69,14 @@ namespace Kanc.MVP.Controllers
                 Task.Navigator.Navigate("NEXT");
             else
             {
-                //TODO -> View.NotifyUser(dialog);
                 string delimeter = " \n";
-                MessageBox.Show("Please correct errors: \n"
-                                + Errors.Aggregate((i, j) => i + delimeter + j));
+                string message = "View is not valid, please correct errors: \n";
+                if (Errors.Any())
+                    message += Errors.Aggregate((i, j) => i + delimeter + j);
+                else
+                    message = "- but you don`t have errors ??";
+
+                View.NotifyUser(message);
             }
                 
         }

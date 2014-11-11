@@ -11,6 +11,7 @@ using Kanc.MVP.Controllers;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
+using Kanc.MVP.Presentation.Customers;
 using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.Client
@@ -105,6 +106,6 @@ namespace Kanc.MVP.Presentation.Client
 
     }
 
-    public class ucEditOrder : WinUserControlView<EditOrderController>
+    public class ucEditOrder : MyBaseControlView<EditOrderController>
     { }
 }

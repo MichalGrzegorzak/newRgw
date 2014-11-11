@@ -24,7 +24,6 @@ namespace Kanc.Commons
                 }
                 return name;
             }
-
             throw new ArgumentException("expression");
         }
     }

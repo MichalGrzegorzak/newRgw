@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Management.Instrumentation;
@@ -6,6 +7,7 @@ using System.Windows.Forms;
 using System.Xml.Schema;
 using Kanc.Commons;
 using Kanc.MVP.Controllers;
+using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using MVCSharp.Core.Views;
@@ -17,33 +19,23 @@ namespace Kanc.MVP.Presentation.Customers
     [ViewEx(typeof(MainTask), MainTask.NewCustomer, "New")]
     public partial class EditCustomerView : ucEditCustomer, IBaseEditCustomersView
     {
-        private BasicValidator<EditCustomerView> validatorHlp = null;
-
         public EditCustomerView()
         {
             InitializeComponent();
+
             txbId.Enabled = false;
 
-            validatorHlp = new BasicValidator<EditCustomerView>(this, errorProvider1);
-            validatorHlp.For(x=>x.Name).IsRequired();
-            validatorHlp.For(x=>x.Age).IsRequired().IsCorrectAge();
-            //validatorHlp.For("txbName", "Name").IsRequired();
-            //validatorHlp.For("txbAge", "Age").IsRequired().IsCorrectAge();
+            //WALIDACJA
+            base.errorProvider = errorProvider1;
 
-            ControlHelper.GetAll<TextBox>(this).ToList()
-                .ForEach(x=> x.Validating += ValidateInput);
-            //txbName.Validating += ValidateInput;
-            //txbAge.Validating += ValidateInput;
+            //aby kontroler mogl uruchomic SetError na errorProviderze, bez referencji do kontrolki
+            availableControls.AddRange(ControlHelper.GetAll<TextBox>(this).ToList()); 
+            availableControls.ForEach(x=> x.Validating += ValidateInput);
         }
 
         public override void Activate(bool activate)
         {
             Controller.ViewActivated();
-        }
-
-        public bool IsNew
-        {
-            get { return Id > 0; }
         }
 
         public int Id
@@ -61,7 +53,8 @@ namespace Kanc.MVP.Presentation.Customers
             get { return txbAge.Text.Trim().ParseSafe<int>(); }
             set { txbAge.Text = value.ToString(); }
         }
-        public string Message
+
+        string IMyBaseView.Message
         {
             get { return lblMessage.Text.Trim(); }
             set { lblMessage.Text = value; }
@@ -69,6 +62,7 @@ namespace Kanc.MVP.Presentation.Customers
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
+            ValidateChildren(); //odpala validacje dla kazdej kontrolki
             Controller.Next();
         }
 
@@ -82,7 +76,11 @@ namespace Kanc.MVP.Presentation.Customers
             Control ctrl = (Control)sender;
             errorProvider1.SetError(ctrl, ""); //clear ctrl previous error
 
-            validatorHlp.Validate(ctrl);
+            string message = Controller.Validate(ctrl);
+            if(message == null) 
+                return;
+            
+            errorProvider1.SetError(ctrl, message);
 
             //MessageBox.Show("You have Input Errors, Please Correct or", "Test ErrProvider", MessageBoxButtons.OK);
             //{
@@ -109,6 +107,6 @@ namespace Kanc.MVP.Presentation.Customers
         
     }
 
-    public class ucEditCustomer : WinUserControlView<EditCustomerController>
+    public class ucEditCustomer : MyBaseControlView<EditCustomerController>
     { }
 }

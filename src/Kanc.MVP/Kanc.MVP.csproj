@@ -92,7 +92,7 @@
       <DependentUpon>EditCustomerView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Customers\IEditCustomersView.cs">
-      <SubType>Code</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controllers\IOrdersView.cs" />
     <Compile Include="Controllers\Other\OrderController.cs" />
