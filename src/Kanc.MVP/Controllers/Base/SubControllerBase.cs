@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Presentation.Customers;
-using MVCSharp.Core;
 
 namespace Kanc.MVP.Controllers
 {
@@ -50,13 +48,12 @@ namespace Kanc.MVP.Controllers
         {
         }
 
+        protected List<string> Errors = new List<string>();
         protected BasicValidator<TView> Validator = null;
         public void RegisterControlForValidation<TProperty>(Control control, Expression<Func<TView, TProperty>> expression)
         {
             Validator.For(expression, control.Name);
         }
-
-        protected List<string> Errors = new List<string>();
         public virtual bool IsValid()
         {
             Errors = new List<string>(); //you should always do this
@@ -84,31 +81,5 @@ namespace Kanc.MVP.Controllers
         {
             Task.Navigator.NavigateBack();//.Navigate(MainTask.MainViewEmpty);
         }
-    }
-
-
-    public class MyControllerBase<TTask, TView> : ControllerBase<TTask, TView>
-        where TTask : MyTaskBase
-        where TView : class
-    {
-        
-        //public void StartSubTask<TT, Ret>()
-        //    where TT : MyTaskBase
-        //    where Ret : class
-        //{
-        //    Type taskType = typeof(TT);
-        //    IMyTaskResultListener<Ret> resultListener = this as IMyTaskResultListener<Ret>;
-
-        //    Task.TasksManager.StartTask(taskType, new object[] { Task, resultListener });
-        //}
-        public void StartSubTask<TT>() where TT : MyTaskBase
-        {
-            Type taskType = typeof(TT);
-            var resultListener = this as IMyTaskResultListener;
-
-            Task.TasksManager.StartTask(taskType, new object[] { Task, resultListener });
-        }
-
-        
     }
 }

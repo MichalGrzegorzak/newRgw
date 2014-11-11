@@ -77,14 +77,15 @@
     <Compile Include="Controllers\Customer\EditCustomerController.cs" />
     <Compile Include="Controllers\Order\EditOrderController.cs.cs" />
     <Compile Include="Controllers\Customer\SearchCustomerController.cs" />
-    <Compile Include="Controllers\Other\MyControllerBase.cs" />
-    <Compile Include="Controllers\Other\SearchFormController.cs" />
-    <Compile Include="Controllers\Other\MainViewEmptyController.cs" />
+    <Compile Include="Controllers\Base\MyControllerBase.cs" />
+    <Compile Include="Controllers\Customer\SearchFormController.cs" />
+    <Compile Include="Controllers\Main\MainViewEmptyController.cs" />
+    <Compile Include="Controllers\Base\SubControllerBase.cs" />
     <Compile Include="Engine\Tasks\MyTask.cs" />
     <Compile Include="Engine\Tasks\SearchTask.cs" />
-    <Compile Include="Presentation\ComboboxItem.cs" />
-    <Compile Include="Presentation\Customers\BasicValidator.cs" />
-    <Compile Include="Presentation\Customers\ControlHelper.cs" />
+    <Compile Include="Engine\ComboboxItem.cs" />
+    <Compile Include="Engine\Validator\BasicValidator.cs" />
+    <Compile Include="Engine\Validator\ControlHelper.cs" />
     <Compile Include="Presentation\Customers\EditCustomerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,13 +95,16 @@
     <Compile Include="Presentation\Customers\IEditCustomersView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controllers\IOrdersView.cs" />
+    <Compile Include="Presentation\Order\IOrdersView.cs" />
     <Compile Include="Controllers\Other\OrderController.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderState.cs" />
     <Compile Include="Engine\ViewManager\IDynamicViewsManager.cs" />
-    <Compile Include="Presentation\Customers\RegexHelper.cs" />
+    <Compile Include="Engine\Validator\PropertyInfoExtensions.cs" />
+    <Compile Include="Engine\Validator\RegexHelper.cs" />
+    <Compile Include="Engine\Validator\RuleDef.cs" />
+    <Compile Include="Engine\Validator\ValRules.cs" />
     <Compile Include="Presentation\Search\SearchCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,7 +114,7 @@
     <Compile Include="Presentation\Search\ISearchCustomer.cs" />
     <Compile Include="Engine\InteractionPoint\InteractionPointInfoEx.cs" />
     <Compile Include="Engine\Tasks\MainTask.cs" />
-    <Compile Include="Controllers\Other\MainViewController.cs" />
+    <Compile Include="Controllers\Main\MainViewController.cs" />
     <Compile Include="Engine\InteractionPoint\IPointExAttribute.cs" />
     <Compile Include="Engine\Navigator\NavigatorEx.cs" />
     <Compile Include="Controllers\Other\NewMailPropertiesViewController.cs" />
