@@ -261,7 +261,7 @@ namespace MVCSharp.Winforms
         /// Event hanlder for the manual view activation (by the end-user).
         /// </summary>
         #endregion
-        protected void View_ActivatedManually(object sender, EventArgs e)
+        protected virtual void View_ActivatedManually(object sender, EventArgs e)
         {
             activeView = sender as Control;
             if (viewActivatedInCode) return;

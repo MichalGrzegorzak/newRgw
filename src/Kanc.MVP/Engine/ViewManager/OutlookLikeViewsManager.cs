@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using Kanc.MVP.Controllers;
@@ -93,5 +94,15 @@ namespace Kanc.MVP.Engine.ViewManager
             return result;
         }
 
+        /// <summary>
+        /// Override this to NOT change view when user activate view manually (by click on a view)
+        /// http://sourceforge.net/p/mvcsharp/bugs/7/
+        /// </summary>
+        protected override void View_ActivatedManually(object sender, EventArgs e)
+        {
+        }
+        protected override void View_Deactivate(object sender, EventArgs e)
+        {
+        }
     }
 }
