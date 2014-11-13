@@ -54,9 +54,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MT.WindowsUI, Version=2.6.4.0, Culture=neutral, PublicKeyToken=6a0e81d0b9165633, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\MT.WindowsUI.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.1.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Envers">
+      <HintPath>..\packages\NHibernate.Envers.2.0.0\lib\Net40\NHibernate.Envers.dll</HintPath>
     </Reference>
     <Reference Include="Office2007Renderer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -81,6 +95,7 @@
     <Compile Include="Controllers\Customer\SearchFormController.cs" />
     <Compile Include="Controllers\Main\MainViewEmptyController.cs" />
     <Compile Include="Controllers\Base\SubControllerBase.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Engine\Tasks\MyTask.cs" />
     <Compile Include="Engine\Tasks\SearchTask.cs" />
     <Compile Include="Engine\ComboboxItem.cs" />
@@ -177,7 +192,6 @@
     <Compile Include="Presentation\Order\IEditOrderView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Presentation\Task\TaskView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +252,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

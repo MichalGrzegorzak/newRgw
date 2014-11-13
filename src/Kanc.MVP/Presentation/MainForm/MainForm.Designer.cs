@@ -58,6 +58,7 @@
             this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip.SuspendLayout();
             this.navigateBar.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -375,12 +376,23 @@
             this.tasksToolStripMenuItem.Text = "Tasks";
             this.tasksToolStripMenuItem.Click += new System.EventHandler(this.catToolStripItem_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(365, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(219)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(440, 351);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.mtSplitter);
             this.Controls.Add(this.navigateBar);
@@ -434,6 +446,7 @@
         private System.Windows.Forms.ToolStripButton btnCancel;
         private MT.WindowsUI.NavigationPane.NavigateBarButton szukajNavButton;
         private System.Windows.Forms.ToolStripButton nowyKlientToolStripButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 
