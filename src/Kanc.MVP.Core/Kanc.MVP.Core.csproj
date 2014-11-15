@@ -94,8 +94,8 @@
     <Compile Include="nHibernate\SessionProviders\BaseSessionProvider.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="nHibernate\SessionProviders\SqlSessionFactoryProvider.cs" />
     <Compile Include="nHibernate\SessionProviders\InMemorySessionProvider.cs" />
-    <Compile Include="nHibernate\SessionProviders\SqlSessionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

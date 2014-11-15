@@ -1,27 +1,25 @@
-﻿using System;
-using FluentNHibernate.Automapping;
+﻿using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
 using Kanc.MVP.Core.nHibernate.Base;
 using Kanc.MVP.Core.nHibernate.Conventions;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 
-namespace Kanc.MVP.Tests.nHibernate.Core
+namespace Kanc.MVP.Core.nHibernate.SessionProviders
 {
     public abstract class BaseSessionProvider<T> where T : class, new()
     {
-        private static T instance;
+        protected static T instance;
         public static T Instance
         {
             get { return instance ?? (instance = new T()); }
         }
 
-        private ISessionFactory sessionFactory;
-        private Configuration configuration;
+        protected ISessionFactory sessionFactory;
+        protected Configuration configuration;
 
-        private BaseSessionProvider() { }
+        protected BaseSessionProvider() { }
 
         public void Initialize()
         {
@@ -29,13 +27,8 @@ namespace Kanc.MVP.Tests.nHibernate.Core
         }
 
         public abstract FluentConfiguration GetDatabase();
-        //{
-        //    return Fluently.Configure();
-        //}
 
-
-
-        private ISessionFactory CreateSessionFactory()
+        protected ISessionFactory CreateSessionFactory()
         {
             return GetDatabase()
                 .ExposeConfiguration(cfg => configuration = cfg)
@@ -58,9 +51,14 @@ namespace Kanc.MVP.Tests.nHibernate.Core
             ISession session = sessionFactory.OpenSession();
 
             var export = new SchemaExport(configuration);
-            export.Execute(true, true, false, session.Connection, null);
+            SchemaExport(export, session);
 
             return session;
+        }
+
+        public virtual void SchemaExport(SchemaExport schema, ISession session)
+        {
+            schema.Execute(true, true, false, session.Connection, null);
         }
 
         public void Dispose()
