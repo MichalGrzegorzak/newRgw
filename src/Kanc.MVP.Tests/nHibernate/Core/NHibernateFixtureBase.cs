@@ -1,4 +1,5 @@
 ﻿using FluentNHibernate;
+using Kanc.MVP.Core.nHibernate.SessionProviders;
 using NHibernate;
 using NUnit.Framework;
 
@@ -12,6 +13,15 @@ namespace Kanc.MVP.Tests.nHibernate.Core
         [TestFixtureSetUp]
         public void OnetimeInit()
         {
+            System.Environment.SetEnvironmentVariable("PreLoadSQLite_BaseDirectory", System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
+
+            InMemorySessionFactoryProvider.Instance.Initialize();
+        }
+
+        [TestFixtureTearDown]
+        public void TearDown()
+        {
+            InMemorySessionFactoryProvider.Instance.Dispose();
         }
 
         [SetUp]

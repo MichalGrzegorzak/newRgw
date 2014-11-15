@@ -84,40 +84,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="nHibernate\Core\NHibernateFixtureBase.cs" />
-    <Compile Include="nHibernate\Core\InMemorySessionProvider.cs" />
-    <Compile Include="nHibernate\Test1 - basics\nHibernate_basics.cs" />
-    <Compile Include="nHibernate\Test1 - basics\Models.cs" />
-    <Compile Include="nHibernate\Test2 - real\Domain\Osoby\OsobaLookup.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="nHibernate\Test2 - real\Domain\Osoby\Osoba.cs" />
-    <Compile Include="nHibernate\Test2 - real\Domain\Osoby\Partner.cs" />
-    <Compile Include="nHibernate\Test2 - real\MappingsOverride\KlientMap.cs" />
-    <Compile Include="nHibernate\Test2 - real\Domain\Adres.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="nHibernate\Test2 - real\Domain\Bank.cs" />
-    <Compile Include="nHibernate\Test2 - real\Domain\Enums\KontoWlasciciel.cs" />
-    <Compile Include="nHibernate\Test2 - real\Domain\Enums\Kraje.cs" />
-    <Compile Include="nHibernate\Test2 - real\Domain\Enums\Status.cs" />
-    <Compile Include="nHibernate\Test2 - real\Domain\Rozliczenie\Klient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="nHibernate\Test2 - real\Domain\Rozliczenie\Konto.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="nHibernate\Test2 - real\Domain\Rozliczenie\Rozliczenie.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="nHibernate\Test2 - real\MappingsOverride\KlientOverride.cs" />
-    <Compile Include="nHibernate\Test2 - real\nHibernate_domain.cs">
+    <Compile Include="nHibernate\t2-real\domain_testing.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="nHibernate\Core\FluentConventions.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="nHibernate\Test1 - basics\TestSetupFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kanc.MVP.Core\Kanc.MVP.Core.csproj">

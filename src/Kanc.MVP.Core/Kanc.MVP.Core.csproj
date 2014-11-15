@@ -60,6 +60,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="nHibernate\Conventions\AutomappingConfiguration.cs" />
+    <Compile Include="nHibernate\Conventions\CascadeAllConvention.cs" />
+    <Compile Include="nHibernate\Conventions\DefaultHasManyConvention.cs" />
+    <Compile Include="nHibernate\Conventions\DefaultReferenceConvention.cs" />
+    <Compile Include="nHibernate\Conventions\DefaultStringLengthConvention.cs" />
+    <Compile Include="nHibernate\Conventions\DefaultTableNameConvention.cs" />
+    <Compile Include="nHibernate\DomainMappings\KlientMap.cs" />
+    <Compile Include="nHibernate\DomainMappings\KlientOverride.cs" />
+    <Compile Include="Domain\Adres.cs" />
+    <Compile Include="Domain\Bank.cs" />
+    <Compile Include="nHibernate\Base\IAutoMap.cs" />
+    <Compile Include="nHibernate\Base\ModelBase.cs" />
+    <Compile Include="Domain\Enums\KontoWlasciciel.cs" />
+    <Compile Include="Domain\Enums\Kraje.cs" />
+    <Compile Include="Domain\Enums\Status.cs" />
+    <Compile Include="Domain\Osoby\Osoba.cs" />
+    <Compile Include="Domain\Osoby\OsobaLookup.cs" />
+    <Compile Include="Domain\Osoby\Partner.cs" />
+    <Compile Include="Domain\Rozliczenie\Klient.cs" />
+    <Compile Include="Domain\Rozliczenie\Konto.cs" />
+    <Compile Include="Domain\Rozliczenie\Rozliczenie.cs" />
+    <Compile Include="nHibernate\Conventions\DefaultPrimaryKeyConvention.cs" />
     <Compile Include="Infrastructure\EventArgs.cs" />
     <Compile Include="Infrastructure\Fact.cs" />
     <Compile Include="Infrastructure\IsDirtyExtensioncs.cs" />
@@ -69,6 +91,11 @@
     <Compile Include="Infrastructure\Setup\SessionFactoryInitializer.cs" />
     <Compile Include="Infrastructure\Utils\ShowForm.cs" />
     <Compile Include="Infrastructure\Utils\Utils.cs" />
+    <Compile Include="nHibernate\SessionProviders\BaseSessionProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nHibernate\SessionProviders\InMemorySessionProvider.cs" />
+    <Compile Include="nHibernate\SessionProviders\SqlSessionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
