@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Kanc.MVP.Domain;
-using Kanc.MVP.Engine.Tasks;
-using Kanc.MVP.Presentation.Client;
-using MVCSharp.Core;
+﻿using Kanc.MVP.Controllers.Base;
+using Kanc.MVP.Presentation.Order;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Order
 {
     public class EditOrderController : SubControllerBase<IEditOrderView>
     {
         public override void BindModel()
         {
-            Order order = Task.CurrentOrder;
+            Domain.Order order = Task.CurrentOrder;
 
             View.Message = "";
 

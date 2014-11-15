@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Engine.ViewManager;
-using Kanc.MVP.Presentation.Client;
 using Kanc.MVP.Presentation.MainForm;
-using Kanc.MVP.Presentation.Note;
-using Kanc.MVP.Presentation.Task;
 using MVCSharp.Core;
 using MVCSharp.Core.Tasks;
 using MVCSharp.Core.Views;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Main
 {
     public class MainViewController : ControllerBase<MainTask, IMainView>, IMyTaskResultListener
     {
@@ -48,8 +44,8 @@ namespace Kanc.MVP.Controllers
         }
         public void RecieveTaskResult(params object[] item)
         {
-            Task.CurrentCustomer = item[0] as Customer;
-            Task.CurrentOrder = item[1] as Order;
+            Task.CurrentCustomer = item[0] as Domain.Customer;
+            Task.CurrentOrder = item[1] as Domain.Order;
 
             View.LoadAvailableActions(false);
             View.ShowViewCategory(ViewCategory.Klient);

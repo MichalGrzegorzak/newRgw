@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
-using Kanc.Commons;
-using MVCSharp.Core.Views;
+using Kanc.MVP.Presentation.Customers;
+using Utils.Extensions;
+using Utils.Features.ExtendentEnum;
+using Utils.Features.Reflection;
+using Utils.Features.TypesParsing;
 
-namespace Kanc.MVP.Presentation.Customers
+namespace Kanc.MVP.Engine.Validator
 {
     public enum ValidationRulesEnum
     {

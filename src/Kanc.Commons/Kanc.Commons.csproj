@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Enums\KontoWlasciciel.cs" />
+    <Compile Include="Controls\Enums\Kraje.cs" />
+    <Compile Include="Controls\Enums\Status.cs" />
     <Compile Include="Controls\GenericEnumDDL.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -60,7 +63,6 @@
     <Compile Include="Controls\KrajeBankiDDL.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Enums\KontoWlasciciel.cs" />
     <Compile Include="Controls\Enums\Polecony.cs" />
     <Compile Include="Controls\PoleconyDDL.cs">
       <SubType>Component</SubType>
@@ -70,7 +72,6 @@
     </Compile>
     <Compile Include="Controls\Enums\RptLang.cs" />
     <Compile Include="Controls\Enums\Religia.cs" />
-    <Compile Include="Controls\Enums\Status.cs" />
     <Compile Include="Controls\Enums\TypListy.cs" />
     <Compile Include="Controls\Enums\TypRaportu.cs" />
     <Compile Include="Controls\TypyListGrpBox.cs">
@@ -79,7 +80,6 @@
     <Compile Include="Controls\base\DropdownBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Enums\Kraje.cs" />
     <Compile Include="Controls\KrajeDDL.cs">
       <SubType>Component</SubType>
     </Compile>

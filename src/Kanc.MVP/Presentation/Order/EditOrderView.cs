@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Kanc.Commons;
-using Kanc.MVP.Controllers;
-using Kanc.MVP.Domain;
+using Kanc.MVP.Controllers.Order;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Presentation.Customers;
-using MVCSharp.Winforms;
+using Utils.Features.TypesParsing;
 
-namespace Kanc.MVP.Presentation.Client
+namespace Kanc.MVP.Presentation.Order
 {
     [ViewEx(typeof(MainTask), MainTask.EditOrder, "New")]
     public partial class EditOrderView : ucEditOrder, IEditOrderView

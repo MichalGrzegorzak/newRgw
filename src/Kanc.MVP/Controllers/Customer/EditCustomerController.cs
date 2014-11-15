@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using Kanc.MVP.Domain;
-using Kanc.MVP.Engine.Tasks;
-using Kanc.MVP.Presentation.Client;
+using Kanc.MVP.Controllers.Base;
+using Kanc.MVP.Engine.Validator;
 using Kanc.MVP.Presentation.Customers;
-using MVCSharp.Core;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Customer
 {
     public class EditCustomerController : SubControllerBase<IBaseEditCustomersView>
     {
@@ -102,7 +98,7 @@ namespace Kanc.MVP.Controllers
         public override void Next()
         {
             //uwaga - edycja przez referencje
-            Customer c = (View.IsNew) ? GetNewCustomer() : Task.CurrentCustomer;
+            Domain.Customer c = (View.IsNew) ? GetNewCustomer() : Task.CurrentCustomer;
             c.Name = View.NazwiskoPl;
             c.Age = View.Age;
 
@@ -114,12 +110,12 @@ namespace Kanc.MVP.Controllers
             base.Next(); //odpali walidacje i wywoluje z navigatora NEXT, jesli blad to wyswietli
         }
 
-        private Customer GetNewCustomer()
+        private Domain.Customer GetNewCustomer()
         {
-            Customer c = new Customer(View.NazwiskoPl);
+            Domain.Customer c = new Domain.Customer(View.NazwiskoPl);
             c.Id = 55; //symuluje zapis do bazy - view wykrywa po Id > 0, czy to edycja czy nowy
 
-            Order o = new Order(0, "");
+            Domain.Order o = new Domain.Order(0, "");
             c.Orders.Add(o);
 
             Task.CurrentOrder = o;

@@ -1,4 +1,4 @@
-﻿namespace Kanc.MVP.Presentation.Client
+﻿namespace Kanc.MVP.Presentation.Order
 {
     partial class EditOrderView
     {

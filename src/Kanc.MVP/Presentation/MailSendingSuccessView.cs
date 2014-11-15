@@ -3,7 +3,7 @@ using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using MVCSharp.Winforms;
 
-namespace Kanc.MVP.Presentation.Client
+namespace Kanc.MVP.Presentation
 {
     [ViewEx(typeof(MainTask), MainTask.MailSendingSuccessView, "")]
     public partial class MailSendingSuccessView : WinFormView

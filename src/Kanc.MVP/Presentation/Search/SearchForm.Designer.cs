@@ -1,4 +1,4 @@
-﻿namespace Kanc.MVP.Presentation.Customers
+﻿namespace Kanc.MVP.Presentation.Search
 {
     partial class SearchForm
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchCustomer1 = new Kanc.MVP.Presentation.Customers.SearchCustomer();
+            this.searchCustomer1 = new SearchCustomer();
             this.SuspendLayout();
             // 
             // searchCustomer1

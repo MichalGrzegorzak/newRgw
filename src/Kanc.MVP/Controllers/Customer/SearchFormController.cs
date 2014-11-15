@@ -1,9 +1,8 @@
 ﻿using Kanc.MVP.Engine.Tasks;
-using Kanc.MVP.Presentation.Customers;
 using MVCSharp.Core;
 using MVCSharp.Core.Views;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Customer
 {
     public interface ISearchFormView : IView
     {

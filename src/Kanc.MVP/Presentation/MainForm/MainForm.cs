@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Kanc.MVP.Controllers;
+using Kanc.MVP.Controllers.Main;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;

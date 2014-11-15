@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="Kanc.Core"
+				   namespace="Kanc.Core.Entities">
+  
+  <class name="Klient" table="Klient" lazy="false">
+	  <id name="Id">
+	  <generator class="foreign">
+		  <param name="property">Rozliczenie</param>
+	  </generator>
+	  </id>
+	  <one-to-one name="Rozliczenie" class="Rozliczenie" constrained="true"/>
+
+	  <property name="MandId" />
+	  <property name="Steuernummer" />
+
+      <many-to-one name="AdresZameld" class="Adres"  cascade="all" lazy="false" />
+
+      <property name="Imie" />
+	  <property name="ImieDe" />
+	  <property name="Nazwisko" />
+	  <property name="NazwiskoDe" />
+	  <property name="Urodz" />
+	  <property name="Telefon" />
+	  <property name="Komorka" />
+	  <property name="Email" />
+	  <property name="Religia" />
+	  <property name="Plec" />
+	  
+	  <property name="DataSlubu" />
+	  <property name="DzieciLiczba" />
+	  <property name="DzieciDaty" />
+	  <property name="Polecil" />
+	  <property name="Notka" />
+
+
+	
+  </class>
+</hibernate-mapping>
+<!--
+<property name="Notka" />
+<bag name="Rozliczenia" inverse="true" cascade="all, delete-orphan">
+  <key column="KlientId" on-delete="cascade"/>
+  <one-to-many class="Rozliczenie" />
+</bag>
+-->
+
+

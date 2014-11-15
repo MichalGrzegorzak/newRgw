@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="Kanc.Core"
+				   namespace="Kanc.Core.Entities">
+
+  <class name="Rachunek" table="Rachunek" lazy="false">
+      <id name="Id">
+          <generator class="foreign">
+              <param name="property">Rozliczenie</param>
+          </generator>
+      </id>
+      <one-to-one name="Rozliczenie" class="Rozliczenie" constrained="true"/>
+
+	<property name="NrKP" />
+	<property name="Rok" />
+
+      <property name="NumerRachunku" />
+      <property name="KwotaRachunek" />
+      <property name="DoZaplaty" />
+      <property name="PodatekProcent" />
+      
+
+
+      <property name="Data" />
+	  
+      <property name="KodListyZapl" />
+      <!--chyba one to many-->
+	  <many-to-one name="ListaZaplat" column="ListaZaplatId" cascade="all" /> 
+
+  </class>
+  
+</hibernate-mapping>
+
+

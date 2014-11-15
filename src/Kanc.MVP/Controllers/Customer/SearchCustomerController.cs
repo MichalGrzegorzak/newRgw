@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
-using Kanc.MVP.Presentation.Client;
-using Kanc.MVP.Presentation.Customers;
+using Kanc.MVP.Presentation.Search;
 using MVCSharp.Core;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Customer
 {
     public class SearchCustomerController : ControllerBase<SearchTask, ISearchCustomer>
     {
-        public List<Customer> FoundCustomers = new List<Customer>();
+        public List<Domain.Customer> FoundCustomers = new List<Domain.Customer>();
 
         public void CurrentCustomerChanged()
         {
@@ -38,7 +36,7 @@ namespace Kanc.MVP.Controllers
 
         public void NewOrder()
         {
-            Order order = new Order(-1, "");
+            Domain.Order order = new Domain.Order(-1, "");
             Task.CurrentOrder = order;
 
             UserHasSelectedOrder();
@@ -55,7 +53,7 @@ namespace Kanc.MVP.Controllers
         {
             ResetView();
 
-            FoundCustomers = Customer.AllCustomers.Where(x => x.Name.StartsWith(View.Nazwisko)).ToList();
+            FoundCustomers = Domain.Customer.AllCustomers.Where(x => x.Name.StartsWith(View.Nazwisko)).ToList();
             if (FoundCustomers.Any())
             {
                 View.SetCustomers(FoundCustomers);

@@ -1,4 +1,6 @@
-﻿namespace Kanc.MVP.Presentation.Customers
+﻿using Kanc.MVP.Controls;
+
+namespace Kanc.MVP.Presentation.Search
 {
     partial class SearchCustomer
     {
@@ -37,7 +39,7 @@
             this.gridOrders = new System.Windows.Forms.DataGridView();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBoxExt1 = new Kanc.Commons.MaskedTextBoxExt();
+            this.maskedTextBoxExt1 = new MaskedTextBoxExt();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).BeginInit();
             this.SuspendLayout();
@@ -195,6 +197,6 @@
         private System.Windows.Forms.DataGridView gridOrders;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Label label1;
-        private Commons.MaskedTextBoxExt maskedTextBoxExt1;
+        private MaskedTextBoxExt maskedTextBoxExt1;
     }
 }

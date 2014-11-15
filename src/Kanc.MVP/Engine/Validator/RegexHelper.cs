@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Kanc.MVP.Presentation.Customers
+namespace Kanc.MVP.Engine.Validator
 {
     public static class RegexHelper
     {

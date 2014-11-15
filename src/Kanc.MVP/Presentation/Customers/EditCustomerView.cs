@@ -5,13 +5,14 @@ using System.Linq;
 using System.Management.Instrumentation;
 using System.Windows.Forms;
 using System.Xml.Schema;
-using Kanc.Commons;
-using Kanc.MVP.Controllers;
+using Kanc.MVP.Controllers.Customer;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
+using Kanc.MVP.Engine.Validator;
 using Kanc.MVP.Engine.View;
 using MVCSharp.Core.Views;
 using MVCSharp.Winforms;
+using Utils.Features.TypesParsing;
 
 namespace Kanc.MVP.Presentation.Customers
 {

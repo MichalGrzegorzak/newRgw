@@ -1,9 +1,8 @@
 using System;
-using System.ComponentModel;
 using Kanc.MVP.Engine.Tasks;
 using MVCSharp.Core;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Base
 {
     public class MyControllerBase<TTask, TView> : ControllerBase<TTask, TView>
         where TTask : MyTaskBase

@@ -2,13 +2,13 @@
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
-using Kanc.MVP.Controllers;
+using Kanc.MVP.Controllers.Customer;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.View;
-using Kanc.MVP.Presentation.Client;
 using Kanc.MVP.Presentation.Customers;
 using Kanc.MVP.Presentation.MainForm;
 using Kanc.MVP.Presentation.Note;
+using Kanc.MVP.Presentation.Search;
 using Kanc.MVP.Presentation.Task;
 using Kanc.MVP.Properties;
 using MVCSharp.Core.Configuration;

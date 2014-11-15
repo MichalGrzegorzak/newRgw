@@ -4,9 +4,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 using Kanc.MVP.Engine.Tasks;
+using Kanc.MVP.Engine.Validator;
 using Kanc.MVP.Presentation.Customers;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Base
 {
     public class SubControllerBase<TView> : MyControllerBase<MainTask, TView>
         where TView : class, IMyBaseView

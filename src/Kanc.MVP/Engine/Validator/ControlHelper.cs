@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Kanc.MVP.Presentation.Customers
+namespace Kanc.MVP.Engine.Validator
 {
     public abstract class ControlHelper
     {

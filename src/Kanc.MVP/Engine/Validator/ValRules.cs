@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Kanc.Commons;
+using Utils.Features.ExtendentEnum;
 
-namespace Kanc.MVP.Presentation.Customers
+namespace Kanc.MVP.Engine.Validator
 {
     public class ValRules
     {

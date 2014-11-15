@@ -1,9 +1,10 @@
 ﻿using System;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
+using Kanc.MVP.Presentation.Order;
 using MVCSharp.Core;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Other
 {
     public class OrderController : ControllerBase<MainTask, IOrdersView>
     {

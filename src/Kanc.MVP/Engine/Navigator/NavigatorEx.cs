@@ -1,5 +1,6 @@
 ﻿using System;
-using Kanc.MVP.Controllers;
+using Kanc.MVP.Controllers.Customer;
+using Kanc.MVP.Controllers.Other;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.View;
 using MVCSharp.Core;

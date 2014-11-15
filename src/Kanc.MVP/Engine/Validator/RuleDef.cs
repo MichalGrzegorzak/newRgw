@@ -1,4 +1,4 @@
-namespace Kanc.MVP.Presentation.Customers
+namespace Kanc.MVP.Engine.Validator
 {
     public class RuleDef
     {

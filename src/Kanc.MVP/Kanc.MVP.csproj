@@ -24,6 +24,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -81,6 +83,7 @@
       <HintPath>..\lib\Owf.Controls.OutlookPanelEx.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -95,10 +98,13 @@
     <Compile Include="Controllers\Customer\SearchFormController.cs" />
     <Compile Include="Controllers\Main\MainViewEmptyController.cs" />
     <Compile Include="Controllers\Base\SubControllerBase.cs" />
+    <Compile Include="UIControls\MaskedTextBoxExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Engine\Tasks\MyTask.cs" />
     <Compile Include="Engine\Tasks\SearchTask.cs" />
-    <Compile Include="Engine\ComboboxItem.cs" />
+    <Compile Include="UIControls\ComboboxItem.cs" />
     <Compile Include="Engine\Validator\BasicValidator.cs" />
     <Compile Include="Engine\Validator\ControlHelper.cs" />
     <Compile Include="Presentation\Customers\EditCustomerView.cs">
@@ -251,7 +257,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="appSettings.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -299,20 +315,32 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Kanc.Commons\Kanc.Commons.csproj">
-      <Project>{a9ee3f5c-2b0a-4b3f-a597-5088edb4bd0b}</Project>
-      <Name>Kanc.Commons</Name>
-    </ProjectReference>
+    <Content Include="hibernate.cfg.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ThirdParties\MVCSharp\MVCSharp.csproj">
       <Project>{c04a36b0-4a58-45d4-b95b-a4a58afebc95}</Project>
       <Name>MVCSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{4652a77f-c220-4294-974e-fb622cd8329d}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="CleanUp">
     <RemoveDir Directories="bin;obj;Presentation\SeparateViewsAssembly\obj" />
     <Delete Files="$(SolutionNameWithPath).suo" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
 </Project>

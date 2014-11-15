@@ -1,11 +1,6 @@
-﻿using Kanc.MVP.Engine.InteractionPoint;
-using Kanc.MVP.Engine.View;
-using Kanc.MVP.Engine.ViewManager;
-using Kanc.MVP.Presentation.MainForm;
-using MVCSharp.Core;
-using MVCSharp.Core.Views;
+﻿using MVCSharp.Core;
 
-namespace Kanc.MVP.Controllers
+namespace Kanc.MVP.Controllers.Main
 {
     public class MainViewEmptyController : ControllerBase
     {

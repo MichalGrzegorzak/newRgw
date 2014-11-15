@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Kanc.MVP.Domain;
-using Kanc.MVP.Presentation.Customers;
+﻿using Kanc.MVP.Presentation.Customers;
 
-namespace Kanc.MVP.Presentation.Client
+namespace Kanc.MVP.Presentation.Order
 {
     public interface IEditOrderView : IMyBaseView
     {

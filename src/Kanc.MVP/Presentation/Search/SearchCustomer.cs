@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Kanc.MVP.Controllers;
+using Kanc.MVP.Controllers.Customer;
+using Kanc.MVP.Controls;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
-using Kanc.MVP.Presentation.Client;
-using MVCSharp.Core.Configuration.Views;
 using MVCSharp.Winforms;
 
-namespace Kanc.MVP.Presentation.Customers
+namespace Kanc.MVP.Presentation.Search
 {
     //[ViewEx(typeof(MainTask), MainTask.SearchCustomer, "New")]
     [ViewEx(typeof(SearchTask), SearchTask.SearchCustomer, "New")]
@@ -27,16 +26,16 @@ namespace Kanc.MVP.Presentation.Customers
                 CloseTriggered.Invoke(this, null);
         }
 
-        public Order CurrentOrder
+        public Domain.Order CurrentOrder
         {
             get
             {
                 return gridOrders.CurrentRow == null ? null :
-                       gridOrders.CurrentRow.DataBoundItem as Order;
+                       gridOrders.CurrentRow.DataBoundItem as Domain.Order;
             }
         }
 
-        public void SetCustomerOrders(IList<Order> orders)
+        public void SetCustomerOrders(IList<Domain.Order> orders)
         {
             gridOrders.CurrentCellChanged -= gridOrders_CurrentCellChanged;
 

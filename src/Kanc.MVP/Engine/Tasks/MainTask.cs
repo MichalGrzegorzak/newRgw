@@ -1,5 +1,7 @@
 ﻿using System;
-using Kanc.MVP.Controllers;
+using Kanc.MVP.Controllers.Customer;
+using Kanc.MVP.Controllers.Main;
+using Kanc.MVP.Controllers.Order;
 using Kanc.MVP.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Navigator;
