@@ -3,7 +3,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using Kanc.MVP.Domain;
+using Kanc.MVP.Core.Domain.Osoby;
+using Kanc.MVP.Core.Domain.Rozliczenie;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Engine.ViewManager;
@@ -56,18 +57,18 @@ namespace Kanc.MVP
 
         private static void CreateTestData()
         {
-            Customer.AllCustomers.Add(new Customer("John"));
-            Customer.AllCustomers.Add(new Customer("Paul"));
-            Customer.AllCustomers.Add(new Customer("Snow"));
-            Customer.AllCustomers.Add(new Customer("Snow1"));
-            Customer.AllCustomers.Add(new Customer("Snow2"));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup("John"));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup("Paul"));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup("Snow"));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup("Snow1"));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup("Snow2"));
 
-            Customer.AllCustomers[2].Orders.Add(new Order(1, "a"));
-            Customer.AllCustomers[2].Orders.Add(new Order(2, "b"));
-            Customer.AllCustomers[2].Orders.Add(new Order(3, "c"));
+            OsobaLookup.AllCustomers[2].Rozliczenies.Add(new Rozliczenie());
+            OsobaLookup.AllCustomers[2].Rozliczenies.Add(new Rozliczenie());
+            OsobaLookup.AllCustomers[2].Rozliczenies.Add(new Rozliczenie());
 
-            Customer.AllCustomers[1].Orders.Add(new Order(4, "44"));
-            Customer.AllCustomers[1].Orders.Add(new Order(5, "55"));
+            OsobaLookup.AllCustomers[1].Rozliczenies.Add(new Rozliczenie());
+            OsobaLookup.AllCustomers[1].Rozliczenies.Add(new Rozliczenie());
         }
 
         //private void UITestingInitialize()

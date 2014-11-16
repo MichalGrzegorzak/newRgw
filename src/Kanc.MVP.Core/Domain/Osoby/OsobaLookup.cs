@@ -10,6 +10,8 @@ namespace Kanc.MVP.Core.Domain.Osoby
     [Serializable]
     public class OsobaLookup : ModelBase, IAutoMap
     {
+        public static readonly List<OsobaLookup> AllCustomers = new List<OsobaLookup>();
+
         public OsobaLookup() { }
         public OsobaLookup(Osoba o)
         {
