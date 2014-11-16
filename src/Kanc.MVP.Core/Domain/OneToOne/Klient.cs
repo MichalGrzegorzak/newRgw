@@ -1,8 +1,7 @@
 ﻿using System;
-using Kanc.MVP.Core.Domain.Osoby;
 using Kanc.MVP.Core.nHibernate.Base;
 
-namespace Kanc.MVP.Core.Domain.Rozliczenie
+namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
     public class Klient : Osoba, IAutoMap
@@ -11,7 +10,8 @@ namespace Kanc.MVP.Core.Domain.Rozliczenie
         public Klient(Rozliczenie rozlicz)
         {
             Rozliczenie = rozlicz;
-            AdresZameld = new Adres();
+            AdresZameld = new Adres() {IsNew = true};
+            IsNew = true;
         }
         public virtual void AssignFrom(Osoba o)
         {
@@ -40,8 +40,6 @@ namespace Kanc.MVP.Core.Domain.Rozliczenie
 
         public virtual int DzieciLiczba { get; set; }
         public virtual string DzieciDaty { get; set; } // KmStand
-
-        
 
         //public override object Clone()
         //{

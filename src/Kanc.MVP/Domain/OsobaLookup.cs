@@ -2,16 +2,16 @@
 
 namespace Kanc.MVP.Domain
 {
-    public class Customer
+    public class OsobaLookup
     {
-        public static readonly List<Customer> AllCustomers = new List<Customer>();
-        public readonly List<Order> Orders = new List<Order>();
+        public static readonly List<OsobaLookup> AllCustomers = new List<OsobaLookup>();
+        public readonly List<Rozliczenie> Orders = new List<Rozliczenie>();
 
-        public Customer(string name)
+        public OsobaLookup(string name)
         {
             Id = 0;
             Name = name;
-            Orders = new List<Order>();
+            Orders = new List<Rozliczenie>();
         }
         
         public int Id { get; set; }

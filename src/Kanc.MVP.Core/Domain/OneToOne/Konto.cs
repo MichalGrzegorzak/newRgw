@@ -1,8 +1,7 @@
 ﻿using System;
-using Kanc.MVP.Core.Domain.Enums;
 using Kanc.MVP.Core.nHibernate.Base;
 
-namespace Kanc.MVP.Core.Domain.Rozliczenie
+namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
     public class Konto : ModelBase, IAutoMap
@@ -13,8 +12,9 @@ namespace Kanc.MVP.Core.Domain.Rozliczenie
         public Konto(Rozliczenie rozlicz)
         {
             Rozliczenie = rozlicz;
-            KontoTypWlasciciela = Enums.KontoWlasciciel.brak;
+            KontoTypWlasciciela = KontoWlasciciel.brak;
             BankKraj = Kraje.brak;
+            IsNew = true;
         }
 
         public virtual void AssignFrom(Bank b)
@@ -30,7 +30,7 @@ namespace Kanc.MVP.Core.Domain.Rozliczenie
 
         public virtual string KontoLk { get; set; }
         public virtual string KontoNr { get; set; }
-        public virtual string KontoWlasciciel { get; set; }
+        public virtual string WlascicielKonta { get; set; }
         public virtual KontoWlasciciel KontoTypWlasciciela { get; set; }
 
         public virtual string BankNazwa { get; set; }

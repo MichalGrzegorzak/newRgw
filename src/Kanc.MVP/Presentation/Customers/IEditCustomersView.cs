@@ -9,10 +9,12 @@ namespace Kanc.MVP.Presentation.Customers
 {
     public interface IMyBaseView
     {
+        int Id { get; set; }
         bool IsNew { get; set; }
         string Message { get; set; }
         
         void NotifyUser(string message);
+        void ClearView();
 
         void SetError(Control control, string message);
         void SetError(string ctrlName, string message);
@@ -23,14 +25,19 @@ namespace Kanc.MVP.Presentation.Customers
     {
         public List<Control> availableControls = new List<Control>();
         protected ErrorProvider errorProvider;
-        
+
+        public virtual int Id { get; set; }
         public virtual bool IsNew { get; set; }
         public virtual string Message { get; set; }
 
         public virtual void NotifyUser(string message)
         {
-            
             MessageBox.Show(message);
+        }
+
+        public virtual void ClearView()
+        {
+            availableControls.ForEach(x=>x.ResetText());
         }
 
         public virtual void SetError(Control control, string message)
@@ -49,9 +56,8 @@ namespace Kanc.MVP.Presentation.Customers
 
     public interface IBaseEditCustomersView : IMyBaseView
     {
-        int Id { get; set; }
         string NazwiskoPl { get; set; }
-        int Age { get; set; }
+        DateTime? Urodzony { get; set; }
     }
 
     //public interface IEditCustomersView : IBaseEditCustomersView

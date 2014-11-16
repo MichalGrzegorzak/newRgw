@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Kanc.MVP.Core.nHibernate.Base;
 
-namespace Kanc.MVP.Core.Domain.Osoby
+namespace Kanc.MVP.Core.Domain
 {
     /// <summary>
     /// Unikalne, i zawsze aktualne dane klienta
@@ -12,7 +12,10 @@ namespace Kanc.MVP.Core.Domain.Osoby
     {
         public static readonly List<OsobaLookup> AllCustomers = new List<OsobaLookup>();
 
-        public OsobaLookup() { }
+        public OsobaLookup()
+        {
+            Rozliczenies = new List<Rozliczenie>();
+        }
         public OsobaLookup(Osoba o)
         {
             MandId = o.MandId;
@@ -34,6 +37,6 @@ namespace Kanc.MVP.Core.Domain.Osoby
 
         public virtual DateTime? Urodz { get; set; }
 
-        public virtual IList<Rozliczenie.Rozliczenie> Rozliczenies { get; protected set; }
+        public virtual IList<Rozliczenie> Rozliczenies { get; protected set; }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using System.Collections.Generic;
-using Kanc.MVP.Domain;
+
+using Kanc.MVP.Core.Domain;
 
 namespace Kanc.MVP.Presentation.Search
 {
     public interface ISearchCustomer
     {
-        void SetCustomerOrders(IList<Domain.Order> orders);
+        void SetCustomerOrders(IList<Rozliczenie> orders);
 
-        void SetCustomers(IList<Customer> customers);
+        void SetCustomers(IList<OsobaLookup> customers);
 
         int SelectedCustomerIndex { get; }
-        Domain.Order CurrentOrder { get; }
+        Rozliczenie CurrentRozliczenie { get; }
         //bool EventsAllowed { set; }
 
         string Nazwisko { get; set; }

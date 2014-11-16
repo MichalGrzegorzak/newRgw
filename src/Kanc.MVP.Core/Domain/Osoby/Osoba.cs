@@ -1,7 +1,7 @@
 ﻿using System;
 using Kanc.MVP.Core.nHibernate.Base;
 
-namespace Kanc.MVP.Core.Domain.Osoby
+namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
     public class Osoba : ModelBase 

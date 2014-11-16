@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.txbAge = new System.Windows.Forms.TextBox();
+            this.txbUrodz = new System.Windows.Forms.TextBox();
             this.txbName = new System.Windows.Forms.TextBox();
             this.txbId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblMessage, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txbAge, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txbUrodz, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txbName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txbId, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
@@ -84,10 +84,10 @@
             // 
             // txbAge
             // 
-            this.txbAge.Location = new System.Drawing.Point(103, 73);
-            this.txbAge.Name = "txbAge";
-            this.txbAge.Size = new System.Drawing.Size(100, 20);
-            this.txbAge.TabIndex = 5;
+            this.txbUrodz.Location = new System.Drawing.Point(103, 73);
+            this.txbUrodz.Name = "txbUrodz";
+            this.txbUrodz.Size = new System.Drawing.Size(100, 20);
+            this.txbUrodz.TabIndex = 5;
             // 
             // txbName
             // 
@@ -191,7 +191,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.TextBox txbName;
-        private System.Windows.Forms.TextBox txbAge;
+        private System.Windows.Forms.TextBox txbUrodz;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnZapisz;
         private System.Windows.Forms.Button btnCancel;

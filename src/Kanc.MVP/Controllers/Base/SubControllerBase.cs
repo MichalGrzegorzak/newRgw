@@ -18,7 +18,7 @@ namespace Kanc.MVP.Controllers.Base
             set
             {
                 base.Task = value;
-                Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
+                //Task.CurrentCustomerChanged += Task_CurrentCustomerChanged;
                 Task.CurrentOrderChanged += Task_CurrentOrderChanged;
             }
         }

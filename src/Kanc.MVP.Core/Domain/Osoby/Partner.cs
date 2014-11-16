@@ -1,17 +1,18 @@
 using System;
 using Kanc.MVP.Core.nHibernate.Base;
 
-namespace Kanc.MVP.Core.Domain.Osoby
+namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
     public class Partner : Osoba, IAutoMap
     {
-        public virtual Rozliczenie.Rozliczenie Rozliczenie { get; protected set; }
+        public virtual Rozliczenie Rozliczenie { get; protected set; }
 
         public Partner() { }
-        public Partner(Rozliczenie.Rozliczenie rozlicz)
+        public Partner(Rozliczenie rozlicz)
         {
             Rozliczenie = rozlicz;
+            IsNew = true;
         }
         protected internal virtual void AssignFrom(Osoba o)
         {

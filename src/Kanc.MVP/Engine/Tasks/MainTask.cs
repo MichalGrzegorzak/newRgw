@@ -2,7 +2,7 @@
 using Kanc.MVP.Controllers.Customer;
 using Kanc.MVP.Controllers.Main;
 using Kanc.MVP.Controllers.Order;
-using Kanc.MVP.Domain;
+using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Navigator;
 using Kanc.MVP.Engine.View;
@@ -31,9 +31,6 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.Klient, typeof(EditOrderController), false, NavTargets = new[] { EditCustomer })]
         public const string EditOrder = "EditOrder";
 
-        
-        
-
         //[InteractionPoint(typeof(CustomersController), true)]
         //[IPointEx(ViewCategory.Klient, typeof(CustomerController), true)]
         //public const string Customers = "Customers";
@@ -41,33 +38,31 @@ namespace Kanc.MVP.Engine.Tasks
         //[IPointEx(ViewCategory.Klient, typeof(OrderController), true)]
         //public const string Orders = "Orders";
 
+        //private OsobaLookup _currentOsobaLookup = OsobaLookup.AllCustomers[0];
+        //public event EventHandler CurrentCustomerChanged;
+        //public OsobaLookup CurrentOsobaLookup
+        //{
+        //    get { return _currentOsobaLookup; }
+        //    set
+        //    {
+        //        _currentOsobaLookup = value;
+        //        FireCustomerChanged();
+        //    }
+        //}
+        //public void FireCustomerChanged()
+        //{
+        //    if (CurrentCustomerChanged != null)
+        //        CurrentCustomerChanged(this, EventArgs.Empty);
+        //}
 
-
-        private Customer currentCustomer = Customer.AllCustomers[0];
-        public event EventHandler CurrentCustomerChanged;
-        public Customer CurrentCustomer
-        {
-            get { return currentCustomer; }
-            set
-            {
-                currentCustomer = value;
-                FireCustomerChanged();
-            }
-        }
-        public void FireCustomerChanged()
-        {
-            if (CurrentCustomerChanged != null)
-                CurrentCustomerChanged(this, EventArgs.Empty);
-        }
-
-        private Order currentOrder = null;
+        private Rozliczenie _currentRozliczenie = new Rozliczenie();
         public event EventHandler CurrentOrderChanged;
-        public Order CurrentOrder
+        public Rozliczenie CurrentRozliczenie
         {
-            get { return currentOrder; }
+            get { return _currentRozliczenie; }
             set
             {
-                currentOrder = value;
+                _currentRozliczenie = value;
                 FireOrderChanged();
             }
         }

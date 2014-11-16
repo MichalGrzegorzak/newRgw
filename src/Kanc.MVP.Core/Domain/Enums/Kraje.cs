@@ -1,6 +1,6 @@
 ﻿using Utils.Features.ExtendentEnum;
 
-namespace Kanc.MVP.Core.Domain.Enums
+namespace Kanc.MVP.Core.Domain
 {
     public enum Kraje
     {

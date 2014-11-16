@@ -30,25 +30,25 @@ namespace Kanc.MVP.Controllers.Other
 
         private void CurrentCustomerChanged(object sender, EventArgs e)
         {
-            View.SetOrdersList(Task.CurrentCustomer.Orders);
+            View.SetOrdersList(Task.CurrentOsobaLookup.Orders);
             UpdateView();
         }
 
         public void AcceptOrder()
         {
-            View.CurrentOrder.Accept();
+            View.CurrentRozliczenie.Accept();
             UpdateView();
         }
 
         public void ShipOrder()
         {
-            View.CurrentOrder.Ship();
+            View.CurrentRozliczenie.Ship();
             UpdateView();
         }
 
         public void CancelOrder()
         {
-            View.CurrentOrder.Cancel();
+            View.CurrentRozliczenie.Cancel();
             UpdateView();
         }
 
@@ -59,8 +59,8 @@ namespace Kanc.MVP.Controllers.Other
 
         private void UpdateView()
         {
-            if (View.CurrentOrder == null) return;
-            OrderState os = View.CurrentOrder.State;
+            if (View.CurrentRozliczenie == null) return;
+            OrderState os = View.CurrentRozliczenie.State;
             View.SetOperationsEnabling(
                     os == OrderState.Open, os == OrderState.Pending,
                     (os == OrderState.Open) || (os == OrderState.Pending));

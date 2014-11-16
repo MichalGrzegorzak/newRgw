@@ -32,7 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMessage = new System.Windows.Forms.Label();
             this.txbOwner = new System.Windows.Forms.TextBox();
-            this.txbDesc = new System.Windows.Forms.TextBox();
+            this.txbRok = new System.Windows.Forms.TextBox();
             this.txbId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblMessage, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txbOwner, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txbDesc, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txbRok, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txbId, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
@@ -91,10 +91,10 @@
             // 
             // txbDesc
             // 
-            this.txbDesc.Location = new System.Drawing.Point(103, 53);
-            this.txbDesc.Name = "txbDesc";
-            this.txbDesc.Size = new System.Drawing.Size(100, 20);
-            this.txbDesc.TabIndex = 4;
+            this.txbRok.Location = new System.Drawing.Point(103, 53);
+            this.txbRok.Name = "txbRok";
+            this.txbRok.Size = new System.Drawing.Size(100, 20);
+            this.txbRok.TabIndex = 4;
             // 
             // txbId
             // 
@@ -190,7 +190,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbId;
-        private System.Windows.Forms.TextBox txbDesc;
+        private System.Windows.Forms.TextBox txbRok;
         private System.Windows.Forms.TextBox txbOwner;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnZapisz;

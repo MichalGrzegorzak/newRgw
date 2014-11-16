@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using Kanc.MVP.Controllers.Customer;
 using Kanc.MVP.Controls;
-using Kanc.MVP.Domain;
+
+using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using MVCSharp.Winforms;
@@ -26,16 +27,16 @@ namespace Kanc.MVP.Presentation.Search
                 CloseTriggered.Invoke(this, null);
         }
 
-        public Domain.Order CurrentOrder
+        public Rozliczenie CurrentRozliczenie
         {
             get
             {
                 return gridOrders.CurrentRow == null ? null :
-                       gridOrders.CurrentRow.DataBoundItem as Domain.Order;
+                       gridOrders.CurrentRow.DataBoundItem as Rozliczenie;
             }
         }
 
-        public void SetCustomerOrders(IList<Domain.Order> orders)
+        public void SetCustomerOrders(IList<Rozliczenie> orders)
         {
             gridOrders.CurrentCellChanged -= gridOrders_CurrentCellChanged;
 
@@ -45,7 +46,7 @@ namespace Kanc.MVP.Presentation.Search
             gridOrders.CurrentCellChanged += gridOrders_CurrentCellChanged;
         }
 
-        public void SetCustomers(IList<Customer> customers)
+        public void SetCustomers(IList<OsobaLookup> customers)
         {
             //cmbUsers.DataSource = new BindingSource(customers, null);
             //cmbUsers.DisplayMember = "Value";
@@ -53,9 +54,9 @@ namespace Kanc.MVP.Presentation.Search
 
             cmbUsers.Items.Clear();
 
-            foreach (Customer c in customers)
+            foreach (OsobaLookup c in customers)
             {
-                var item = new ComboboxItem() { Text = c.Name, Value = c.Name };
+                var item = new ComboboxItem() { Text = c.Nazwisko, Value = c.Nazwisko };
                 cmbUsers.Items.Add(item);
             }
 

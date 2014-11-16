@@ -3,8 +3,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using Kanc.MVP.Core.Domain.Osoby;
-using Kanc.MVP.Core.Domain.Rozliczenie;
+
+using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Engine.ViewManager;
@@ -28,11 +28,10 @@ namespace Kanc.MVP
              // Catch all unhandled exceptions in all threads.
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
-            NormalInitialize();
-            //UITestingInitialize();
+            Initialize();
         }
 
-        private void NormalInitialize()
+        private void Initialize()
         {
             //BootStrapper.Initialize();
             //SlownikiInitialize();
@@ -57,30 +56,34 @@ namespace Kanc.MVP
 
         private static void CreateTestData()
         {
-            OsobaLookup.AllCustomers.Add(new OsobaLookup("John"));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup("Paul"));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup("Snow"));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup("Snow1"));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup("Snow2"));
+            var o1 = new Osoba() {Nazwisko = "John"};
+            var o2 = new Osoba() {Nazwisko = "Paul"};
+            var o3 = new Osoba() {Nazwisko = "Snow"};
+            var o4 = new Osoba() {Nazwisko = "Snow1"};
+            var o5 = new Osoba() {Nazwisko = "Snow2"};
+            
+            OsobaLookup.AllCustomers.Add(new OsobaLookup(o1));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup(o2));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup(o3));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup(o4));
+            OsobaLookup.AllCustomers.Add(new OsobaLookup(o5));
 
-            OsobaLookup.AllCustomers[2].Rozliczenies.Add(new Rozliczenie());
-            OsobaLookup.AllCustomers[2].Rozliczenies.Add(new Rozliczenie());
-            OsobaLookup.AllCustomers[2].Rozliczenies.Add(new Rozliczenie());
+            var r1 = new Rozliczenie(); 
+            r1.Klient.AssignFrom(o3);
+            var r2 = new Rozliczenie();
+            r2.Klient.AssignFrom(o3);
+            var r3 = new Rozliczenie();
+            r3.Klient.AssignFrom(o3);
 
-            OsobaLookup.AllCustomers[1].Rozliczenies.Add(new Rozliczenie());
-            OsobaLookup.AllCustomers[1].Rozliczenies.Add(new Rozliczenie());
+            var r4 = new Rozliczenie();
+            r4.Klient.AssignFrom(o1);
+            var r5 = new Rozliczenie();
+            r5.Klient.AssignFrom(o1);
+
+            OsobaLookup.AllCustomers[2].Rozliczenies.Add(r1);
+            OsobaLookup.AllCustomers[2].Rozliczenies.Add(r2);
+            OsobaLookup.AllCustomers[2].Rozliczenies.Add(r3);
         }
-
-        //private void UITestingInitialize()
-        //{
-        //    SlownikiInitialize();
-
-        //    Rozliczenie r = new Rozliczenie();
-        //    EdycjaKlienta form = new EdycjaKlienta(null, r);
-        //    form.AutoScroll = true;
-
-        //    form.Show();
-        //}
 
         //private void SlownikiInitialize()
         //{

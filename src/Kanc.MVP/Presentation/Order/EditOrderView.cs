@@ -17,7 +17,7 @@ namespace Kanc.MVP.Presentation.Order
             InitializeComponent();
 
             txbId.Validating += ValidateInput;
-            txbDesc.Validating += ValidateInput;
+            txbRok.Validating += ValidateInput;
             txbOwner.Validating += ValidateInput;
         }
 
@@ -26,10 +26,10 @@ namespace Kanc.MVP.Presentation.Order
             get { return txbId.Text.Trim().ParseSafe<int>(); }
             set { txbId.Text = value.ToString(); }
         }
-        public string Desc
+        public int Rok
         {
-            get { return txbDesc.Text.Trim(); }
-            set { txbDesc.Text = value; }
+            get { return txbRok.Text.Trim().ParseSafe<int>(); }
+            set { txbRok.Text = value.ToString(); }
         }
         public string Owner
         {

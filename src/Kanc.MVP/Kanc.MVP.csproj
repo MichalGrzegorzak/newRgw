@@ -98,6 +98,9 @@
     <Compile Include="Controllers\Customer\SearchFormController.cs" />
     <Compile Include="Controllers\Main\MainViewEmptyController.cs" />
     <Compile Include="Controllers\Base\SubControllerBase.cs" />
+    <Compile Include="UIControls\MaskedDateBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UIControls\MaskedTextBoxExt.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -117,10 +120,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Presentation\Order\IOrdersView.cs" />
-    <Compile Include="Controllers\Other\OrderController.cs" />
-    <Compile Include="Domain\Customer.cs" />
-    <Compile Include="Domain\Order.cs" />
-    <Compile Include="Domain\OrderState.cs" />
     <Compile Include="Engine\ViewManager\IDynamicViewsManager.cs" />
     <Compile Include="Engine\Validator\PropertyInfoExtensions.cs" />
     <Compile Include="Engine\Validator\RegexHelper.cs" />
@@ -139,9 +138,7 @@
     <Compile Include="Engine\InteractionPoint\IPointExAttribute.cs" />
     <Compile Include="Engine\Navigator\NavigatorEx.cs" />
     <Compile Include="Controllers\Other\NewMailPropertiesViewController.cs" />
-    <Compile Include="Controllers\Other\NoteController.cs" />
     <Compile Include="Engine\Tasks\TaskInfoByAttributesProviderEx.cs" />
-    <Compile Include="Controllers\Other\TaskController.cs" />
     <Compile Include="Engine\View\ViewCategory.cs" />
     <Compile Include="Model\Mail.cs" />
     <Compile Include="Presentation\Search\SearchForm.cs">
@@ -322,6 +319,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Kanc.MVP.Core\Kanc.MVP.Core.csproj">
+      <Project>{84110644-f4fa-4158-916d-2f5089781708}</Project>
+      <Name>Kanc.MVP.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ThirdParties\MVCSharp\MVCSharp.csproj">
       <Project>{c04a36b0-4a58-45d4-b95b-a4a58afebc95}</Project>
       <Name>MVCSharp</Name>

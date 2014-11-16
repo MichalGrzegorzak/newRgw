@@ -1,5 +1,4 @@
 ﻿using System;
-using Kanc.MVP.Core.Domain.Enums;
 using Kanc.MVP.Core.nHibernate.Base;
 
 namespace Kanc.MVP.Core.Domain

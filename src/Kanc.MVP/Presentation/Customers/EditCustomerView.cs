@@ -6,7 +6,7 @@ using System.Management.Instrumentation;
 using System.Windows.Forms;
 using System.Xml.Schema;
 using Kanc.MVP.Controllers.Customer;
-using Kanc.MVP.Domain;
+
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.Validator;
 using Kanc.MVP.Engine.View;
@@ -49,10 +49,15 @@ namespace Kanc.MVP.Presentation.Customers
             get { return txbName.Text.Trim(); }
             set { txbName.Text = value; }
         }
-        public int Age
+        public DateTime? Urodzony
         {
-            get { return txbAge.Text.Trim().ParseSafe<int>(); }
-            set { txbAge.Text = value.ToString(); }
+            get { return txbUrodz.Text.Trim().ParseSafe<DateTime>(); }
+            set
+            {
+                txbUrodz.Text = string.Empty;
+                if(value.HasValue)
+                    txbUrodz.Text = value.Value.ToShortDateString();
+            }
         }
 
         string IMyBaseView.Message

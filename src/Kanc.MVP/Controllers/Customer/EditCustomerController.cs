@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Kanc.MVP.Controllers.Base;
+
+using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.Validator;
 using Kanc.MVP.Presentation.Customers;
 
@@ -29,7 +32,9 @@ namespace Kanc.MVP.Controllers.Customer
             //zdefiniuj walidacje wykorzystywana przez widok i kontroler
             Validator = new BasicValidator<IBaseEditCustomersView>(View);
             Validator.For(x => x.NazwiskoPl, "txbName").IsRequired();
-            Validator.For(x => x.Age).IsRequired().IsCorrectAge(); //kontrolke znajdzie z konwencji
+            Validator.For(x => x.Urodzony).IsRequired(); 
+            //.IsCorrectAge(); //kontrolke znajdzie z konwencji
+
             //  or
             //validatorHlp.For("txbName", "Name").IsRequired();
         }
@@ -47,16 +52,13 @@ namespace Kanc.MVP.Controllers.Customer
         /// </summary>
         public override void BindModel()
         {
-            var c = Task.CurrentCustomer;
+            var c = Task.CurrentRozliczenie.Klient;
 
             ResetView();
             View.Id = c.Id;
-            View.NazwiskoPl = c.Name;
-            View.Age = c.Age;
-            View.IsNew = (c.Id == 0);
-
-            if (c.Id == 0)
-                View.IsNew = true;
+            View.NazwiskoPl = c.Nazwisko;
+            View.Urodzony = c.Urodz;
+            View.IsNew = c.IsNew;
         }
 
         /// <summary>
@@ -65,9 +67,10 @@ namespace Kanc.MVP.Controllers.Customer
         public void ResetView()
         {
             View.Message = "";
-            View.Id = 0;
-            View.Age = 0;
+            //View.Id = 0;
+            View.Urodzony = null;
             View.NazwiskoPl = "";
+            //View.IsNew = false;
         }
 
         /// <summary>
@@ -83,7 +86,7 @@ namespace Kanc.MVP.Controllers.Customer
             Errors.AddRange(Validator.Errors);
 
             //a tu przyklad dodatkowej customowej walidacji
-            var c = Task.CurrentCustomer;
+            var c = Task.CurrentRozliczenie.Klient;
             //if (c.Id < 1)
             //{
             //    string m = "Id can`t be 0";
@@ -97,31 +100,32 @@ namespace Kanc.MVP.Controllers.Customer
 
         public override void Next()
         {
-            //uwaga - edycja przez referencje
-            Domain.Customer c = (View.IsNew) ? GetNewCustomer() : Task.CurrentCustomer;
-            c.Name = View.NazwiskoPl;
-            c.Age = View.Age;
+            if (!IsValid())
+                return;
 
-            if (IsValid())
-            {
-                Task.CurrentCustomer = c; //przypisanie odpali event
-            }
+            //uwaga - edycja przez referencje
+            //Klient c = (View.IsNew) ? GetNewCustomer() : Task.CurrentRozliczenie.Klient;
+            Klient c = Task.CurrentRozliczenie.Klient;
+            c.Nazwisko = View.NazwiskoPl;
+            c.Urodz = View.Urodzony;
+            c.IsNew = false;
 
             base.Next(); //odpali walidacje i wywoluje z navigatora NEXT, jesli blad to wyswietli
+            Task.FireOrderChanged();
         }
 
-        private Domain.Customer GetNewCustomer()
-        {
-            Domain.Customer c = new Domain.Customer(View.NazwiskoPl);
-            c.Id = 55; //symuluje zapis do bazy - view wykrywa po Id > 0, czy to edycja czy nowy
+        //private OsobaLookup GetNewCustomer()
+        //{
+        //    OsobaLookup c = new OsobaLookup(View.NazwiskoPl);
+        //    //c.Id = 55; //symuluje zapis do bazy - view wykrywa po Id > 0, czy to edycja czy nowy
 
-            Domain.Order o = new Domain.Order(0, "");
-            c.Orders.Add(o);
+        //    Rozliczenie o = new Rozliczenie(0, "");
+        //    c.Orders.Add(o);
 
-            Task.CurrentOrder = o;
+        //    Task.CurrentRozliczenie = o;
 
-            return c;
-        }
+        //    return c;
+        //}
         public override void Previous()
         {
             base.Previous();

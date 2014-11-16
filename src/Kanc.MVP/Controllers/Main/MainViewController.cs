@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
@@ -44,8 +45,8 @@ namespace Kanc.MVP.Controllers.Main
         }
         public void RecieveTaskResult(params object[] item)
         {
-            Task.CurrentCustomer = item[0] as Domain.Customer;
-            Task.CurrentOrder = item[1] as Domain.Order;
+            //Task.CurrentOsobaLookup = item[0] as OsobaLookup;
+            Task.CurrentRozliczenie = item[0] as Rozliczenie;
 
             View.LoadAvailableActions(false);
             View.ShowViewCategory(ViewCategory.Klient);

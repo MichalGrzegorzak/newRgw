@@ -5,7 +5,7 @@ namespace Kanc.MVP.Presentation.Order
     public interface IEditOrderView : IMyBaseView
     {
         int Id { get; set; }
-        string Desc { get; set; }
+        int Rok { get; set; }
         string Owner { get; set; }
     }
 }

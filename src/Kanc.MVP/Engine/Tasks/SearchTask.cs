@@ -1,6 +1,7 @@
 ﻿using System;
 using Kanc.MVP.Controllers.Customer;
-using Kanc.MVP.Domain;
+
+using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Navigator;
 using Kanc.MVP.Engine.View;
@@ -21,27 +22,27 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.None, typeof(SearchCustomerController), true)]
         public const string SearchCustomer = "Search";
 
-        private Customer currentCustomer = Customer.AllCustomers[0];
+        private OsobaLookup _currentOsobaLookup = OsobaLookup.AllCustomers[0];
         public event EventHandler CurrentCustomerChanged;
-        public Customer CurrentCustomer
+        public OsobaLookup CurrentOsobaLookup
         {
-            get { return currentCustomer; }
+            get { return _currentOsobaLookup; }
             set
             {
-                currentCustomer = value;
+                _currentOsobaLookup = value;
                 if (CurrentCustomerChanged != null)
                     CurrentCustomerChanged(this, EventArgs.Empty);
             }
         }
 
-        private Order currentOrder = null;
+        private Rozliczenie _currentRozliczenie = null;
         public event EventHandler CurrentOrderChanged;
-        public Order CurrentOrder
+        public Rozliczenie CurrentRozliczenie
         {
-            get { return currentOrder; }
+            get { return _currentRozliczenie; }
             set
             {
-                currentOrder = value;
+                _currentRozliczenie = value;
                 if (CurrentOrderChanged != null)
                     CurrentOrderChanged(this, EventArgs.Empty);
             }

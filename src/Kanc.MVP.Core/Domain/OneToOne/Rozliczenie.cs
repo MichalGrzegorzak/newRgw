@@ -1,9 +1,7 @@
 ﻿using System;
-using Kanc.MVP.Core.Domain.Enums;
-using Kanc.MVP.Core.Domain.Osoby;
 using Kanc.MVP.Core.nHibernate.Base;
 
-namespace Kanc.MVP.Core.Domain.Rozliczenie
+namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
     public class Rozliczenie : ModelBase, IAutoMap
@@ -16,6 +14,7 @@ namespace Kanc.MVP.Core.Domain.Rozliczenie
             Klient = new Klient(this);
             Partner = new Partner(this);
             Konto = new Konto(this);
+            IsNew = true;
         }
 
         public virtual int Rok { get; set; }

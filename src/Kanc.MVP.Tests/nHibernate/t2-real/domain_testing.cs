@@ -2,9 +2,6 @@
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Kanc.MVP.Core.Domain;
-using Kanc.MVP.Core.Domain.Enums;
-using Kanc.MVP.Core.Domain.Osoby;
-using Kanc.MVP.Core.Domain.Rozliczenie;
 using Kanc.MVP.Tests.nHibernate.Core;
 using NHibernate.Linq;
 using NUnit.Framework;
@@ -15,8 +12,6 @@ namespace Kanc.MVP.Tests.nHibernate
     [TestFixture]
     public class domain_tests : NHibernateFixtureBase
     {
-        
-
         [Test]
         public void t1_dodaj_rozliczenia()
         {

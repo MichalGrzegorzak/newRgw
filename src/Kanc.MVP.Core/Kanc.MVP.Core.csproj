@@ -78,9 +78,9 @@
     <Compile Include="Domain\Osoby\Osoba.cs" />
     <Compile Include="Domain\Osoby\OsobaLookup.cs" />
     <Compile Include="Domain\Osoby\Partner.cs" />
-    <Compile Include="Domain\Rozliczenie\Klient.cs" />
-    <Compile Include="Domain\Rozliczenie\Konto.cs" />
-    <Compile Include="Domain\Rozliczenie\Rozliczenie.cs" />
+    <Compile Include="Domain\OneToOne\Klient.cs" />
+    <Compile Include="Domain\OneToOne\Konto.cs" />
+    <Compile Include="Domain\OneToOne\Rozliczenie.cs" />
     <Compile Include="nHibernate\Conventions\DefaultPrimaryKeyConvention.cs" />
     <Compile Include="Infrastructure\EventArgs.cs" />
     <Compile Include="Infrastructure\Fact.cs" />

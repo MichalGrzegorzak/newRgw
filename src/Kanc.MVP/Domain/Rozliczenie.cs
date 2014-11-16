@@ -2,9 +2,9 @@
 
 namespace Kanc.MVP.Domain
 {
-    public class Order
+    public class Rozliczenie
     {
-        public Order(int id, string desc)
+        public Rozliczenie(int id, string desc)
         {
             Id = id;
             Desc = desc;

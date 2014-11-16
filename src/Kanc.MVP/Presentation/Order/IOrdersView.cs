@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using Kanc.MVP.Core.Domain;
 
 namespace Kanc.MVP.Presentation.Order
 {
     public interface IOrdersView
     {
-        void SetOrdersList(List<Domain.Order> orders);
+        void SetOrdersList(List<Rozliczenie> orders);
         
-        Domain.Order CurrentOrder
+        Rozliczenie CurrentRozliczenie
         {
             get;
         }

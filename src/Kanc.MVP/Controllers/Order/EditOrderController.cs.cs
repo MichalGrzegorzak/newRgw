@@ -1,4 +1,6 @@
 ﻿using Kanc.MVP.Controllers.Base;
+using Kanc.MVP.Core.Domain;
+
 using Kanc.MVP.Presentation.Order;
 
 namespace Kanc.MVP.Controllers.Order
@@ -7,12 +9,12 @@ namespace Kanc.MVP.Controllers.Order
     {
         public override void BindModel()
         {
-            Domain.Order order = Task.CurrentOrder;
+            Rozliczenie rozliczenie = Task.CurrentRozliczenie;
 
             View.Message = "";
 
-            View.Id = order.Id;
-            View.Desc = order.Desc;
+            View.Id = rozliczenie.Id;
+            View.Rok = rozliczenie.Rok;
             //View.Owner = 
         }
 
@@ -23,12 +25,11 @@ namespace Kanc.MVP.Controllers.Order
 
         public override void Next()
         {
-            var ord = Task.CurrentOrder;
+            var rozlicz = Task.CurrentRozliczenie;
 
             //uwaga - edycja przez referencje
-            ord.Id = View.Id;
-            ord.Desc = View.Desc;
-            ord.Ship();
+            //ord.Id = View.Id;
+            rozlicz.Rok = View.Rok;
 
             //Task.Navigator.NavigateDirectly(MainTask.EditCustomer);
             base.Next();
