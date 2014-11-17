@@ -4,7 +4,7 @@ using Kanc.MVP.Core.nHibernate.Base;
 namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
-    public class Bank : ModelBase, IAutoMap
+    public class Bank : EntityBase, IAutoMap
     {
         public Bank() { }
 

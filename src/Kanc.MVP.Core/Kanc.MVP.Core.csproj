@@ -71,7 +71,7 @@
     <Compile Include="Domain\Adres.cs" />
     <Compile Include="Domain\Bank.cs" />
     <Compile Include="nHibernate\Base\IAutoMap.cs" />
-    <Compile Include="nHibernate\Base\ModelBase.cs" />
+    <Compile Include="nHibernate\Base\EntityBase.cs" />
     <Compile Include="Domain\Enums\KontoWlasciciel.cs" />
     <Compile Include="Domain\Enums\Kraje.cs" />
     <Compile Include="Domain\Enums\Status.cs" />

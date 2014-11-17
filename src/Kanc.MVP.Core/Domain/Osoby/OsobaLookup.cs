@@ -8,7 +8,7 @@ namespace Kanc.MVP.Core.Domain
     /// Unikalne, i zawsze aktualne dane klienta
     /// </summary>
     [Serializable]
-    public class OsobaLookup : ModelBase, IAutoMap
+    public class OsobaLookup : EntityBase, IAutoMap
     {
         public static readonly List<OsobaLookup> AllCustomers = new List<OsobaLookup>();
 
@@ -16,7 +16,7 @@ namespace Kanc.MVP.Core.Domain
         {
             Rozliczenies = new List<Rozliczenie>();
         }
-        public OsobaLookup(Osoba o)
+        public OsobaLookup(Osoba o) : this()
         {
             MandId = o.MandId;
             Steuernummer = o.Steuernummer;

@@ -11,12 +11,12 @@ namespace Kanc.MVP.Core.nHibernate.Conventions
     {
         private static readonly IList<string> IgnoredMembers = new List<string>
         {
-            "IsNew", "IsDeleted", "AssignFrom", "ImieINazwisko", "ImieINazwiskoDe"
+            "IsDeleted", "AssignFrom", "ImieINazwisko", "ImieINazwiskoDe"
         };
 
         public override bool ShouldMap(Type type)
         {
-            return type.IsSubclassOf(typeof (ModelBase))
+            return type.IsSubclassOf(typeof (EntityBase))
                    && type.GetInterfaces().Any(y => y == typeof(IAutoMap));
         }
 

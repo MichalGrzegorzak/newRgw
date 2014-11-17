@@ -4,7 +4,7 @@ using Kanc.MVP.Core.nHibernate.Base;
 namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
-    public class Konto : ModelBase, IAutoMap
+    public class Konto : EntityBase, IAutoMap
     {
         public Konto()
         {
@@ -14,7 +14,6 @@ namespace Kanc.MVP.Core.Domain
             Rozliczenie = rozlicz;
             KontoTypWlasciciela = KontoWlasciciel.brak;
             BankKraj = Kraje.brak;
-            IsNew = true;
         }
 
         public virtual void AssignFrom(Bank b)

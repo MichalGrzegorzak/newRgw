@@ -4,8 +4,12 @@ using Kanc.MVP.Core.nHibernate.Base;
 namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
-    public class Osoba : ModelBase 
+    public class Osoba : EntityBase 
     {
+        public Osoba()
+        {
+        }
+
         public virtual string MandId { get; set; }
         public virtual string Steuernummer { get; set; }
         public virtual DateTime? Urodz { get; set; }

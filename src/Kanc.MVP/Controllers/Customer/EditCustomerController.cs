@@ -58,7 +58,7 @@ namespace Kanc.MVP.Controllers.Customer
             View.Id = c.Id;
             View.NazwiskoPl = c.Nazwisko;
             View.Urodzony = c.Urodz;
-            View.IsNew = c.IsNew;
+            View.IsNew = c.IsTransient();
         }
 
         /// <summary>
@@ -67,10 +67,8 @@ namespace Kanc.MVP.Controllers.Customer
         public void ResetView()
         {
             View.Message = "";
-            //View.Id = 0;
             View.Urodzony = null;
             View.NazwiskoPl = "";
-            //View.IsNew = false;
         }
 
         /// <summary>
@@ -98,20 +96,24 @@ namespace Kanc.MVP.Controllers.Customer
             return !hasError;
         }
 
-        public override void Next()
+        public override void Save()
         {
-            if (!IsValid())
-                return;
-
             //uwaga - edycja przez referencje
             //Klient c = (View.IsNew) ? GetNewCustomer() : Task.CurrentRozliczenie.Klient;
             Klient c = Task.CurrentRozliczenie.Klient;
             c.Nazwisko = View.NazwiskoPl;
             c.Urodz = View.Urodzony;
-            c.IsNew = false;
+        }
+
+        public override void Next()
+        {
+            if (!IsValid())
+                return;
+
+            
 
             base.Next(); //odpali walidacje i wywoluje z navigatora NEXT, jesli blad to wyswietli
-            Task.FireOrderChanged();
+            
         }
 
         //private OsobaLookup GetNewCustomer()

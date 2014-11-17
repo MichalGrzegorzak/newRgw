@@ -10,8 +10,7 @@ namespace Kanc.MVP.Core.Domain
         public Klient(Rozliczenie rozlicz)
         {
             Rozliczenie = rozlicz;
-            AdresZameld = new Adres() {IsNew = true};
-            IsNew = true;
+            AdresZameld = new Adres();
         }
         public virtual void AssignFrom(Osoba o)
         {

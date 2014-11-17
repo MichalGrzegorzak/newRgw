@@ -4,7 +4,7 @@ using Kanc.MVP.Core.nHibernate.Base;
 namespace Kanc.MVP.Core.Domain
 {
     [Serializable]
-    public class Adres : ModelBase, IAutoMap
+    public class Adres : EntityBase, IAutoMap
     {
         public virtual void AssignFrom(Adres a)
         {

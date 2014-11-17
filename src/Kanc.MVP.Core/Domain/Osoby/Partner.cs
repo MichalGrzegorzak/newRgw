@@ -12,7 +12,6 @@ namespace Kanc.MVP.Core.Domain
         public Partner(Rozliczenie rozlicz)
         {
             Rozliczenie = rozlicz;
-            IsNew = true;
         }
         protected internal virtual void AssignFrom(Osoba o)
         {

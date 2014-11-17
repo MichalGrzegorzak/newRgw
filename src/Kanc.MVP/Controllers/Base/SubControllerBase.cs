@@ -60,27 +60,37 @@ namespace Kanc.MVP.Controllers.Base
             Errors = new List<string>(); //you should always do this
             return true;
         }
+        public virtual void Save()
+        {
+        }
 
         public virtual void Next()
         {
-            if (IsValid())
-                Task.Navigator.Navigate("NEXT");
-            else
+            if (!IsValid())
             {
-                string delimeter = " \n";
-                string message = "View is not valid, please correct errors: \n";
-                if (Errors.Any())
-                    message += Errors.Aggregate((i, j) => i + delimeter + j);
-                else
-                    message = "- but you don`t have errors ??";
-
-                View.NotifyUser(message);
+                ShowErrors();
+                return;
             }
-                
+
+            Save();
+            Task.Navigator.Navigate("NEXT");
+            Task.FireOrderChanged();
         }
         public virtual void Previous()
         {
             Task.Navigator.NavigateBack();//.Navigate(MainTask.MainViewEmpty);
+        }
+
+        public virtual void ShowErrors()
+        {
+            string delimeter = " \n";
+            string message = "View is not valid, please correct errors: \n";
+            if (Errors.Any())
+                message += Errors.Aggregate((i, j) => i + delimeter + j);
+            else
+                message = "- but you don`t have errors ??";
+
+            View.NotifyUser(message);
         }
     }
 }
