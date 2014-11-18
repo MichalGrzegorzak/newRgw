@@ -8,7 +8,10 @@ namespace Kanc.MVP.Core.nHibernate.DomainMappings
     {
         public void Override(AutoMapping<Klient> mapping)
         {
-        
+            //1 to 1 mapping example
+            //   map => map.HasOne(x => x.Person)
+            //.PropertyRef(x => x.FileData)
+            //.Constrained();
         }
     }
 }

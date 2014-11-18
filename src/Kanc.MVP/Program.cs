@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 
 using Kanc.MVP.Core.Domain;
+using Kanc.MVP.Core.nHibernate.SessionProviders;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Engine.ViewManager;
@@ -56,33 +57,48 @@ namespace Kanc.MVP
 
         private static void CreateTestData()
         {
-            var o1 = new Osoba() {Nazwisko = "John"};
-            var o2 = new Osoba() {Nazwisko = "Paul"};
-            var o3 = new Osoba() {Nazwisko = "Snow"};
-            var o4 = new Osoba() {Nazwisko = "Snow1"};
-            var o5 = new Osoba() {Nazwisko = "Snow2"};
-            
-            OsobaLookup.AllCustomers.Add(new OsobaLookup(o1));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup(o2));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup(o3));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup(o4));
-            OsobaLookup.AllCustomers.Add(new OsobaLookup(o5));
+            SqlSessionFactoryProvider.Instance.Initialize();
+
+            var session = SqlSessionFactoryProvider.Instance.OpenSession();
+
+            //if we have already have data in DB, then skipp it
+            bool isDbInitalized = session.Get<OsobaLookup>(1) != null; 
+            if(isDbInitalized)
+                return;
+
+            var o1 = new Osoba() { Nazwisko = "John"};
+            var o2 = new Osoba() { Nazwisko = "Paul" };
+            var o3 = new Osoba() { Nazwisko = "Snow" };
+            var o4 = new Osoba() { Nazwisko = "Snow1" };
+            var o5 = new Osoba() { Nazwisko = "Snow2" };
+            var l1 = new OsobaLookup(o1);
+            var l2 = new OsobaLookup(o2);
+            var l3 = new OsobaLookup(o3);
+            var l4 = new OsobaLookup(o4);
+            var l5 = new OsobaLookup(o5);
 
             var r1 = new Rozliczenie(); 
             r1.Klient.AssignFrom(o3);
+            r1.Lookup = l3;
             var r2 = new Rozliczenie();
             r2.Klient.AssignFrom(o3);
+            r2.Lookup = l4;
             var r3 = new Rozliczenie();
             r3.Klient.AssignFrom(o3);
-
+            r3.Lookup = l3;
+            //
             var r4 = new Rozliczenie();
-            r4.Klient.AssignFrom(o1);
+            r4.Klient.AssignFrom(o4);
+            r4.Lookup = l4;
             var r5 = new Rozliczenie();
-            r5.Klient.AssignFrom(o1);
+            r5.Klient.AssignFrom(o4);
+            r5.Lookup = l4;
 
-            OsobaLookup.AllCustomers[2].Rozliczenies.Add(r1);
-            OsobaLookup.AllCustomers[2].Rozliczenies.Add(r2);
-            OsobaLookup.AllCustomers[2].Rozliczenies.Add(r3);
+            session.SaveOrUpdate(r1);
+            session.SaveOrUpdate(r2);
+            session.SaveOrUpdate(r3);
+            session.SaveOrUpdate(r4);
+            session.SaveOrUpdate(r5);
         }
 
         //private void SlownikiInitialize()

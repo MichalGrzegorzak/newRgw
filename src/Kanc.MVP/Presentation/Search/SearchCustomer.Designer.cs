@@ -39,7 +39,7 @@ namespace Kanc.MVP.Presentation.Search
             this.gridOrders = new System.Windows.Forms.DataGridView();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBoxExt1 = new MaskedTextBoxExt();
+            this.maskedTextBoxExt1 = new Kanc.MVP.Controls.MaskedTextBoxExt();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).BeginInit();
             this.SuspendLayout();

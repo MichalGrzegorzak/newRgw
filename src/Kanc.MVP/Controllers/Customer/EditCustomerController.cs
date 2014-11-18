@@ -9,7 +9,7 @@ using Kanc.MVP.Presentation.Customers;
 
 namespace Kanc.MVP.Controllers.Customer
 {
-    public class EditCustomerController : SubControllerBase<IBaseEditCustomersView>
+    public class EditCustomerController : SubControllerBase<IEditCustomersView>
     {
         /// <summary>
         /// Wywoluje sie za kazdym razem gdy otwieramy widok
@@ -30,7 +30,7 @@ namespace Kanc.MVP.Controllers.Customer
             base.ViewInitialized();
 
             //zdefiniuj walidacje wykorzystywana przez widok i kontroler
-            Validator = new BasicValidator<IBaseEditCustomersView>(View);
+            Validator = new BasicValidator<IEditCustomersView>(View);
             Validator.For(x => x.NazwiskoPl, "txbName").IsRequired();
             Validator.For(x => x.Urodzony).IsRequired(); 
             //.IsCorrectAge(); //kontrolke znajdzie z konwencji
@@ -99,7 +99,6 @@ namespace Kanc.MVP.Controllers.Customer
         public override void Save()
         {
             //uwaga - edycja przez referencje
-            //Klient c = (View.IsNew) ? GetNewCustomer() : Task.CurrentRozliczenie.Klient;
             Klient c = Task.CurrentRozliczenie.Klient;
             c.Nazwisko = View.NazwiskoPl;
             c.Urodz = View.Urodzony;
@@ -110,24 +109,9 @@ namespace Kanc.MVP.Controllers.Customer
             if (!IsValid())
                 return;
 
-            
-
             base.Next(); //odpali walidacje i wywoluje z navigatora NEXT, jesli blad to wyswietli
-            
         }
 
-        //private OsobaLookup GetNewCustomer()
-        //{
-        //    OsobaLookup c = new OsobaLookup(View.NazwiskoPl);
-        //    //c.Id = 55; //symuluje zapis do bazy - view wykrywa po Id > 0, czy to edycja czy nowy
-
-        //    Rozliczenie o = new Rozliczenie(0, "");
-        //    c.Orders.Add(o);
-
-        //    Task.CurrentRozliczenie = o;
-
-        //    return c;
-        //}
         public override void Previous()
         {
             base.Previous();

@@ -98,6 +98,10 @@
     <Compile Include="Controllers\Customer\SearchFormController.cs" />
     <Compile Include="Controllers\Main\MainViewEmptyController.cs" />
     <Compile Include="Controllers\Base\SubControllerBase.cs" />
+    <Compile Include="Presentation\Base\IMyBaseView.cs" />
+    <Compile Include="Presentation\Base\MyBaseControlView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UIControls\MaskedDateBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -116,9 +120,7 @@
     <Compile Include="Presentation\Customers\EditCustomerView.Designer.cs">
       <DependentUpon>EditCustomerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Customers\IEditCustomersView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Presentation\Customers\IEditCustomersView.cs" />
     <Compile Include="Presentation\Order\IOrdersView.cs" />
     <Compile Include="Engine\ViewManager\IDynamicViewsManager.cs" />
     <Compile Include="Engine\Validator\PropertyInfoExtensions.cs" />

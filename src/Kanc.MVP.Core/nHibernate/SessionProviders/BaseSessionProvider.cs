@@ -24,6 +24,8 @@ namespace Kanc.MVP.Core.nHibernate.SessionProviders
         public void Initialize()
         {
             sessionFactory = CreateSessionFactory();
+
+            ExportSchema();
         }
 
         public abstract FluentConfiguration GetDatabase();
@@ -50,15 +52,33 @@ namespace Kanc.MVP.Core.nHibernate.SessionProviders
         {
             ISession session = sessionFactory.OpenSession();
 
-            var export = new SchemaExport(configuration);
-            SchemaExport(export, session);
+            //var export = new SchemaExport(configuration);
+            //SchemaExport(export, session);
 
             return session;
         }
 
-        public virtual void SchemaExport(SchemaExport schema, ISession session)
+        private void ExportSchema()
         {
-            schema.Execute(true, true, false, session.Connection, null);
+            // Validate the schema: if wrong try to create the new schema
+			try
+			{
+                new SchemaValidator(configuration).Validate();
+			}
+			catch (HibernateException ex)
+			{
+				var s = ex.Message;
+                RecreateDB(configuration);
+			}
+		}
+
+        public static void RecreateDB(Configuration conf)
+        {
+            var export = new SchemaExport(conf);
+            export.Drop(false, true);
+            export.Create(false, true);
+
+            //schema.Execute(true, true, false, session.Connection, null);
         }
 
         public void Dispose()

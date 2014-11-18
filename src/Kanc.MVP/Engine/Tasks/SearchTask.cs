@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using Kanc.MVP.Controllers.Customer;
 
 using Kanc.MVP.Core.Domain;
+using Kanc.MVP.Core.nHibernate.SessionProviders;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Navigator;
 using Kanc.MVP.Engine.View;
@@ -10,6 +12,7 @@ using Kanc.MVP.Presentation.MainForm;
 using MVCSharp.Core;
 using MVCSharp.Core.Configuration.Tasks;
 using MVCSharp.Core.Tasks;
+using NHibernate;
 
 namespace Kanc.MVP.Engine.Tasks
 {
@@ -22,7 +25,7 @@ namespace Kanc.MVP.Engine.Tasks
         [IPointEx(ViewCategory.None, typeof(SearchCustomerController), true)]
         public const string SearchCustomer = "Search";
 
-        private OsobaLookup _currentOsobaLookup = OsobaLookup.AllCustomers[0];
+        private OsobaLookup _currentOsobaLookup = new OsobaLookup(); //OsobaLookup.AllCustomers[0]);
         public event EventHandler CurrentCustomerChanged;
         public OsobaLookup CurrentOsobaLookup
         {
@@ -46,6 +49,12 @@ namespace Kanc.MVP.Engine.Tasks
                 if (CurrentOrderChanged != null)
                     CurrentOrderChanged(this, EventArgs.Empty);
             }
+        }
+
+        private ISession _session;
+        public ISession Session
+        {
+            get { return _session ?? SqlSessionFactoryProvider.Instance.OpenSession(); }
         }
 
         public override void OnStart(object param)

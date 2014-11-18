@@ -14,14 +14,16 @@ namespace Kanc.MVP.Tests.nHibernate.Core
         public void OnetimeInit()
         {
             System.Environment.SetEnvironmentVariable("PreLoadSQLite_BaseDirectory", System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
-
-            InMemorySessionFactoryProvider.Instance.Initialize();
+            
+            //InMemorySessionFactoryProvider.Instance.Initialize();
+            SqlSessionFactoryProvider.Instance.Initialize();
         }
 
         [TestFixtureTearDown]
         public void TearDown()
         {
-            InMemorySessionFactoryProvider.Instance.Dispose();
+            //InMemorySessionFactoryProvider.Instance.Dispose();
+            SqlSessionFactoryProvider.Instance.Dispose();
         }
 
         [SetUp]
@@ -38,7 +40,8 @@ namespace Kanc.MVP.Tests.nHibernate.Core
 
         protected virtual void Before_each_test()
         {
-            Session = InMemorySessionFactoryProvider.Instance.OpenSession();
+            //Session = InMemorySessionFactoryProvider.Instance.OpenSession();
+            Session = SqlSessionFactoryProvider.Instance.OpenSession();
 
             CreateInitialData(Session);
             Session.Flush();

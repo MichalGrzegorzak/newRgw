@@ -18,7 +18,7 @@ namespace Kanc.MVP.Presentation.Customers
 {
     [ViewEx(typeof(MainTask), MainTask.EditCustomer, "New")]
     [ViewEx(typeof(MainTask), MainTask.NewCustomer, "New")]
-    public partial class EditCustomerView : ucEditCustomer, IBaseEditCustomersView
+    public partial class EditCustomerView : ucEditCustomer, IEditCustomersView
     {
         public EditCustomerView()
         {

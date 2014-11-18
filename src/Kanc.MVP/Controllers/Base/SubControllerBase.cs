@@ -24,6 +24,7 @@ namespace Kanc.MVP.Controllers.Base
         }
         protected virtual void Task_CurrentOrderChanged(object sender, EventArgs e)
         {
+            BindModel();
         }
         protected virtual void Task_CurrentCustomerChanged(object sender, EventArgs e)
         {

@@ -65,13 +65,12 @@ namespace Kanc.MVP.Presentation.Search
 
         public void RefreshView()
         {
-            btnNewOrder.Enabled = (SelectedCustomerIndex > 0);
+            btnNewOrder.Enabled = (SelectedCustomerIndex > -1);
         }
 
         public int SelectedCustomerIndex
         {
 	        get { return cmbUsers.SelectedIndex; }
-	        //set { cmbUsers.SelectedItem = value; }
         }
 
         public string Nazwisko

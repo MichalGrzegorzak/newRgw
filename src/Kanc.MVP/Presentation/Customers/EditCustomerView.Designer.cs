@@ -82,7 +82,7 @@
             this.lblMessage.TabIndex = 7;
             this.lblMessage.Text = "Blad";
             // 
-            // txbAge
+            // txbUrodz
             // 
             this.txbUrodz.Location = new System.Drawing.Point(103, 73);
             this.txbUrodz.Name = "txbUrodz";

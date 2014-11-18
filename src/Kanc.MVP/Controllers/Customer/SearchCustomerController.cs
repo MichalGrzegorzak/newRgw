@@ -5,6 +5,7 @@ using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Presentation.Search;
 using MVCSharp.Core;
+using NHibernate.Linq;
 
 namespace Kanc.MVP.Controllers.Customer
 {
@@ -56,7 +57,10 @@ namespace Kanc.MVP.Controllers.Customer
         {
             ResetView();
 
-            FoundCustomers = OsobaLookup.AllCustomers.Where(x => x.Nazwisko.StartsWith(View.Nazwisko)).ToList();
+            FoundCustomers = Task.Session.Query<OsobaLookup>()
+                .FetchMany(x=> x.Rozliczenies)
+                .Where(x => x.Nazwisko.StartsWith(View.Nazwisko)).ToList();
+            //FoundCustomers = OsobaLookup.AllCustomers.Where(x => x.Nazwisko.StartsWith(View.Nazwisko)).ToList();
             if (FoundCustomers.Any())
             {
                 View.SetCustomers(FoundCustomers);
