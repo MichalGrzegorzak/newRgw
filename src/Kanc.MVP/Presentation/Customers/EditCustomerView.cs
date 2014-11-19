@@ -32,6 +32,21 @@ namespace Kanc.MVP.Presentation.Customers
             //aby kontroler mogl uruchomic SetError na errorProviderze, bez referencji do kontrolki
             availableControls.AddRange(ControlHelper.GetAll<TextBox>(this).ToList()); 
             availableControls.ForEach(x=> x.Validating += ValidateInput);
+
+            txbUrodz.RequireValidEntry = false; //moze wyjsc z kontrolki
+            txbUrodz.InvalidDateEntered += txbUrodz_InvalidDateEntered;
+        }
+
+        void txbUrodz_InvalidDateEntered(object sender, MaskedDateEntryControl.InvalidDateTextEventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            errorProvider1.SetError(ctrl, ""); //clear ctrl previous error
+
+            string message = Controller.Validate(ctrl);
+            if (message == null)
+                return;
+
+            errorProvider1.SetError(ctrl, message);
         }
 
         public override void Activate(bool activate)
@@ -51,12 +66,10 @@ namespace Kanc.MVP.Presentation.Customers
         }
         public DateTime? Urodzony
         {
-            get { return txbUrodz.Text.Trim().ParseSafe<DateTime>(); }
+            get { return txbUrodz.DateValue; }
             set
             {
-                txbUrodz.Text = string.Empty;
-                if(value.HasValue)
-                    txbUrodz.Text = value.Value.ToShortDateString();
+                txbUrodz.DateValue = value;
             }
         }
 
@@ -110,7 +123,6 @@ namespace Kanc.MVP.Presentation.Customers
             //}
         }
 
-        
     }
 
     public class ucEditCustomer : MyBaseControlView<EditCustomerController>

@@ -89,7 +89,7 @@
             this.txbOwner.Size = new System.Drawing.Size(100, 20);
             this.txbOwner.TabIndex = 5;
             // 
-            // txbDesc
+            // txbRok
             // 
             this.txbRok.Location = new System.Drawing.Point(103, 53);
             this.txbRok.Name = "txbRok";

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using Kanc.MVP.Controllers.Order;
 using Kanc.MVP.Engine.Tasks;
+using Kanc.MVP.Engine.Validator;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Presentation.Customers;
 using Utils.Features.TypesParsing;
@@ -16,9 +18,20 @@ namespace Kanc.MVP.Presentation.Order
         {
             InitializeComponent();
 
-            txbId.Validating += ValidateInput;
-            txbRok.Validating += ValidateInput;
-            txbOwner.Validating += ValidateInput;
+            txbId.Enabled = false;
+
+            //WALIDACJA
+            errorProvider = errorProvider1;
+
+            //aby kontroler mogl uruchomic SetError na errorProviderze, bez referencji do kontrolki
+            availableControls.AddRange(ControlHelper.GetAll<TextBox>(this).ToList());
+            availableControls.ForEach(x => x.Validating += ValidateInput);
+            //txbId.Validating += ValidateInput;
+            //txbRok.Validating += ValidateInput;
+            //txbOwner.Validating += ValidateInput;
+
+            //txbUrodz.RequireValidEntry = false; //moze wyjsc z kontrolki
+            //txbUrodz.InvalidDateEntered += txbUrodz_InvalidDateEntered;
         }
 
         public int Id

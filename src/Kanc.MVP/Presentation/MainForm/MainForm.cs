@@ -179,6 +179,11 @@ namespace Kanc.MVP.Presentation.MainForm
             throw new Exception("testing exceptions");
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Controller.Save();
+        }
+
     }
 
     public class WinFormViewForMainViewController : WinFormView<MainViewController> { }

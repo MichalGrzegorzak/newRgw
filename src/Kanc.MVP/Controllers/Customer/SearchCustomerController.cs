@@ -33,6 +33,8 @@ namespace Kanc.MVP.Controllers.Customer
         /// </summary>
         public void UserHasSelectedOrder()
         {
+            Task.StatelessSession.Close();
+
             //Task.CurrentOsobaLookup, 
             Task.TaskResultListener.RecieveTaskResult(Task.CurrentRozliczenie);
             View.Close();
@@ -57,7 +59,7 @@ namespace Kanc.MVP.Controllers.Customer
         {
             ResetView();
 
-            FoundCustomers = Task.Session.Query<OsobaLookup>()
+            FoundCustomers = Task.StatelessSession.Query<OsobaLookup>()
                 .FetchMany(x=> x.Rozliczenies)
                 .Where(x => x.Nazwisko.StartsWith(View.Nazwisko)).ToList();
             //FoundCustomers = OsobaLookup.AllCustomers.Where(x => x.Nazwisko.StartsWith(View.Nazwisko)).ToList();

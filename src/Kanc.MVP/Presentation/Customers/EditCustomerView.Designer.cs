@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.txbUrodz = new System.Windows.Forms.TextBox();
             this.txbName = new System.Windows.Forms.TextBox();
             this.txbId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txbUrodz = new MaskedDateEntryControl.MaskedDateTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -52,13 +52,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblMessage, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txbUrodz, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txbName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txbId, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txbUrodz, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -82,13 +82,6 @@
             this.lblMessage.TabIndex = 7;
             this.lblMessage.Text = "Blad";
             // 
-            // txbUrodz
-            // 
-            this.txbUrodz.Location = new System.Drawing.Point(103, 73);
-            this.txbUrodz.Name = "txbUrodz";
-            this.txbUrodz.Size = new System.Drawing.Size(100, 20);
-            this.txbUrodz.TabIndex = 5;
-            // 
             // txbName
             // 
             this.txbName.Location = new System.Drawing.Point(103, 53);
@@ -108,9 +101,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Age";
+            this.label3.Text = "Urodzony";
             // 
             // label2
             // 
@@ -168,6 +161,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txbUrodz
+            // 
+            this.txbUrodz.DateValue = null;
+            this.txbUrodz.Location = new System.Drawing.Point(103, 73);
+            this.txbUrodz.Mask = "00/00/0000";
+            this.txbUrodz.Name = "txbUrodz";
+            this.txbUrodz.RequireValidEntry = true;
+            this.txbUrodz.Size = new System.Drawing.Size(100, 20);
+            this.txbUrodz.TabIndex = 8;
+            // 
             // EditCustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,11 +194,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.TextBox txbName;
-        private System.Windows.Forms.TextBox txbUrodz;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnZapisz;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private MaskedDateEntryControl.MaskedDateTextBox txbUrodz;
     }
 }

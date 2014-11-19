@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
+using Kanc.MVP.Core.nHibernate.SessionProviders;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.Validator;
 using Kanc.MVP.Presentation.Customers;
+using NHibernate;
 
 namespace Kanc.MVP.Controllers.Base
 {
@@ -93,5 +95,18 @@ namespace Kanc.MVP.Controllers.Base
 
             View.NotifyUser(message);
         }
+
+        #region nHibernate session - from Task
+        public ISession Session
+        {
+            get { return Task.Session; }
+        }
+        private IStatelessSession _statelessSession;
+        protected IStatelessSession StatelessSession
+        {
+            get { return Task.StatelessSession; }
+        }
+        #endregion
+
     }
 }

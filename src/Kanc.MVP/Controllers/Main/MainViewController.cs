@@ -70,6 +70,10 @@ namespace Kanc.MVP.Controllers.Main
             else
                 tasks[taskType].OnStart(null);
         }
-        
+
+        public void Save()
+        {
+            Task.Session.Flush();
+        }
     }
 }

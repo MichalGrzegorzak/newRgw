@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -23,7 +24,7 @@ namespace MaskedDateEntryControl
 
         private string DateSeparator = "-";
 
-        // The default mask is traditional, USA-centric mm/dd/yyyy format. 
+        // The default mask is traditional - dd/mm/yyyy format. 
         private const string DEFAULT_MASK = "00/00/0000";
         private const char DEFAULT_PROMPT = '_';
 
@@ -79,8 +80,8 @@ namespace MaskedDateEntryControl
 
             // Separate the date components as delimmited by standard mm/dd/yyyy formatting:
             string[] dateComponents = FormattedDate.Split('/');
-            string month = dateComponents[0].Trim(); ;
-            string day = dateComponents[1].Trim();
+            string day = dateComponents[0].Trim();
+            string month = dateComponents[1].Trim(); ;
             string year = dateComponents[2].Trim();
 
             // We require a two-digit month. If there is only one digit, add a leading zero:
@@ -94,10 +95,10 @@ namespace MaskedDateEntryControl
             // We require a four-digit year. If there are only two digits, add 
             // two digits denoting the current century as leading numerals:
             if (year.Length == 2)
-                year = "20" + year;
+                year = "19" + year;
 
             // Put the date back together again with proper delimiters, and 
-            dateTextBox.Text = month + "/" + day + "/" + year;
+            dateTextBox.Text = day + "/" + month + "/" + year;
         }
 
 
@@ -136,8 +137,8 @@ namespace MaskedDateEntryControl
             {
                 // Split the original date into components:
                 string[] dateSoFar = dateTextBox.Text.Split(new[] { DateSeparator }, StringSplitOptions.RemoveEmptyEntries);
-                string month = dateSoFar[0].Trim();
-                string day = dateSoFar[1].Trim();
+                string day = dateSoFar[0].Trim();
+                string month = dateSoFar[1].Trim();
                 string year = dateSoFar[2].Trim();
 
                 // If the component values are of the proper length for mm/dd/yyyy formatting:
@@ -148,7 +149,10 @@ namespace MaskedDateEntryControl
                 {
                     // Check to see if the string resolves to a valid date:
                     DateTime d;
-                    if (!DateTime.TryParse(dateTextBox.Text, out d))
+                    if (!DateTime.TryParseExact(dateTextBox.Text, "dd-MM-yyyy",
+                                               CultureInfo.InvariantCulture,
+                                               DateTimeStyles.None,
+                                               out d))
                     {
                         // The string did NOT resolve to a valid date:
                         return false;
@@ -248,17 +252,20 @@ namespace MaskedDateEntryControl
             {
                 DateTime d;
                 DateTime? Result = null;
-                if (DateTime.TryParse(this.Text, out d))
+                if (DateTime.TryParseExact(Text, "dd-MM-yyyy",
+                                               CultureInfo.InvariantCulture,
+                                               DateTimeStyles.None,
+                                               out d))
                 {
                     Result = d;
                 }
                 return Result;
             }
-            set
+            set 
             {
                 string DateString = "";
                 if (value.HasValue)
-                    DateString = value.Value.ToString("MM/dd/yyyy");
+                    DateString = value.Value.ToString("dd-MM-yyyy");
                 this.Text = DateString;
             }
         }
@@ -268,7 +275,7 @@ namespace MaskedDateEntryControl
     {
         private string _Message = ""
             + "Text does not resolve to a valid date. "
-            + "Enter a date in mm/dd/yyyy format, or clear the text to represent an empty date.";
+            + "Enter a date in dd-MM-yyyy format, or clear the text to represent an empty date.";
 
         private string _InvalidDateString = "";
 

@@ -3,15 +3,27 @@ using Kanc.MVP.Controllers.Customer;
 using Kanc.MVP.Controllers.Main;
 using Kanc.MVP.Controllers.Order;
 using Kanc.MVP.Core.Domain;
+using Kanc.MVP.Core.nHibernate.SessionProviders;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Navigator;
 using Kanc.MVP.Engine.View;
 using MVCSharp.Core;
 using MVCSharp.Core.Configuration.Tasks;
 using MVCSharp.Core.Tasks;
+using NHibernate;
 
 namespace Kanc.MVP.Engine.Tasks
 {
+    public class ViewChangedEventArgs : EventArgs
+    {
+        public ViewChangedEventArgs(string viewName)
+        {
+            ViewName = viewName;
+        }
+
+        public string ViewName { get; set; }    
+    }
+
     [Task(typeof(NavigatorEx))]
     public class MainTask : MyTaskBase
     {
@@ -66,10 +78,10 @@ namespace Kanc.MVP.Engine.Tasks
                 FireOrderChanged();
             }
         }
-        public void FireOrderChanged()
+        public void FireOrderChanged(string currViewName)
         {
             if (CurrentOrderChanged != null)
-                CurrentOrderChanged(this, EventArgs.Empty);
+                CurrentOrderChanged(this, new ViewChangedEventArgs(currViewName));
         }
 
         [IPointEx(ViewCategory.None, typeof(ControllerBase))]
@@ -85,5 +97,36 @@ namespace Kanc.MVP.Engine.Tasks
         {
             Navigator.NavigateDirectly(MainView);
         }
+
+        #region nHibernate session
+        private ISession _session;
+        public ISession Session
+        {
+            get
+            {
+                if (_session == null)
+                    _session = SqlSessionFactoryProvider.Instance.OpenSession();
+                return _session;
+            }
+        }
+        private IStatelessSession _statelessSession;
+        public IStatelessSession StatelessSession
+        {
+            get
+            {
+                if (_statelessSession == null)
+                    _statelessSession = SqlSessionFactoryProvider.Instance.OpenStatelessSession();
+                return _statelessSession;
+            }
+        }
+
+        public virtual void Dispose()
+        {
+            if (_session != null)
+                _session.Dispose();
+            if (_statelessSession != null)
+                _statelessSession.Dispose();
+        }
+        #endregion
     }
 }

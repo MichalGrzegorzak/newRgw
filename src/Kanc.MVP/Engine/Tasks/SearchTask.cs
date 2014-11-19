@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Diagnostics.Eventing.Reader;
 using Kanc.MVP.Controllers.Customer;
-
 using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Core.nHibernate.SessionProviders;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Navigator;
 using Kanc.MVP.Engine.View;
-using Kanc.MVP.Engine.ViewManager;
-using Kanc.MVP.Presentation.MainForm;
 using MVCSharp.Core;
 using MVCSharp.Core.Configuration.Tasks;
-using MVCSharp.Core.Tasks;
 using NHibernate;
 
 namespace Kanc.MVP.Engine.Tasks
@@ -51,11 +46,7 @@ namespace Kanc.MVP.Engine.Tasks
             }
         }
 
-        private ISession _session;
-        public ISession Session
-        {
-            get { return _session ?? SqlSessionFactoryProvider.Instance.OpenSession(); }
-        }
+        
 
         public override void OnStart(object param)
         {
@@ -66,5 +57,36 @@ namespace Kanc.MVP.Engine.Tasks
 
             Navigator.ActivateView(Start);
         }
+
+        #region nHibernate session
+        private ISession _session;
+        public ISession Session
+        {
+            get
+            {
+                if (_session == null)
+                    _session = SqlSessionFactoryProvider.Instance.OpenSession();
+                return _session;
+            }
+        }
+        private IStatelessSession _statelessSession;
+        public IStatelessSession StatelessSession
+        {
+            get
+            {
+                if (_statelessSession == null)
+                    _statelessSession = SqlSessionFactoryProvider.Instance.OpenStatelessSession();
+                return _statelessSession;
+            }
+        }
+
+        public virtual void Dispose()
+        {
+            if (_session != null)
+                _session.Dispose();
+            if (_statelessSession != null)
+                _statelessSession.Dispose();
+        } 
+        #endregion
     }
 }

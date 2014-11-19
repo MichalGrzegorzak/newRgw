@@ -102,6 +102,8 @@ namespace Kanc.MVP.Controllers.Customer
             Klient c = Task.CurrentRozliczenie.Klient;
             c.Nazwisko = View.NazwiskoPl;
             c.Urodz = View.Urodzony;
+
+            Session.SaveOrUpdate(Task.CurrentRozliczenie);
         }
 
         public override void Next()

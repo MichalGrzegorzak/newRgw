@@ -10,8 +10,8 @@ namespace Kanc.MVP.Core.nHibernate.Conventions
         {
             instance.Column(string.Format(instance.Class.Name.StartsWith("Id") ? "{1}" : "{0}{1}", "Id",
                 instance.Class.Name));
-            //instance.LazyLoad();
-            instance.LazyLoad(Laziness.NoProxy);
+            instance.LazyLoad();
+            //instance.LazyLoad(Laziness.NoProxy);
         }
     }
 }

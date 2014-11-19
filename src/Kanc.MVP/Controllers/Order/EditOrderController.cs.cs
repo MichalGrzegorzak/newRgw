@@ -23,7 +23,7 @@ namespace Kanc.MVP.Controllers.Order
         //    View.Message = "";
         //}
 
-        public override void Next()
+        public override void Save()
         {
             var rozlicz = Task.CurrentRozliczenie;
 
@@ -31,6 +31,11 @@ namespace Kanc.MVP.Controllers.Order
             //ord.Id = View.Id;
             rozlicz.Rok = View.Rok;
 
+            Session.SaveOrUpdate(Task.CurrentRozliczenie);
+        }
+
+        public override void Next()
+        {
             //Task.Navigator.NavigateDirectly(MainTask.EditCustomer);
             base.Next();
             Task.FireOrderChanged();
@@ -40,8 +45,5 @@ namespace Kanc.MVP.Controllers.Order
             base.Previous();
         }
 
-        
-
-        
     }
 }

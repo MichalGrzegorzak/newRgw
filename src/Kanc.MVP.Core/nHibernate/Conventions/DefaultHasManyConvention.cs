@@ -8,7 +8,7 @@ namespace Kanc.MVP.Core.nHibernate.Conventions
         public void Apply(IOneToManyCollectionInstance instance)
         {
             instance.Key.Column(string.Format("{0}{1}", "Id", instance.EntityType.Name));
-            //instance.LazyLoad();
+            instance.LazyLoad();
         }
     }
 }

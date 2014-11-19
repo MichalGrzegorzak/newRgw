@@ -51,10 +51,11 @@ namespace Kanc.MVP.Core.nHibernate.SessionProviders
         public ISession OpenSession()
         {
             ISession session = sessionFactory.OpenSession();
-
-            //var export = new SchemaExport(configuration);
-            //SchemaExport(export, session);
-
+            return session;
+        }
+        public IStatelessSession OpenStatelessSession()
+        {
+            IStatelessSession session = sessionFactory.OpenStatelessSession();
             return session;
         }
 
@@ -77,8 +78,6 @@ namespace Kanc.MVP.Core.nHibernate.SessionProviders
             var export = new SchemaExport(conf);
             export.Drop(false, true);
             export.Create(false, true);
-
-            //schema.Execute(true, true, false, session.Connection, null);
         }
 
         public void Dispose()
