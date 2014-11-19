@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 using Kanc.MVP.Core.nHibernate.SessionProviders;
 using Kanc.MVP.Engine.Tasks;
@@ -14,6 +15,9 @@ namespace Kanc.MVP.Controllers.Base
     public class SubControllerBase<TView> : MyControllerBase<MainTask, TView>
         where TView : class, IMyBaseView
     {
+        /// <summary>
+        /// Wykonuje sie tylko raz, przy utworzeniu kontrolera
+        /// </summary>
         public override MainTask Task
         {
             get { return base.Task; }
@@ -24,22 +28,20 @@ namespace Kanc.MVP.Controllers.Base
                 Task.CurrentOrderChanged += Task_CurrentOrderChanged;
             }
         }
-        protected virtual void Task_CurrentOrderChanged(object sender, EventArgs e)
-        {
-            BindModel();
-        }
-        protected virtual void Task_CurrentCustomerChanged(object sender, EventArgs e)
-        {
-        }
-        
+        /// <summary>
+        /// Wykounje sie tylko raz, po utworzeniu View
+        /// </summary>
         public override TView View
         {
             get { return base.View; }
             set
             {
                 base.View = value;
+                base.View.ViewName = Task.CurrViewName;
+
                 ViewInitialized();
                 BindModel();
+
             }
         }
         public virtual void ViewInitialized()
@@ -47,10 +49,25 @@ namespace Kanc.MVP.Controllers.Base
         }
         public virtual void ViewActivated()
         {
+            BindModel();
         }
         public virtual void BindModel()
         {
         }
+
+        protected virtual void Task_CurrentOrderChanged(object sender, ViewChangedEventArgs e)
+        {
+            if (e.ViewName == View.ViewName) //aby nie bindowac drugi raz aktualnego View
+                return;
+
+            //obecnie robie Bindind przez ViewActivated ?
+            //BindModel();
+        }
+        protected virtual void Task_CurrentCustomerChanged(object sender, ViewChangedEventArgs e)
+        {
+        }
+        
+        
 
         protected List<string> Errors = new List<string>();
         protected BasicValidator<TView> Validator = null;
@@ -76,8 +93,10 @@ namespace Kanc.MVP.Controllers.Base
             }
 
             Save();
+
+            Task.FireOrderChanged(Task.CurrViewName); //poinformuj reszte formatek
             Task.Navigator.Navigate("NEXT");
-            Task.FireOrderChanged();
+            
         }
         public virtual void Previous()
         {

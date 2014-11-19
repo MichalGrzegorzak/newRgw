@@ -38,7 +38,7 @@ namespace Kanc.MVP.Controllers.Order
         {
             //Task.Navigator.NavigateDirectly(MainTask.EditCustomer);
             base.Next();
-            Task.FireOrderChanged();
+            //Task.FireOrderChanged(Task.CurrViewName);
         }
         public override void Previous()
         {

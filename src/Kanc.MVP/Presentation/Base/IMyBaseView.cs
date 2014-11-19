@@ -7,7 +7,8 @@ namespace Kanc.MVP.Presentation.Customers
         int Id { get; set; }
         bool IsNew { get; set; }
         string Message { get; set; }
-        
+
+        string ViewName { get; set; }
         void NotifyUser(string message);
         void ClearView();
 

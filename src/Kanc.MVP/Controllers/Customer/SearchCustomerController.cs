@@ -33,7 +33,8 @@ namespace Kanc.MVP.Controllers.Customer
         /// </summary>
         public void UserHasSelectedOrder()
         {
-            Task.StatelessSession.Close();
+            if (Task.StatelessSession.IsOpen)
+                Task.StatelessSession.Close();
 
             //Task.CurrentOsobaLookup, 
             Task.TaskResultListener.RecieveTaskResult(Task.CurrentRozliczenie);

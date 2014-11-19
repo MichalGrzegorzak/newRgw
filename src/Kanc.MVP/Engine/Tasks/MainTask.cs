@@ -68,14 +68,14 @@ namespace Kanc.MVP.Engine.Tasks
         //}
 
         private Rozliczenie _currentRozliczenie = new Rozliczenie();
-        public event EventHandler CurrentOrderChanged;
+        public event EventHandler<ViewChangedEventArgs> CurrentOrderChanged;
         public Rozliczenie CurrentRozliczenie
         {
             get { return _currentRozliczenie; }
             set
             {
                 _currentRozliczenie = value;
-                FireOrderChanged();
+                FireOrderChanged(CurrViewName);
             }
         }
         public void FireOrderChanged(string currViewName)

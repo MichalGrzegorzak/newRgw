@@ -6,6 +6,7 @@
 //===========================================
 
 using System;
+using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
@@ -166,7 +167,7 @@ namespace MVCSharp.Core
 
         public virtual void NavigateBack()
         {
-            if (viewsNavigationTracking.Peek() != null)
+            if (viewsNavigationTracking.Any())
             {
                 string lastView = viewsNavigationTracking.Pop();
                 NavigateDirectly(lastView);

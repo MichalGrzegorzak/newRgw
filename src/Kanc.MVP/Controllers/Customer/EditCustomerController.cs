@@ -20,6 +20,7 @@ namespace Kanc.MVP.Controllers.Customer
             {
                 ResetView(); //executed whenever NewCustomer action is clicked
             }
+            base.ViewActivated();
         }
 
         /// <summary>
