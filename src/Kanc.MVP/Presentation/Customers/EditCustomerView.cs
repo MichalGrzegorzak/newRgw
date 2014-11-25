@@ -30,23 +30,11 @@ namespace Kanc.MVP.Presentation.Customers
             base.errorProvider = errorProvider1;
 
             //aby kontroler mogl uruchomic SetError na errorProviderze, bez referencji do kontrolki
-            availableControls.AddRange(ControlHelper.GetAll<TextBox>(this).ToList()); 
+            availableControls.AddRange(ControlHelper.GetAll<TextBox>(this).ToList());
+            availableControls.Add(txbUrodz);
             availableControls.ForEach(x=> x.Validating += ValidateInput);
 
             txbUrodz.RequireValidEntry = false; //moze wyjsc z kontrolki
-            txbUrodz.InvalidDateEntered += txbUrodz_InvalidDateEntered;
-        }
-
-        void txbUrodz_InvalidDateEntered(object sender, MaskedDateEntryControl.InvalidDateTextEventArgs e)
-        {
-            Control ctrl = (Control)sender;
-            errorProvider1.SetError(ctrl, ""); //clear ctrl previous error
-
-            string message = Controller.Validate(ctrl);
-            if (message == null)
-                return;
-
-            errorProvider1.SetError(ctrl, message);
         }
 
         public override void Activate(bool activate)

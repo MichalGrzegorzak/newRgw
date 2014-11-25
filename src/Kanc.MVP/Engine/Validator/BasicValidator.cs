@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
+using Kanc.MVP.Controls;
 using Kanc.MVP.Presentation.Customers;
+using Kanc.MVP.UIControls;
 using Utils.Extensions;
 using Utils.Features.ExtendentEnum;
 using Utils.Features.Reflection;
@@ -19,8 +21,10 @@ namespace Kanc.MVP.Engine.Validator
         IsRequired,
         [EnumDescription("Musi byc liczba")]
         IsNumber,
-        [EnumDescription("Nie poprawny wiek")]
-        IsCorrectAge
+        [EnumDescription("Musi być pełnolietni")]
+        IsMature,
+        [EnumDescription("Nie poprawna data")]
+        IsDate
     }
 
     public class BasicValidator<TView> where TView : class, IMyBaseView//, IView //, IView
@@ -119,7 +123,11 @@ namespace Kanc.MVP.Engine.Validator
                         if (RegexHelper.DigitRegex.IsMatch(value) == false)
                             hasError = true;
                         break;
-                    case ValidationRulesEnum.IsCorrectAge:
+                    case ValidationRulesEnum.IsDate:
+                        if(!value.ParseToDate().HasValue)
+                            hasError = true;
+                        break;
+                    case ValidationRulesEnum.IsMature:
                         int val = value.ParseSafe<int>();
                         if (!(val > 18 && val < 111))
                             hasError = true;

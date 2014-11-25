@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 using Kanc.MVP.Core.nHibernate.Base;
 
 namespace Kanc.MVP.Core.Domain
@@ -14,6 +15,10 @@ namespace Kanc.MVP.Core.Domain
             Klient = new Klient(this);
             Partner = new Partner(this);
             Konto = new Konto(this);
+
+            Lookup = new OsobaLookup(new Osoba());
+
+            Created = DateTime.Now;
         }
 
         public virtual int Rok { get; set; }
@@ -31,6 +36,11 @@ namespace Kanc.MVP.Core.Domain
         //public virtual Podatek Podatek { get; set; }
         //public virtual Rachunek Rachunek { get; set; }
         //public virtual Historia Historia { get; set; }
+
+        public virtual DateTime? Created { get; set; }
+        public virtual string CreatedBy { get; set; }
+        public virtual DateTime? Modified { get; set; }
+        public virtual string ModifiedBy { get; set; }
     }
 }
 

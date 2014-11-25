@@ -8,7 +8,7 @@ namespace Kanc.MVP.Controllers.Base
         where TTask : MyTaskBase
         where TView : class
     {
-        
+
         public void StartSubTask<TT>() where TT : MyTaskBase
         {
             Type taskType = typeof(TT);

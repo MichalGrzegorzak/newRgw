@@ -10,5 +10,7 @@ namespace Kanc.MVP.Presentation.MainForm
         void CurrentCategoryChanged(string catName);
 
         void ShowViewCategory(ViewCategory cat);
+
+        void ShowOrHide(bool show);
     }
 }

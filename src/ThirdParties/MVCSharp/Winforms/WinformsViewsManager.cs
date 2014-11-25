@@ -98,9 +98,11 @@ namespace MVCSharp.Winforms
         protected virtual void NotifyViewsOnActivation(IView activatedView)
         {
             INotifiedView prActiveNotifiedView = prevActiveView as INotifiedView;
-            if (prActiveNotifiedView != null) prActiveNotifiedView.Activate(false);
+            if (prActiveNotifiedView != null) 
+                prActiveNotifiedView.Activate(false);
             INotifiedView activatedNotifiedView = activatedView as INotifiedView;
-            if (activatedNotifiedView != null) activatedNotifiedView.Activate(true);
+            if (activatedNotifiedView != null) 
+                activatedNotifiedView.Activate(true);
             prevActiveView = activatedView;
         }
 
@@ -116,7 +118,8 @@ namespace MVCSharp.Winforms
             WinformsViewInfo viewInf = GetViewInfo(view.ViewName);
             if (viewInf.ShowModal)
             {
-                if (!form.Visible) form.ShowDialog();
+                if (!form.Visible) 
+                    form.ShowDialog();
             }
             else
             {

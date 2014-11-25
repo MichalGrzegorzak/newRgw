@@ -9,6 +9,20 @@ using Kanc.MVP.Presentation.Customers;
 
 namespace Kanc.MVP.Controllers.Customer
 {
+    //public class EntityCreator
+    //{
+    //    public Rozliczenie NewRozliczenie()
+    //    {
+    //        Osoba o = new Osoba();
+    //        OsobaLookup newGuy = new OsobaLookup(o);
+
+    //        Rozliczenie rozlicz = new Rozliczenie();
+    //        rozlicz.Lookup = newGuy;
+
+    //        return rozlicz;
+    //    }
+    //}
+
     public class EditCustomerController : SubControllerBase<IEditCustomersView>
     {
         /// <summary>
@@ -18,6 +32,9 @@ namespace Kanc.MVP.Controllers.Customer
         {
             if (View.IsNew)
             {
+                Rozliczenie roz = new Rozliczenie();
+                Task.CurrentRozliczenie = roz;
+
                 ResetView(); //executed whenever NewCustomer action is clicked
             }
             base.ViewActivated();
@@ -33,7 +50,7 @@ namespace Kanc.MVP.Controllers.Customer
             //zdefiniuj walidacje wykorzystywana przez widok i kontroler
             Validator = new BasicValidator<IEditCustomersView>(View);
             Validator.For(x => x.NazwiskoPl, "txbName").IsRequired();
-            Validator.For(x => x.Urodzony).IsRequired(); 
+            Validator.For(x => x.Urodzony, "txbUrodz").IsRequired().IsDate();
             //.IsCorrectAge(); //kontrolke znajdzie z konwencji
 
             //  or
@@ -53,9 +70,9 @@ namespace Kanc.MVP.Controllers.Customer
         /// </summary>
         public override void BindModel()
         {
-            var c = Task.CurrentRozliczenie.Klient;
-
             ResetView();
+
+            var c = Task.CurrentRozliczenie.Klient;
             View.Id = c.Id;
             View.NazwiskoPl = c.Nazwisko;
             View.Urodzony = c.Urodz;
@@ -109,8 +126,8 @@ namespace Kanc.MVP.Controllers.Customer
 
         public override void Next()
         {
-            if (!IsValid())
-                return;
+            //if (!IsValid())
+            //    return;
 
             base.Next(); //odpali walidacje i wywoluje z navigatora NEXT, jesli blad to wyswietli
         }

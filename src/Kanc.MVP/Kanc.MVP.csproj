@@ -91,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Base\ISubController.cs" />
     <Compile Include="Controllers\Customer\EditCustomerController.cs" />
     <Compile Include="Controllers\Order\EditOrderController.cs.cs" />
     <Compile Include="Controllers\Customer\SearchCustomerController.cs" />
@@ -102,10 +103,7 @@
     <Compile Include="Presentation\Base\MyBaseControlView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UIControls\MaskedDateBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UIControls\MaskedTextBoxExt.cs">
+    <Compile Include="UIControls\MaskedDateTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />

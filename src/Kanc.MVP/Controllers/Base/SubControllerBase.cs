@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using Kanc.MVP.Core.nHibernate.SessionProviders;
 using Kanc.MVP.Engine.Tasks;
@@ -12,7 +13,7 @@ using NHibernate;
 
 namespace Kanc.MVP.Controllers.Base
 {
-    public class SubControllerBase<TView> : MyControllerBase<MainTask, TView>
+    public class SubControllerBase<TView> : MyControllerBase<MainTask, TView>, ISubController
         where TView : class, IMyBaseView
     {
         /// <summary>

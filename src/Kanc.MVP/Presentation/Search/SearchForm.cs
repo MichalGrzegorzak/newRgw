@@ -5,7 +5,7 @@ using MVCSharp.Winforms;
 
 namespace Kanc.MVP.Presentation.Search
 {
-    [ViewEx(typeof(SearchTask), SearchTask.Start, null, ShowModal = true)]
+    [ViewEx(typeof(SearchTask), SearchTask.Start, null)] //, ShowModal = true
     public partial class SearchForm : WinFormView, ISearchFormView
     {
         public SearchForm()

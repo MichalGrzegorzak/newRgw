@@ -15,7 +15,8 @@ namespace Kanc.MVP.Engine.Tasks
 
         public override void OnStart(object param)
         {
-            if(param == null) return;
+            if(param == null) 
+                return;
 
             OriginTask = (param as object[])[0] as MainTask;
             TaskResultListener = (param as object[])[1] as IMyTaskResultListener;

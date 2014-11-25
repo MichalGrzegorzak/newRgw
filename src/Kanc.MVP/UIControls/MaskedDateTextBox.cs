@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace MaskedDateEntryControl
+namespace Kanc.MVP.UIControls
 {
     public class MaskedDateTextBox : MaskedTextBox
     {
-
         // Set up custom event to handle invalid entry:
         public delegate void InvalidDateEntryHandler(object sender, InvalidDateTextEventArgs e);
         public event InvalidDateEntryHandler InvalidDateEntered;
@@ -123,72 +117,27 @@ namespace MaskedDateEntryControl
 
                 // If any of the above key values are encountered, apply a formatting 
                 // check to the text entered so far, and make adjustments as needed. 
-                this.CorrectDateText(txt);
+                CorrectDateText(txt);
         }
 
-
-        bool IsValidDate(MaskedTextBox dateTextBox)
+        public bool IsValid
         {
-            // Remove delimiters from the text contained in the control. 
-            string DateContents = dateTextBox.Text.Replace(DateSeparator, "").Trim();
-
-            // if no date was entered, we wil be left with an empty string or whitespace. Otherwise:
-            if (!string.IsNullOrEmpty(DateContents) && DateContents != "")
-            {
-                // Split the original date into components:
-                string[] dateSoFar = dateTextBox.Text.Split(new[] { DateSeparator }, StringSplitOptions.RemoveEmptyEntries);
-                string day = dateSoFar[0].Trim();
-                string month = dateSoFar[1].Trim();
-                string year = dateSoFar[2].Trim();
-
-                // If the component values are of the proper length for mm/dd/yyyy formatting:
-                if (month.Length == 2
-                    && day.Length == 2
-                    && year.Length == 4
-                    && (year.StartsWith("19") || year.StartsWith("20")))
-                {
-                    // Check to see if the string resolves to a valid date:
-                    DateTime d;
-                    if (!DateTime.TryParseExact(dateTextBox.Text, "dd-MM-yyyy",
-                                               CultureInfo.InvariantCulture,
-                                               DateTimeStyles.None,
-                                               out d))
-                    {
-                        // The string did NOT resolve to a valid date:
-                        return false;
-                    }
-                    else
-                        // The string resolved to a valid date:
-                        return true;
-                }
-                else
-                {
-                    // The Components are not of the correct size, and automatic adjustment
-                    // is unsuccessful:
-                    return false;
-
-                } // End if Components are correctly sized
-            }
-            else
-                // The date string is empty or whitespace - no date is a valid return:
-                return true;
-
-        } // IsValidDate
-
+            get { return DateHelper.ValidateDate(Text.Trim(), DateSeparator); }
+        }
 
         protected override void OnLeave(EventArgs e)
         {
             // Perform a final adjustment of the text entry to fit the mm/dd/yyyy format:
-            this.CorrectDateText(this);
+            CorrectDateText(this);
 
             // If the entry is a valid date, fire the leave event. We are done here. 
-            if (this.IsValidDate(this))
+            if (IsValid)
             {
                 base.OnLeave(e);
             }
             else
             {
-                this.OnInvalidDateEntry(this, new InvalidDateTextEventArgs(this.Text.Trim()));
+                OnInvalidDateEntry(this, new InvalidDateTextEventArgs(this.Text.Trim()));
 
                 // if a valid date entry is not required, the user is free to navigate away
                 // from the control:
@@ -266,7 +215,7 @@ namespace MaskedDateEntryControl
                 string DateString = "";
                 if (value.HasValue)
                     DateString = value.Value.ToString("dd-MM-yyyy");
-                this.Text = DateString;
+                Text = DateString;
             }
         }
     }
@@ -281,7 +230,6 @@ namespace MaskedDateEntryControl
 
 
         public InvalidDateTextEventArgs(string InvalidDateString)
-            : base()
         {
             _InvalidDateString = InvalidDateString;
         }
@@ -300,12 +248,10 @@ namespace MaskedDateEntryControl
             set { _Message = value; }
         }
 
-
         public String InvalidDateString
         {
             get { return _InvalidDateString; }
         }
-
 
     }
 }

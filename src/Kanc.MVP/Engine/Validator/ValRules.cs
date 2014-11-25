@@ -36,11 +36,16 @@ namespace Kanc.MVP.Engine.Validator
             AddRule(ValidationRulesEnum.IsNumber, message);
             return this;
         }
-        public ValRules IsCorrectAge(string message = null)
+        public ValRules HasCorrectAge(string message = null)
         {
             AddRule(ValidationRulesEnum.IsRequired, message);
             AddRule(ValidationRulesEnum.IsNumber, message);
-            AddRule(ValidationRulesEnum.IsCorrectAge, message);
+            AddRule(ValidationRulesEnum.IsMature, message);
+            return this;
+        }
+        public ValRules IsDate(string message = null)
+        {
+            AddRule(ValidationRulesEnum.IsDate, message);
             return this;
         }
     }

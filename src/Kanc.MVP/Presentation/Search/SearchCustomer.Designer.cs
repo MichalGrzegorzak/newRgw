@@ -1,4 +1,5 @@
 ﻿using Kanc.MVP.Controls;
+using Kanc.MVP.UIControls;
 
 namespace Kanc.MVP.Presentation.Search
 {
@@ -39,7 +40,7 @@ namespace Kanc.MVP.Presentation.Search
             this.gridOrders = new System.Windows.Forms.DataGridView();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBoxExt1 = new Kanc.MVP.Controls.MaskedTextBoxExt();
+            this.urodzTextBox = new Kanc.MVP.UIControls.MaskedDateTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@ namespace Kanc.MVP.Presentation.Search
             this.tableLayoutPanel1.Controls.Add(this.gridOrders, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnNewOrder, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxExt1, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.urodzTextBox, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
@@ -163,13 +164,15 @@ namespace Kanc.MVP.Presentation.Search
             this.label1.TabIndex = 9;
             this.label1.Text = "Urodz:";
             // 
-            // maskedTextBoxExt1
+            // urodzTextBox
             // 
-            this.maskedTextBoxExt1.Date = null;
-            this.maskedTextBoxExt1.Location = new System.Drawing.Point(143, 23);
-            this.maskedTextBoxExt1.Name = "maskedTextBoxExt1";
-            this.maskedTextBoxExt1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxExt1.TabIndex = 10;
+            this.urodzTextBox.DateValue = null;
+            this.urodzTextBox.Location = new System.Drawing.Point(143, 23);
+            this.urodzTextBox.Mask = "00/00/0000";
+            this.urodzTextBox.Name = "urodzTextBox";
+            this.urodzTextBox.RequireValidEntry = true;
+            this.urodzTextBox.Size = new System.Drawing.Size(100, 20);
+            this.urodzTextBox.TabIndex = 10;
             // 
             // SearchCustomer
             // 
@@ -197,6 +200,6 @@ namespace Kanc.MVP.Presentation.Search
         private System.Windows.Forms.DataGridView gridOrders;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Label label1;
-        private MaskedTextBoxExt maskedTextBoxExt1;
+        private MaskedDateTextBox urodzTextBox;
     }
 }

@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Threading;
+using Kanc.MVP.UIControls;
 
 namespace Utils.Features.TypesParsing
 {
@@ -29,36 +31,30 @@ namespace Utils.Features.TypesParsing
                 value = value.Trim().Trim(',', '.', ';', ':');
                 value = value.Replace(" ", "");
 
-                #region Allows custom parse for datetime formats, uncomment if needed
+                #region custom types parsing
 
                 if (typeof(T) == typeof(DateTime))
                 {
-                    if (value == "01-01-00")
-                    {
-                        value = ((DateTime)SqlDateTime.MinValue).ToShortDateString();
-                    }
-                    else
-                    {
-                        if (value.Count() == 8 && value.IndexOf(".") == 2)
-                        {
-                            value = value.Replace('.', '-');
-                        }
+                    throw new Exception("Not supported type, use special method!");
 
-                        if (value.IndexOf("-") == 2)
-                        {
-                            string[] splitted = value.Split(new char[] { '-', ' ' });
-                            string dd = splitted[0];
-                            string mm = splitted[1];
-                            string yyyy = splitted[2];
-                            string time = "";
-                            if (splitted.Length == 4) //has time
-                            {
-                                time = splitted[3];
-                            }
-
-                            value = yyyy + "-" + mm + "-" + dd + " " + time;
-                        }
-                    }
+                    //if (value == "01-01-00")
+                    //    value = ((DateTime)SqlDateTime.MinValue).ToShortDateString();
+                    //else
+                    //{
+                    //    if (value.Count() == 8 && value.IndexOf(".") == 2)
+                    //        value = value.Replace('.', '-');
+                    //    if (value.IndexOf("-") == 2)
+                    //    {
+                    //        string[] splitted = value.Split(new char[] { '-', ' ' });
+                    //        string dd = splitted[0];
+                    //        string mm = splitted[1];
+                    //        string yyyy = splitted[2];
+                    //        string time = "";
+                    //        if (splitted.Length == 4) //has time
+                    //            time = splitted[3];
+                    //        value = yyyy + "-" + mm + "-" + dd + " " + time;
+                    //    }
+                    //}
                 }
 
                 #endregion
@@ -95,6 +91,19 @@ namespace Utils.Features.TypesParsing
             }
 
             return result;
+        }
+
+        public static DateTime? ParseToDate(this string value, bool after1900 = true)
+        {
+            var val = DateHelper.CreateDate(value);
+
+            if (after1900)
+            {
+                if (val < new DateTime(1900, 1, 1))
+                    return null;
+            }
+
+            return val;
         }
 
         public static T ParseToEnum<T>(this string value)

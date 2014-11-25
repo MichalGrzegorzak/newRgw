@@ -46,6 +46,7 @@
     <Compile Include="Features\Paging\IPager.cs" />
     <Compile Include="Features\Paging\IQuerable.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
+    <Compile Include="Features\TypesParsing\DateHelper.cs" />
     <Compile Include="Features\TypesParsing\Parser.cs" />
     <Compile Include="Extensions\Strings.cs" />
     <Compile Include="Features\Cloning\CloneHelper.cs" />

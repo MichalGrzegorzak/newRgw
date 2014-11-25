@@ -98,7 +98,7 @@ namespace Kanc.MVP.Presentation.Search
 
         private void gridOrders_CurrentCellChanged(object sender, EventArgs e)
         {
-            Controller.CurrentOrderChanged();
+            //Controller.CurrentOrderChanged();
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)

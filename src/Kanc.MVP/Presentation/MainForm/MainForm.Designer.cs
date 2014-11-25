@@ -77,7 +77,7 @@
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(440, 25);
+            this.toolStrip.Size = new System.Drawing.Size(784, 25);
             this.toolStrip.TabIndex = 0;
             this.toolStrip.Text = "toolStrip1";
             // 
@@ -178,7 +178,7 @@
             this.navigateBar.NavigateBarColorTable = ((MT.WindowsUI.NavigationPane.NavigateBarColorTable)(resources.GetObject("navigateBar.NavigateBarColorTable")));
             this.navigateBar.NavigateBarDisplayedButtonCount = 3;
             this.navigateBar.SelectedButton = this.mailNavBtn;
-            this.navigateBar.Size = new System.Drawing.Size(116, 300);
+            this.navigateBar.Size = new System.Drawing.Size(116, 511);
             this.navigateBar.TabIndex = 1;
             this.navigateBar.Text = "navigateBar";
             this.navigateBar.OnNavigateBarButtonSelected += new MT.WindowsUI.NavigationPane.NavigateBar.OnNavigateBarButtonEventHandler(this.navigateBar_OnNavigateBarButtonSelected);
@@ -195,7 +195,7 @@
             this.mailNavBtn.IsShowCaptionImage = false;
             this.mailNavBtn.IsShowCollapseScreenCaption = false;
             this.mailNavBtn.Key = "Klient";
-            this.mailNavBtn.Location = new System.Drawing.Point(0, 172);
+            this.mailNavBtn.Location = new System.Drawing.Point(0, 383);
             this.mailNavBtn.Margin = new System.Windows.Forms.Padding(2);
             this.mailNavBtn.MinimumSize = new System.Drawing.Size(16, 16);
             this.mailNavBtn.MouseOverImage = ((System.Drawing.Image)(resources.GetObject("mailNavBtn.MouseOverImage")));
@@ -217,7 +217,7 @@
             this.notesNavBtn.IsShowCaptionImage = false;
             this.notesNavBtn.IsShowCollapseScreenCaption = false;
             this.notesNavBtn.Key = "Szukaj";
-            this.notesNavBtn.Location = new System.Drawing.Point(0, 204);
+            this.notesNavBtn.Location = new System.Drawing.Point(0, 415);
             this.notesNavBtn.Margin = new System.Windows.Forms.Padding(2);
             this.notesNavBtn.MinimumSize = new System.Drawing.Size(16, 16);
             this.notesNavBtn.MouseOverImage = ((System.Drawing.Image)(resources.GetObject("notesNavBtn.MouseOverImage")));
@@ -239,7 +239,7 @@
             this.szukajNavButton.IsShowCaptionImage = false;
             this.szukajNavButton.IsShowCollapseScreenCaption = false;
             this.szukajNavButton.Key = "Druki";
-            this.szukajNavButton.Location = new System.Drawing.Point(0, 236);
+            this.szukajNavButton.Location = new System.Drawing.Point(0, 447);
             this.szukajNavButton.MinimumSize = new System.Drawing.Size(22, 20);
             this.szukajNavButton.MouseOverImage = global::Kanc.MVP.Properties.Resources.Notes24;
             this.szukajNavButton.Name = "szukajNavButton";
@@ -254,7 +254,7 @@
             this.mtSplitter.Location = new System.Drawing.Point(116, 51);
             this.mtSplitter.Margin = new System.Windows.Forms.Padding(2);
             this.mtSplitter.Name = "mtSplitter";
-            this.mtSplitter.Size = new System.Drawing.Size(3, 300);
+            this.mtSplitter.Size = new System.Drawing.Size(3, 511);
             this.mtSplitter.SplitterBorderColor = System.Drawing.Color.Transparent;
             this.mtSplitter.SplitterDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(144)))), ((int)(((byte)(212)))));
             this.mtSplitter.SplitterLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(219)))), ((int)(((byte)(254)))));
@@ -277,7 +277,7 @@
             this.contentPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Padding = new System.Windows.Forms.Padding(4, 24, 4, 3);
-            this.contentPanel.Size = new System.Drawing.Size(321, 300);
+            this.contentPanel.Size = new System.Drawing.Size(665, 511);
             this.contentPanel.TabIndex = 3;
             // 
             // topSpacePanel
@@ -287,7 +287,7 @@
             this.topSpacePanel.Location = new System.Drawing.Point(0, 49);
             this.topSpacePanel.Margin = new System.Windows.Forms.Padding(2);
             this.topSpacePanel.Name = "topSpacePanel";
-            this.topSpacePanel.Size = new System.Drawing.Size(440, 2);
+            this.topSpacePanel.Size = new System.Drawing.Size(784, 2);
             this.topSpacePanel.TabIndex = 0;
             // 
             // menuStrip
@@ -299,7 +299,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(440, 24);
+            this.menuStrip.Size = new System.Drawing.Size(784, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -392,7 +392,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(219)))), ((int)(((byte)(254)))));
-            this.ClientSize = new System.Drawing.Size(440, 351);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.mtSplitter);
@@ -402,6 +402,7 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rgw testing";

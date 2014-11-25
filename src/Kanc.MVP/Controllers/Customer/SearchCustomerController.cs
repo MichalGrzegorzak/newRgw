@@ -37,8 +37,9 @@ namespace Kanc.MVP.Controllers.Customer
                 Task.StatelessSession.Close();
 
             //Task.CurrentOsobaLookup, 
-            Task.TaskResultListener.RecieveTaskResult(Task.CurrentRozliczenie);
             View.Close();
+            Task.TaskResultListener.RecieveTaskResult(Task.CurrentRozliczenie);
+            
         }
 
         public void NewOrder()

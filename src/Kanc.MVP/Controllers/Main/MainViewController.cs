@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Kanc.MVP.Controllers.Base;
+using Kanc.MVP.Controllers.Order;
 using Kanc.MVP.Core.Domain;
 using Kanc.MVP.Engine.InteractionPoint;
 using Kanc.MVP.Engine.Tasks;
 using Kanc.MVP.Engine.View;
 using Kanc.MVP.Engine.ViewManager;
+using Kanc.MVP.Presentation.Customers;
 using Kanc.MVP.Presentation.MainForm;
 using MVCSharp.Core;
 using MVCSharp.Core.Tasks;
@@ -51,7 +54,14 @@ namespace Kanc.MVP.Controllers.Main
             View.LoadAvailableActions(false);
             View.ShowViewCategory(ViewCategory.Klient);
 
-            Task.Navigator.NavigateDirectly(MainTask.EditOrder);
+            Task.Navigator.ActivateView(MainTask.EditOrder);
+
+            //rebinding received value to view
+            var subController = (Task.Navigator.GetController(MainTask.EditOrder) as ISubController);
+            subController.BindModel();
+            
+            //View.ShowOrHide(true);
+            //Task.Navigator.NavigateDirectly(MainTask.EditOrder);
 
             //Task.TasksManager.StartTask(typeof(EditOrderTask),
             //    new object[] { Task, Task.CurrentOrder, Task.CurrentCustomer });
@@ -65,10 +75,12 @@ namespace Kanc.MVP.Controllers.Main
             Type taskType = typeof(TT);
             var resultListener = this as IMyTaskResultListener;
 
+            View.ShowOrHide(false);
+
             if (!tasks.ContainsKey(taskType))
                 tasks[taskType] = Task.TasksManager.StartTask(taskType, new object[] { Task, resultListener });
             else
-                tasks[taskType].OnStart(null);
+                tasks[taskType].OnStart(null); //new object[] { Task, resultListener }
         }
 
         public void Save()

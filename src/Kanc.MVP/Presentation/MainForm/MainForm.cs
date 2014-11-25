@@ -29,6 +29,14 @@ namespace Kanc.MVP.Presentation.MainForm
             SetupNavPane();
         }
 
+        public void ShowOrHide(bool show)
+        {
+            if(show)
+                this.Show();
+            else
+                this.Hide();
+        }
+
         private void SetupNavPane()
         {
             navigateBar.NavigateBarButtons[0].RelatedControl = lvKlient;

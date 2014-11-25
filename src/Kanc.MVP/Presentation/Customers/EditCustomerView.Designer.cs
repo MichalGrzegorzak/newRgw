@@ -1,4 +1,6 @@
-﻿namespace Kanc.MVP.Presentation.Customers
+﻿using Kanc.MVP.UIControls;
+
+namespace Kanc.MVP.Presentation.Customers
 {
     partial class EditCustomerView
     {
@@ -39,8 +41,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txbUrodz = new MaskedDateTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txbUrodz = new MaskedDateEntryControl.MaskedDateTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -157,10 +159,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // txbUrodz
             // 
             this.txbUrodz.DateValue = null;
@@ -170,6 +168,10 @@
             this.txbUrodz.RequireValidEntry = true;
             this.txbUrodz.Size = new System.Drawing.Size(100, 20);
             this.txbUrodz.TabIndex = 8;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // EditCustomerView
             // 
@@ -199,6 +201,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private MaskedDateEntryControl.MaskedDateTextBox txbUrodz;
+        private MaskedDateTextBox txbUrodz;
     }
 }
