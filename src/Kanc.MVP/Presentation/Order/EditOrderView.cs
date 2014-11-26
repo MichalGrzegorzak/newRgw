@@ -71,6 +71,11 @@ namespace Kanc.MVP.Presentation.Order
             
         }
 
+        public override void Activate(bool activate)
+        {
+            Controller.ViewActivated();
+        }
+
         //public Order CurrentOrder
         //{
         //    get { throw new NotImplementedException(); }

@@ -66,8 +66,7 @@ namespace Kanc.MVP.Engine.Validator
 
                     var lambda = propertyInfo.GetValueGetter<TView>();
                     object value = lambda(model);
-
-                    bool result = InternalValidate(null, value.ToString(), name, list, validateAll: true);
+                    bool result = InternalValidate(null,value!=null? value.ToString():string.Empty, name, list, validateAll: true);
                     if (!hasError)
                         hasError = result;
                 }

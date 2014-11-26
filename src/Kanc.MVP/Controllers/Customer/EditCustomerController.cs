@@ -30,11 +30,8 @@ namespace Kanc.MVP.Controllers.Customer
         /// </summary>
         public override void ViewActivated()
         {
-            if (View.IsNew)
+            if (Task.CurrentRozliczenie.IsTransient())
             {
-                Rozliczenie roz = new Rozliczenie();
-                Task.CurrentRozliczenie = roz;
-
                 ResetView(); //executed whenever NewCustomer action is clicked
             }
             base.ViewActivated();
