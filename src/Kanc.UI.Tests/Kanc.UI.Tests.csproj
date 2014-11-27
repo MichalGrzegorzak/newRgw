@@ -233,6 +233,14 @@
       <Project>{A9EE3F5C-2B0A-4B3F-A597-5088EDB4BD0B}</Project>
       <Name>Kanc.Commons</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator.Binding\NHibernate.Validator.Binding.csproj">
+      <Project>{241F53B6-E2FD-4D6F-B000-258BFAF4B806}</Project>
+      <Name>NHibernate.Validator.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParties\NHibernate.Validator\src\NHibernate.Validator\NHibernate.Validator.csproj">
+      <Project>{599516E0-E10D-4F44-B5E1-B7B67EFC931A}</Project>
+      <Name>NHibernate.Validator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

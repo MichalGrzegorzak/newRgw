@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Data.Linq;
 using System.Collections.Generic;
- using System.Linq.Expressions;
- using System.Text;
+using System.Linq.Expressions;
+using System.Text;
 using System.ComponentModel;
- using NHibernate.Validator.Constraints;
- using NHibernate.Validator.Engine;
+using NHibernate.Validator.Constraints;
+using NHibernate.Validator.Engine;
 
 namespace Kanc.UI.Tests
 {
