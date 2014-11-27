@@ -101,7 +101,7 @@ namespace Kanc.MVP.Controllers.Customer
             bool hasError = Validator.ValidateViewModel(View);
             Errors.AddRange(Validator.Errors);
 
-            //a tu przyklad dodatkowej customowej walidacji
+            //przyklad dodatkowej customowej walidacji
             var c = Task.CurrentRozliczenie.Klient;
             //if (c.Id < 1)
             //{
@@ -126,9 +126,6 @@ namespace Kanc.MVP.Controllers.Customer
 
         public override void Next()
         {
-            //if (!IsValid())
-            //    return;
-
             base.Next(); //odpali walidacje i wywoluje z navigatora NEXT, jesli blad to wyswietli
         }
 
