@@ -24,6 +24,7 @@ namespace Kanc.MVP.Controllers.Main
         /// </summary>
         public void NavigateToView(string viewName)
         {
+            Task.CurrentRozliczenie = new Rozliczenie();
             Task.Navigator.Navigate(viewName);
         }
 
@@ -49,7 +50,10 @@ namespace Kanc.MVP.Controllers.Main
         public void RecieveTaskResult(params object[] item)
         {
             //Task.CurrentOsobaLookup = item[0] as OsobaLookup;
-            Task.CurrentRozliczenie = item[0] as Rozliczenie;
+
+            var roz = item[0] as Rozliczenie;
+            Task.Session.Merge(roz);
+            Task.CurrentRozliczenie = Task.Session.Get<Rozliczenie>(roz.Id);
 
             View.LoadAvailableActions(false);
             View.ShowViewCategory(ViewCategory.Klient);
